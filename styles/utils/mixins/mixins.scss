@@ -1,0 +1,84 @@
+%center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%cover {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+//Flexbox shorcut
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//Manage flex direction and gap between items
+@mixin flex-col-gap($size) {
+  display: flex;
+  flex-direction: column;
+  gap: rem($size);
+}
+
+@mixin flex-row-gap($size) {
+  display: flex;
+  gap: rem($size);
+}
+
+
+
+// Auto width with container
+@mixin mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin mx-w-auto($width) {
+  max-width: $width;
+  @include mx-auto()
+}
+
+//Support blur
+@mixin support-blur($amount, $color, $alpha) {
+  @supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0)))
+    or (-webkit-backdrop-filter: blur(0)) {
+    background-color: rgba($color: $color, $alpha: $alpha);
+    backdrop-filter: blur($amount);
+  }
+}
+
+//Container
+@mixin container {
+  padding-right: rem(16px);
+  padding-left: rem(16px);
+
+  @include breakpoints('md') {
+    padding-right: rem(48px);
+    padding-left: rem(48px);
+  }
+
+  @include breakpoints('lg') {
+    padding-right: rem(81px);
+    padding-left: rem(81px);
+  }
+
+  @include breakpoints('xlg') {
+    padding-right: rem(98px);
+    padding-left: rem(98px);
+  }
+
+  @include breakpoints('2xlg') {
+    padding-right: calc(((100% - $container) / 2));
+    padding-left: calc(((100% - $container) / 2));
+  }
+}

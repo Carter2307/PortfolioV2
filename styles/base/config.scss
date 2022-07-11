@@ -1,0 +1,27 @@
+//reset
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: $font-satoshi;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	font-size: $base-font;
+  @include text-base;
+  background-color: $color-primary-black;
+  color: $color-white;
+}
+
+//debugging
+  *{
+    //border: 1px solid red!important;
+ }

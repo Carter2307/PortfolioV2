@@ -1,0 +1,86 @@
+.menu__content {
+  width: rem(240px);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  border-radius : rem(20px);
+
+  display: none;
+  flex-direction: column;
+  padding: rem(12px) rem(16px) rem(24px) rem(16px);
+
+  border: 1px solid rgba($color:$color-white, $alpha: .08);
+  background-color : rgba($color:$color-primary, $alpha: .9);
+
+  @include breakpoints('md') {
+    position: static;
+    padding: 0;
+    width : max-content;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+  }
+}
+
+//divider
+.menu__content > *:nth-child(3) {
+  margin: rem(14px) 0;
+
+  @include breakpoints('md') {
+    margin: 0;
+  }
+}
+
+.menu__content {
+  .button-icon, .button-bg {
+    margin-left: auto;
+  }
+
+}
+
+
+.menu__links {
+  @include space-y(8px);
+
+  @include breakpoints('md') {
+    @include flex-center;
+    @include space-y(0px);
+    @include space-x(16px);
+  }
+}
+
+.menu__links__item {
+  transition: text-decoration .4s;
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: rem(-2px);
+    width: 0%;
+    height: 1px;
+    background: $color-gradient-orange;
+    transition: width .4s;
+  }
+}
+
+.menu__links__item__link {
+  @include text-lg;
+  font-weight: 600;
+  color: rgba($color: $color-white, $alpha: .5);
+
+  &:hover {
+    color: $color-white;
+  }
+}

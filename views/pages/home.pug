@@ -1,0 +1,14 @@
+extends ../base.pug
+
+block variables
+  - const title = 'Hello World.'
+  - const description = 'Welcom to my protfolio'
+
+  - let template = 'home'
+
+block content
+  .home
+    .home__wrapper
+      include ../components/hero
+      each img in [1, 2, 3]
+        img(src="apple-touch-icon.png")

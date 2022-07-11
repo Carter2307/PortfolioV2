@@ -1,0 +1,53 @@
+.header {
+  @include container;
+  padding-top: rem(24px);
+  position: sticky;
+  top: 0;
+  transition: top .4s;
+}
+
+.header__wrapper {
+  position: static;
+  padding: rem(8px) rem(12px);
+  border: 1px solid rgba($color: $color-white, $alpha : .1);
+  border-radius : rem(18px);
+  @include support-blur(100px, $color-white, .05);
+  @include flex-between;
+  align-items: center;
+
+  @include breakpoints('md') {
+    padding: rem(8px) rem(24px);
+  }
+}
+
+.header__icons {
+  @include flex-center;
+  @include  space-x(4px);
+
+  &__link {
+    @include flex-center;
+    height: rem(36px);
+    width: rem(36px);
+    border-radius: 50%;
+    background-color: rgba($color: $color-white, $alpha : .08);
+    transition : background-color .4s;
+
+    &__item {
+      @include flex-center;
+    }
+
+    &:hover {
+      background-color: rgba($color: $color-white, $alpha : .16);
+    }
+  }
+}
+
+.header__logo {
+  font-family: $font-rische;
+  @include text-lg;
+  font-weight: bold;
+
+  @include breakpoints('md') {
+    @include text-2xl
+  }
+}

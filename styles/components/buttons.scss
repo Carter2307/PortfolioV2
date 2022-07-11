@@ -1,0 +1,53 @@
+.button {
+  all: unset;
+  @include flex-center;
+  padding: rem(12px) rem(16px);
+  border-radius: rem(12px);
+  width: max-content;
+  height: auto;
+  font-weight: 600;
+  cursor: pointer;
+  border: .5px solid transparent;
+
+  &__wrapper__flex {
+    @include  flex-between;
+    vertical-align: middle;
+    gap: rem(16px);
+    color: rgba($color:$color-white, $alpha: .7);
+  }
+}
+
+.button-primary {
+
+}
+
+.button-secondary {
+
+}
+
+.button-link {
+
+}
+
+.button-border{
+  border-color: rgba($color: $color-white, $alpha: .25);
+}
+
+.button-bg {
+  background-color: rgba($color:$color-white, $alpha: .05);
+}
+
+.button-disabled {
+
+}
+
+
+.button-icon {
+  all: unset;
+  cursor: pointer;
+  border-radius: rem(8px);
+  background-color: rgba($color: $color-white, $alpha: .2);
+  width: rem(32px);
+  height: rem(32px);
+  @include flex-center;
+}

@@ -1,0 +1,56 @@
+.footer {
+  @include container
+}
+
+.footer__wrapper {
+  padding: rem(8px) rem(12px);
+  border: 1px solid rgba($color: $color-white, $alpha : .1);
+  border-radius : rem(18px);
+  @include support-blur(100px, $color-white, .05);
+  @include flex-between;
+  align-items: center;
+  flex-direction: column;
+  gap: rem(16px);
+
+  @include breakpoints('md') {
+    padding: rem(8px) rem(24px);
+    flex-direction: row;
+  }
+}
+
+.footer__content {
+  @include flex-center;
+  gap: rem(16px);
+
+  &__name {
+    @include text-xs;
+    font-family: $font-rische;
+    font-weight: bold;
+
+    @include breakpoints('md') {
+      @include text-sm;
+    }
+
+    @include breakpoints('lg') {
+      @include text-base;
+    }
+  }
+
+  &__copy {
+    @include text-xs;
+    font-weight: 200;
+
+    @include breakpoints('md') {
+      @include text-sm;
+    }
+
+    @include breakpoints('lg') {
+      @include text-base;
+    }
+  }
+}
+
+.footer__icons {
+  display: inline-flex;
+  gap: rem(16px);
+}

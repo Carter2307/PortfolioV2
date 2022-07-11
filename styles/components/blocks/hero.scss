@@ -1,0 +1,163 @@
+.hero {
+  @include container;
+}
+
+.hero__wrapper {
+  display: flex;
+  flex-direction: column;
+  @include space-y(48px);
+  margin-top: rem(64px);
+
+  @include breakpoints('md') {
+    margin-top: rem(81px);
+  }
+
+  @include breakpoints('lg') {
+    margin-top: rem(96px);
+  }
+}
+
+.hero__text {
+  @include breakpoints('sm') {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.hero__title {
+  @include text-3xl;
+  font-family: $font-rische;
+  font-weight: bold;
+  max-width: rem(375px);
+
+  &__highlight-green {
+    color: $color-accent-green
+  }
+
+  &__highlight-blue {
+    color: $color-accent-blue
+  }
+
+  &__highlight-gradient {
+    background: $color-gradient-green;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @include breakpoints('sm') {
+    @include text-6xl;
+    text-align: center;
+    max-width: rem(590px);
+  }
+
+  @include breakpoints('lg') {
+    @include text-7xl;
+    max-width: rem(704px);
+
+  }
+
+  @include breakpoints('xlg') {
+    @include text-8xl;
+    max-width: rem(1024px);
+  }
+
+
+  @include breakpoints('2xlg') {
+    @include text-9xl;
+    max-width: rem(1235px);
+  }
+}
+
+.hero__description {
+  @include text-sm;
+  max-width: rem(288px);
+
+  @include breakpoints('sm') {
+    @include text-base;
+    margin-left: rem(64px);
+  }
+
+  @include breakpoints('lg') {
+    @include text-lg;
+    margin-left: rem(96px);
+    max-width: rem(396px);
+  }
+}
+
+.hero__quote {
+  width: 100%;
+  @include flex-center;
+}
+
+.hero__quote__container {
+  position: relative;
+  max-width : rem(430px);
+  @include flex-col-gap(8px);
+  align-items: center;
+
+
+  @include breakpoints('md') {
+    max-width: rem(656px);
+  }
+
+  @include breakpoints('lg') {
+    max-width: rem(720px);
+  }
+
+  @include breakpoints('xlg') {
+    max-width: rem(827px);
+  }
+}
+
+.hero__quote__text {
+  font-family: $font-rische;
+  @include text-2xl;
+  font-weight: 700;
+  text-align: center;
+
+  @include breakpoints('md') {
+    @include text-4xl;
+  }
+
+  @include breakpoints('lg') {
+    @include text-5xl;
+  }
+
+  @include breakpoints('xlg') {
+    max-width: rem(830px);
+  }
+}
+
+.hero__quote__author {
+  @include text-sm;
+
+  @include breakpoints('lg') {
+    @include text-base
+  }
+}
+
+.hero__quote__img {
+  position: absolute;
+  left: rem(0px);
+  top: -10%;
+
+  svg {
+    transform: scale(1.2);
+    @include breakpoints('md') {
+      transform: scale(1.4);
+    }
+
+    @include breakpoints('lg') {
+      transform: scale(1.6);
+    }
+  }
+
+  @include breakpoints('md') {
+    left: rem(10px);
+  }
+
+  @include breakpoints('lg') {
+    left: rem(30px);
+  }
+}
+

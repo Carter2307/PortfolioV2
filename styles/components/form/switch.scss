@@ -1,0 +1,64 @@
+.switch {
+  @include flex-center;
+  gap: rem(8px);
+  width: max-content;
+}
+
+.switch__option {
+  all: unset;
+  @include text-base;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.toggle {
+  display: inline-block;
+}
+
+.toggle__label {
+  width: rem(48px);
+  height: rem(24px);
+  cursor: pointer;
+}
+
+.toggle__input {
+  display: none;
+
+  &:checked + .toggle__label__track{
+    background-color: $color-accent-blue;
+    .toggle__label__thumb {
+    transform: translateX(100%);
+
+    }
+  }
+
+}
+
+.toggle__label__track {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: rem(52px);
+  height: rem(28px);
+
+  padding: rem(2px) rem(2px);
+  border-radius: rem(9999px);
+
+  background-color: rgba($color: $color-white, $alpha: .5);
+  transition: background-color .4s;
+}
+
+.toggle__label__thumb {
+  display: inline-block;
+
+  height: rem(24px);
+  width: rem(24px);
+
+  border-radius: 100%;
+  background-color: $color-white;
+  vertical-align: middle;
+  box-shadow: $shadow-200;
+  transition: transform .4s;
+}

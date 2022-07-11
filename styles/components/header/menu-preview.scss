@@ -1,0 +1,22 @@
+.menu__links__preview {
+  position: absolute;
+  top: rem(24px);
+  right: 0;
+  border-radius: rem(24px);
+  box-shadow: $shadow-200;
+  @include support-blur(100px, $color-white, .05);
+  width: max-content;
+  height: auto;
+}
+
+.menu__links__media {
+  display: inline-flex;
+  margin: rem(16px);
+  border-radius: calc(24px - 16px);
+  overflow: hidden;
+}
+.menu__links__media__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

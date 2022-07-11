@@ -1,0 +1,21 @@
+block variables
+
+doctype html
+html(lang="en")
+  head
+    include partials/head
+
+  body
+    include components/preloader
+    include components/header/header
+
+    .content#content(data-template=template)
+      block content
+
+    include components/footer
+    include partials/scripts
+
+
+
+
+

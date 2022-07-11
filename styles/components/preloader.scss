@@ -1,0 +1,108 @@
+.preloader {
+  @extend %cover;
+  background: #000;
+  color: white;
+  @include flex-center;
+
+  //display: none;
+}
+
+.preloader__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16px);
+  align-items: center;
+
+  @include breakpoints('lg') {
+    gap: rem(24px);
+  }
+
+  @include breakpoints('xlg') {
+    gap: rem(32px);
+  }
+}
+
+.preloader__text {
+  //border: 1px solid $color-white;
+  overflow: hidden;
+  position: relative;
+  //height: rem(40px);
+  //width: rem(200px);
+}
+
+.preloader__text__wrapper {
+  position: absolute;
+  top: rem(-2px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: rem(2px);
+  flex-direction: column;
+  overflow: hidden;
+  transition: top 0.4s;
+}
+
+.preloader__text__item {
+  font-family: $font-rische;
+  font-weight: bold;
+  @include text-3xl;
+  color: $color-accent-pink;
+  text-align: center;
+  color: $color-accent-orange;
+  display: inline-block;
+  padding-left: rem(18px);
+  padding-right: rem(18px);
+  overflow: hidden;
+  width: 100%;
+
+  &:nth-child(2) {
+    color: $color-accent-green;
+  }
+
+  &:nth-child(3) {
+    color: $color-accent-blue;
+  }
+
+  &:nth-child(4) {
+    color: $color-white;
+  }
+
+  &:nth-child(5) {
+    color: $color-accent-pink;
+  }
+
+  @include breakpoints('md') {
+    @include text-5xl;
+  }
+
+  @include breakpoints('lg') {
+    @include text-7xl;
+  }
+}
+
+.preloader__loader {
+  max-width: rem(200px);
+  width: rem(120px);
+  height: rem(6px);
+  border-radius: rem(6px);
+
+  background-color: rgba($color: $color-white, $alpha: 0.4);
+
+  @include flex-center;
+  padding: rem(1px);
+  justify-content: flex-start;
+
+  @include breakpoints('lg') {
+    width: rem(200px);
+  }
+}
+
+.preloader__loader__bar {
+  display: inline-block;
+  width: 0%;
+  border-radius: 6px;
+  height: 100%;
+  background: $color-loader-gradient;
+  transition: width 3s;
+}

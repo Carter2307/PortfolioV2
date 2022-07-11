@@ -1,0 +1,53 @@
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; Choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+
+@function rem($value, $root-font: $base-font) {
+  $result: calc($value / $root-font);
+  @return $result * 1rem;
+}
+
+/**
+* Hachure/stripes background
+* Permet de créer des background hachuré en css
+* @param {Color} - Coleur de l'hachure en px
+* @param {Size} - Taille de l'hachure en px
+**/
+
+@mixin stripes-bg($bg-color, $color, $size) {
+  background-color: $bg-color;
+  background-image: linear-gradient(
+    135deg,
+    $color 10%,
+    transparent 0,
+    transparent 50%,
+    $color 0,
+    $color 60%,
+    transparent 0,
+    transparent
+  );
+  background-size: $size $size;
+}
+
+@mixin space($size) {
+  display: grid;
+  gap: rem($size);
+}
+
+@mixin space-x($size) {
+  > * + * {
+    margin-left: rem($size);
+  }
+}
+
+@mixin space-y($size) {
+  > * + * {
+    margin-top: rem($size);
+  }
+}
+
