@@ -1,0 +1,14 @@
+@mixin grids-container  {
+  display: grid;
+  grid-gap: rem(20px);
+  justify-content: space-between;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+@mixin grid-col($end, $start) {
+  @if $start != 'none' {
+    grid-column: $start / span $end;
+  }@else {
+    grid-column: span $end;
+  }
+}

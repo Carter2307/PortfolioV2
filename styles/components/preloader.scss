@@ -3,7 +3,7 @@
   background: #000;
   color: white;
   @include flex-center;
-
+  z-index: z('preloader');
   //display: none;
 }
 

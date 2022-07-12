@@ -19,7 +19,7 @@ export default class Preloader extends Components {
     this.addEventListener()
   }
 
-  createPreloader() {
+  createPreloader () {
     if (this.selectors.images) {
       const imgLoad = imagesLoaded(document.body)
 
@@ -27,7 +27,7 @@ export default class Preloader extends Components {
         this.onProgress(imgLoad.images.length)
       })
 
-      imgLoad.on('done', (_) => {
+      imgLoad.on('always', (_) => {
         this.onLoad()
       })
     }
