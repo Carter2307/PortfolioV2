@@ -130,20 +130,7 @@
   max-height: rem(116px);
   aspect-ratio: 1 / 1;
   border-radius: rem(16px);
-
-  @supports not (aspect-ratio: 1 / 1) {
-    &::before {
-      float: left;
-      padding-top: 100%;
-      content: "";
-    }
-
-    &::after {
-      display: block;
-      content: "";
-      clear: both;
-    }
-  }
+  @include support-ratio(1, 1);
 }
 
 .tools__frameworks-disabled {

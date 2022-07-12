@@ -57,6 +57,24 @@
   }
 }
 
+//Support aspect-radio
+@mixin support-ratio($w, $h) {
+  aspect-ratio: $w / $h ;
+  @supports not (aspect-ratio: 1 / 1) {
+    &::before {
+      float: left;
+      padding-top: 100%;
+      content: "";
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+}
+
 //Container
 @mixin container {
   padding-right: rem(16px);

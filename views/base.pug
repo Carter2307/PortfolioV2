@@ -1,5 +1,15 @@
 block variables
 
+// ** Start of Mixin **//
+//Button
+mixin button(href, text)
+  a(class!=attributes.class href=href)
+    span.button__wrapper__flex
+      | #{text}
+      if block
+        block
+//*** End of mixin ***//
+
 doctype html
 html(lang="en")
   head

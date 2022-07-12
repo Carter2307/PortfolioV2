@@ -1,0 +1,151 @@
+.projects {
+  //@include container
+}
+
+.projects__wrapper {
+  @include space-y(32px);
+}
+
+.projects__title {
+  @include container;
+  @include text-3xl;
+  font-weight: 600;
+  font-family: $font-rische;
+
+  @include breakpoints('md') {
+    @include text-5xl;
+  }
+
+  @include breakpoints('lg') {
+    @include text-6xl;
+  }
+
+  @include breakpoints('xlg') {
+    @include text-7xl;
+  }
+}
+
+.projects__content {
+  width: 100%;
+}
+
+//Project items
+.project__items {
+  display: flex;
+  flex-direction: column;
+  @include space-y(24px);
+  border-radius: rem(24px);
+  background-color: rgba($color: $color-white, $alpha: .05);
+  padding: rem(24px) rem(16px);
+
+  @include breakpoints('md') {
+    @include flex-between;
+    flex-direction: row;
+    padding: rem(48px);
+    align-items: center;
+  }
+
+  @include breakpoints('lg') {
+    padding: rem(56px) rem(64px);
+  }
+
+  @include breakpoints('xlg') {
+    padding: rem(64px) rem(71px);
+  }
+
+  @include breakpoints('2xlg') {
+    padding: rem(64px) rem(96px);
+  }
+}
+
+.project__items__description {
+  @include space-y(16px);
+  max-width: rem(230px);
+
+  @include breakpoints('lg') {
+    max-width: rem(300px);
+  }
+
+  @include breakpoints('xlg') {
+    max-width: rem(390px);
+  }
+
+  @include breakpoints('2xlg') {
+    max-width: rem(470px);
+  }
+}
+.project__items__description__number {
+  @include text-2xl;
+  font-weight: 600;
+  font-family: $font-rische;
+
+  @include breakpoints('md') {
+    @include text-3xl;
+  }
+
+  @include breakpoints('lg') {
+    @include text-5xl;
+  }
+
+  @include breakpoints('xlg') {
+    @include text-5xl;
+  }
+}
+
+.project__items__description__title  {
+  @include text-5xl;
+  font-weight: 600;
+  font-family: $font-rische;
+
+  @include breakpoints('lg') {
+    @include text-6xl;
+  }
+
+  @include breakpoints('2xlg') {
+    @include text-8xl;
+  }
+
+}
+.project__items__description__detail {
+  @include text-sm;
+
+  @include breakpoints('md') {
+    @include text-base;
+  }
+
+  @include breakpoints('xlg') {
+    @include text-lg;
+  }
+}
+
+.project__items__image {
+  @include support-ratio(1.4, 1);
+  width: 100%;
+  border-radius: rem(16px);
+  background-color: rgba($color: $color-white, $alpha: .2);
+  padding: rem(8px);
+
+  img {
+    border-radius: rem(8px);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include breakpoints('md') {
+    max-width: rem(280px);
+  }
+
+  @include breakpoints('lg') {
+    max-width: rem(480px);
+    border-radius: rem(24px);
+  }
+
+  @include breakpoints('xlg') {
+    max-width: rem(560px);
+  }
+
+  @include breakpoints('2xlg') {
+    max-width: rem(635px);
+  }
+}

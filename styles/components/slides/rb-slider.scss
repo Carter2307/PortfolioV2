@@ -1,0 +1,40 @@
+.rb-slider {
+  @include container;
+  overflow: hidden;
+  @include space-y(24px)
+}
+
+.rb-slider-navigation {
+  @include flex-between;
+  padding: rem(8px);
+  border: 1px solid rgba($color-white, .07);
+  border-radius: rem(18px);
+  max-width: rem(96px);
+  margin-left: auto;
+  background-color:  rgba($color-white, .05);
+  @include space-x(8px);
+}
+
+.rb-slider-button  {
+  all: unset;
+  height: rem(24px);
+  width: rem(24px);
+  border-radius: 50%;
+  border: 1px solid rgba($color-white, .1);
+  @include flex-center;
+  padding: rem(2px);
+  cursor: pointer;
+}
+
+.rb-slider-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoints('md') {
+    flex-direction: row;
+  }
+}
+
+.rb-slider-items {
+  width: 100%;
+}

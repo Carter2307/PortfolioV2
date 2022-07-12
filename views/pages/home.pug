@@ -2,7 +2,7 @@ extends ../base.pug
 
 block variables
   - const title = 'Hello World.'
-  - const description = 'Welcom to my protfolio'
+  - const description = 'Welcome to my portfolio'
 
   - let template = 'home'
 
@@ -11,5 +11,6 @@ block content
     .home__wrapper
       include ../components/hero
       include ../components/frameworks
+      include ../components/projetcs/projects
       each img in [1, 2, 3]
         img(src="apple-touch-icon.png")
