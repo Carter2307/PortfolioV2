@@ -1,5 +1,12 @@
 .footer {
-  @include container
+  @include container;
+  padding-bottom: rem(16px);
+
+  @include breakpoints('md') {
+    padding-bottom: rem(32px);
+
+  }
+
 }
 
 .footer__wrapper {
@@ -16,6 +23,8 @@
     padding: rem(8px) rem(24px);
     flex-direction: row;
   }
+
+
 }
 
 .footer__content {
@@ -52,5 +61,6 @@
 
 .footer__icons {
   display: inline-flex;
-  gap: rem(16px);
+  @include space-x(16px);
+  //gap: rem(16px);
 }

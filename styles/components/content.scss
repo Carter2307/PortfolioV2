@@ -1,0 +1,30 @@
+.content {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    > div {
+      @include space-y(24px);
+
+      @include breakpoints('sm'){
+        @include space-y(32px)
+      }
+
+      @include breakpoints('md'){
+        @include space-y(48px)
+      }
+
+      @include breakpoints('lg'){
+        @include space-y(56px)
+      }
+
+      @include breakpoints('xlg'){
+        @include space-y(64px)
+      }
+
+      @include breakpoints('2xlg'){
+        @include space-y(96px)
+      }
+    }
+  }
+}
