@@ -1,0 +1,17 @@
+section.connect
+ .connect__wrapper
+   .connect__title Get in touch
+   form.connect__form
+     .form__group
+       label.form__group__label(for="name") Name
+       input.form__group__input#name(type="text" name="name")
+     .form__group
+      label.form__group__label(for="mail") Email
+      input.form__group__input#mail(type="email" name="email")
+
+     .form__group
+       label.form__group__label(for="message") Message
+       textarea.form__group__input#message(name="message")
+     +button('/', 'Let connect')(class='button button__primary button-bg')
+      include svg/arrow-2-right.svg
+

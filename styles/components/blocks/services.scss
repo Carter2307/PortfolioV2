@@ -1,0 +1,98 @@
+.services {
+  @include container;
+}
+
+.services__wrapper {
+  @include space-y(32px)
+}
+
+.services__title {
+  @extend .projects__title
+}
+
+.services__content {
+  @include space-y(32px)
+}
+
+//Description
+.services__description {
+  position: relative;
+  border-radius: rem(16px);
+  padding: rem(24px) rem(16px);
+  padding-bottom: rem(32px + 176px);
+  display: flex;
+  flex-direction: column;
+  @include space-y(8px);
+  background-color: rgba($color-white, .05);
+}
+
+.services__description__icons {
+  @extend .tools__frameworks__content__icons;
+}
+
+.services__description__title {
+  @include text-2xl;
+  font-weight: 600;
+}
+
+.services__description__text {
+  @include text-sm
+}
+
+.services__description__picture {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+}
+
+//List
+.services__lists {
+  border: 2px solid $color-accent-blue;
+  border-radius: rem(16px);
+  padding: rem(16px);
+  background-color: rgba($color-white, .05);
+}
+
+.services__list__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  @include space-y(12px);
+  border-radius: rem(12px);
+  background-color: rgba($color-white, .05);
+  border: 2px solid transparent;
+  padding: rem(16px);
+
+  &:focus, &:hover {
+    border-color: $color-accent-green;
+  }
+}
+
+.services__list__items__content {
+  display: flex;
+  flex-direction: column;
+  @include space-y(12px);
+}
+
+.services__list__items__icon {
+  flex: none;
+  height: rem(48px);
+  width: rem(48px);
+  border-radius: rem(8px);
+  background-color: rgba($color-white, .15);
+  @include flex-center;
+}
+
+.services__list__items__desc {
+  @include space-y(8px)
+}
+
+.services__list__items__title {
+  font-weight: 600;
+}
+.services__list__items__text {
+  @include text-sm
+}
+

@@ -1,0 +1,56 @@
+.gallery {
+  max-width: rem(586px);
+}
+
+.gallery__wrapper {
+  width: 100%;
+  @include flex-center;
+  flex-direction: column;
+  @include space-y(16px)
+}
+
+.gallery__items {
+  width: 100%;
+}
+
+.gallery__item {
+  display: flex;
+  height: rem(220px);
+  width: 100%;
+  max-width: rem(440px);
+  background-color: $color-gray-300;
+  border-radius: rem(20px);
+
+  &:not(:first-child) {
+  }
+}
+
+.gallery__navigation {
+  @include flex-center;
+  @include space-x(8px)
+}
+
+.rb-gallery-button {
+  all : unset;
+  height: rem(24px);
+  width: rem(24px);
+  border: 1px solid rgba($color-white, .1);
+  border-radius: 50%;
+  padding: rem(8px);
+  cursor: pointer;
+}
+
+.rb-gallery-progress {
+  display: flex;
+  padding: rem(1px);
+  border-radius: rem(2px);
+  width: rem(81px);
+  background-color: rgba($color-white, .5);
+}
+.rb-gallery-progress-track {
+  width: 50%;
+  background-color: $color-accent-green;
+  height: rem(2px);
+  border-radius: rem(2px);
+}
+
