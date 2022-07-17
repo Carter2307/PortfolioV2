@@ -1,0 +1,17 @@
+%title {
+  @include text-3xl;
+  font-weight: 600;
+  font-family: $font-rische;
+
+  @include breakpoints('md') {
+    @include text-5xl;
+  }
+
+  @include breakpoints('lg') {
+    @include text-6xl;
+  }
+
+  @include breakpoints('xlg') {
+    @include text-7xl;
+  }
+}

@@ -1,31 +1,34 @@
 .gallery {
+  width: 100%;
   max-width: rem(586px);
 }
 
 .gallery__wrapper {
   width: 100%;
-  @include flex-center;
-  flex-direction: column;
   @include space-y(16px)
 }
 
 .gallery__items {
   width: 100%;
+  @include flex-center;
 }
 
 .gallery__item {
+  @include support-ratio(1.3,1);
   display: flex;
-  height: rem(220px);
+  min-height: rem(220px);
   width: 100%;
   max-width: rem(440px);
   background-color: $color-gray-300;
   border-radius: rem(20px);
+
 
   &:not(:first-child) {
   }
 }
 
 .gallery__navigation {
+  width: 100%;
   @include flex-center;
   @include space-x(8px)
 }

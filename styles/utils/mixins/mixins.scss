@@ -10,6 +10,7 @@
   position: fixed;
   overflow: hidden;
 }
+
 //Flexbox shorcut
 @mixin flex-center {
   display: flex;
@@ -86,8 +87,8 @@
   }
 
   @include breakpoints('lg') {
-    padding-right: rem(81px);
-    padding-left: rem(81px);
+    padding-right: rem(64px);
+    padding-left: rem(64px);
   }
 
   @include breakpoints('xlg') {

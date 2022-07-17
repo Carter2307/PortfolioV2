@@ -41,13 +41,13 @@
 
 @mixin space-x($size) {
   > * + * {
-    margin-left: rem($size);
+    margin-left: rem($size)!important;
   }
 }
 
 @mixin space-y($size) {
   > * + * {
-    margin-top: rem($size);
+    margin-top: rem($size)!important;
   }
 }
 

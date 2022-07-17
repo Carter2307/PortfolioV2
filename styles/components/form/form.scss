@@ -1,3 +1,22 @@
-.form__group {}
-.form__group__label {}
-.form__group__input {}
+.form__group {
+  display: flex;
+  flex-direction: column;
+  @include space-y(16px);
+}
+
+.form__group__label {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.form__group__input {
+  all: unset;
+  display: inline-block;
+  background-color: rgba($color-white, .05);
+  border: 1px solid rgba($color-white, .1);
+  border-radius: rem(14px);
+  padding: rem(14px) rem(16px);
+}
+
+textarea.form__group__input {
+  max-height: rem(140px);
+}

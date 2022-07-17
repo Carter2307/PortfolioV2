@@ -8,21 +8,7 @@
 
 .projects__title {
   @include container;
-  @include text-3xl;
-  font-weight: 600;
-  font-family: $font-rische;
-
-  @include breakpoints('md') {
-    @include text-5xl;
-  }
-
-  @include breakpoints('lg') {
-    @include text-6xl;
-  }
-
-  @include breakpoints('xlg') {
-    @include text-7xl;
-  }
+  @extend %title;
 }
 
 .projects__content {
@@ -36,17 +22,23 @@
   @include space-y(24px);
   border-radius: rem(24px);
   background-color: rgba($color: $color-white, $alpha: .05);
-  padding: rem(24px) rem(16px);
+  padding: rem(24px);
+
+  @include breakpoints('sm') {
+    padding: rem(64px);
+  }
 
   @include breakpoints('md') {
-    @include flex-between;
-    flex-direction: row;
     padding: rem(48px);
-    align-items: center;
   }
 
   @include breakpoints('lg') {
+    @include flex-between;
+    align-items: center;
+    flex-direction: row;
     padding: rem(56px) rem(64px);
+    @include space-x(64px);
+    @include space-y(0px);
   }
 
   @include breakpoints('xlg') {
@@ -60,7 +52,10 @@
 
 .project__items__description {
   @include space-y(16px);
-  max-width: rem(230px);
+
+  @include breakpoints('md') {
+    @include space-y(24px)
+  }
 
   @include breakpoints('lg') {
     max-width: rem(300px);
@@ -132,20 +127,7 @@
     object-fit: cover;
   }
 
-  @include breakpoints('md') {
-    max-width: rem(280px);
-  }
 
-  @include breakpoints('lg') {
-    max-width: rem(480px);
-    border-radius: rem(24px);
-  }
 
-  @include breakpoints('xlg') {
-    max-width: rem(560px);
-  }
 
-  @include breakpoints('2xlg') {
-    max-width: rem(635px);
-  }
 }

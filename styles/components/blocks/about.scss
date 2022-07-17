@@ -7,23 +7,50 @@
 }
 
 .about__title  {
-  @extend .projects__title
+  @extend %title
 }
 
 .about__content {
   @include space-y(32px);
   border-radius: rem(16px);
   background-color: rgba($color-white, .05);
-  padding: rem(16px);
+  padding: rem(24px);
+
+  @include breakpoints('sm') {
+    padding: rem(64px);
+  }
+
+  @include breakpoints('lg') {
+    display: flex;
+    align-items: center;
+    @include space-y(0px);
+
+  }
 }
 .about__description {
-  @include space-y(16px)
+  @include space-y(16px);
+
+  @include breakpoints('lg') {
+    max-width: rem(400px);
+  }
 }
 
 .about__description__number  {
   font-family: $font-rische;
   @include text-2xl;
   font-weight: bold;
+
+  @include breakpoints('md') {
+    @include text-3xl
+  }
+
+  @include breakpoints('lg') {
+    @include text-4xl
+  }
+
+  @include breakpoints('xlg') {
+    @include text-5xl
+  }
 }
 .about__description__title   {
   @extend .about__description__number
@@ -33,4 +60,6 @@
   @include text-sm;
 }
 
-.about__gallery {}
+.about__gallery {
+  width: 100%;
+}

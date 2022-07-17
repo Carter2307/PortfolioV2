@@ -1,4 +1,26 @@
-.connect {}
-.connect__wrapper {}
+.connect {
+  padding: rem(16px);
+
+  @include breakpoints('sm') {
+    padding: rem(64px) 0;
+    background-color: rgba($color-white, .05);
+  }
+}
+.connect__wrapper {
+  padding: rem(16px);
+  border-radius: rem(16px);
+  background-color: rgba($color-white, .05);
+  @include space-y(24px);
+
+  @include breakpoints('sm') {
+    max-width: rem(330px);
+    margin: 0 auto;
+    background-color: transparent;
+  }
+}
+
 .connect__title {}
-.connect__form {}
+
+.connect__form {
+  @include space-y(16px);
+}
