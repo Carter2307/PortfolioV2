@@ -36,14 +36,18 @@
 
   @include breakpoints('md') {
     max-width: rem(426px);
+    @include space-y(48px);
   }
 
   @include breakpoints('xlg') {
     max-width: rem(512px);
+    @include space-y(64px);
+
   }
 
   @include breakpoints('2xlg') {
     max-width: rem(688px);
+    @include space-y(128px);
   }
 }
 
@@ -51,12 +55,32 @@
   display: flex;
   flex-direction: column;
 
+  @include breakpoints('md') {
+    transform: translateX(-100px);
+  }
+
 
   &__text {
     font-family: $font-rische;
     font-weight: bold;
     @include text-3xl;
     color: $color-white;
+
+    @include breakpoints('md') {
+      @include text-4xl
+    }
+
+    @include breakpoints('lg') {
+      @include text-6xl
+    }
+
+    @include breakpoints('xlg') {
+      @include text-7xl
+    }
+
+    @include breakpoints('xlg') {
+      @include text-8xl
+    }
   }
 
   &__icon {

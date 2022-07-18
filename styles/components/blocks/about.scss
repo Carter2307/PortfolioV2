@@ -62,4 +62,5 @@
 
 .about__gallery {
   width: 100%;
+  @include flex-center;
 }
