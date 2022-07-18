@@ -1,13 +1,29 @@
 .connect {
-  padding: rem(16px);
-
   @include breakpoints('sm') {
-    padding: rem(64px) 0;
+    padding-top: rem(64px);
+    @include space-y(64px);
     background-color: rgba($color-white, .05);
+  }
+
+  @include breakpoints('md') {
+    @include space-y(96px);
+  }
+
+  @include breakpoints('lg') {
+    @include space-y(128px);
+  }
+
+  @include breakpoints('xlg') {
+    @include space-y(196px);
+  }
+
+  @include breakpoints('2xlg') {
+    @include space-y(256px);
   }
 }
 .connect__wrapper {
   padding: rem(16px);
+  margin: rem(16px);
   border-radius: rem(16px);
   background-color: rgba($color-white, .05);
   @include space-y(24px);
@@ -17,10 +33,91 @@
     margin: 0 auto;
     background-color: transparent;
   }
+
+  @include breakpoints('md') {
+    max-width: rem(426px);
+  }
+
+  @include breakpoints('xlg') {
+    max-width: rem(512px);
+  }
+
+  @include breakpoints('2xlg') {
+    max-width: rem(688px);
+  }
 }
 
-.connect__title {}
+.connect__title {
+  display: flex;
+  flex-direction: column;
+
+
+  &__text {
+    font-family: $font-rische;
+    font-weight: bold;
+    @include text-3xl;
+    color: $color-white;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    color: $color-accent-green;
+    @include space-x(32px);
+
+    h4 {
+      color: $color-accent-green;
+    }
+
+    &__img {
+      height: 1px;
+      width: 100%;
+      background-color: $color-accent-green;
+      display: inline-block;
+      border-radius: 2px;
+      position: relative;
+
+      &::after {
+        content: '';
+        height: 8px;
+        width: 1px;
+        border-radius: 8px;
+        display: inline-block;
+        background-color: $color-accent-green;
+        position: absolute;
+        right: rem(2px);
+        top: rem(-1px);
+        transform: rotate(45deg);
+      }
+
+      &::before {
+        content: '';
+        height: 8px;
+        width: 1px;
+        border-radius: 8px;
+        display: inline-block;
+        background-color: $color-accent-green;
+        position: absolute;
+        right: rem(2px);
+        top: rem(-6px);
+        transform: rotate(-45deg);
+      }
+    }
+   }
+
+}
 
 .connect__form {
   @include space-y(16px);
+  width: 100%;
+}
+
+.connect__form__wrapper {
+  @include space-y(16px);
+
+  @include breakpoints('md') {
+    display: flex;
+    @include space-x(16px);
+    @include space-y(0px);
+  }
 }
