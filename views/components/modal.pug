@@ -1,0 +1,28 @@
+.modal
+  .modal__wrapper
+    .modal__content
+      .modal__content__wrapper
+        //Content
+        .modal__content__description
+          h3.modal__title You have and idea or a project ? let do it togetter
+          p.modal__text I will be happy to work with you but i need somme information about your and you project  to quickly connect with you and understant your needs.
+        form.modal__form
+          .modal__form__wrapper
+            .modal__collumn
+              .form__group
+                label.form__group__label(for="name") Name
+                input.form__group__input#name(type="text" name="name")
+              .form__group
+                label.form__group__label(for="mail") Email
+                input.form__group__input#mail(type="email" name="email")
+
+            .form__group
+              label.form__group__label(for="idea") Describe your project
+              textarea.form__group__input#idea(name="idea")
+
+            +button('/', 'Let connect')(class='button button__primary button-bg')
+              include svg/arrow-2-right.svg
+
+      .modal__button
+        button.button-icon
+          include svg/close.svg

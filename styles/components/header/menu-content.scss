@@ -7,7 +7,7 @@
 
   border-radius : rem(20px);
 
-  display: none;
+  //display: none;
   flex-direction: column;
   padding: rem(12px) rem(16px) rem(24px) rem(16px);
 
@@ -22,6 +22,15 @@
     flex-direction: row;
     background: none;
     border: none;
+  }
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    z-index: -1;
+    background-color: rgba($color-white, .8);
+    @include support-blur(25px, $color-primary-black, .8);
   }
 }
 
@@ -44,9 +53,12 @@
 
 .menu__links {
   @include space-y(8px);
+  display: flex;
+  flex-direction: column;
 
   @include breakpoints('md') {
     @include flex-center;
+    flex-direction: row;
     @include space-y(0px);
     @include space-x(16px);
   }

@@ -1,0 +1,103 @@
+.modal {
+  @extend %cover;
+  z-index: z('modal');
+  inset: 0;
+  background-color: rgba($color-white, .8);
+  @include support-blur(25px, $color-primary-black, .5);
+  overflow: scroll;
+  @include v-hidden;
+  transition: opacity .2s, visibility .2s;
+
+  &.modal-visible {
+    @include v-visible;
+  }
+}
+
+.modal__wrapper {
+  height: 100%;
+
+  @include breakpoints('sm') {
+  @include flex-center;
+  }
+}
+
+.modal.modal-visible .modal__content {
+  transform: translateY(0px);
+  @include v-visible;
+}
+
+.modal__content {
+  padding: rem(16px);
+  position: relative;
+  transform: translateY(32px);
+  transition: transform .6s, opacity .4s, visibility .2s;
+  @include v-hidden;
+}
+
+.modal__content__wrapper {
+  border-radius: rem(16px);
+  background-color: rgba($color-primary, .9);
+  padding: rem(32px) rem(24px);
+  @include space-y(32px);
+  max-width: rem(635px);
+
+  @include breakpoints('sm') {
+    padding: rem(64px);
+  }
+
+  @include breakpoints('md') {
+    border-radius: rem(32px);
+  }
+
+}
+  //Content
+.modal__content__description {
+  @include space-y(24px);
+  max-width: rem(440px);
+}
+
+.modal__title {
+  font-weight: 700;
+  @include text-2xl;
+  max-width: rem(388px);
+
+  @include breakpoints('lg') {
+    @include text-3xl
+  }
+}
+
+.modal__text {
+  @include text-sm;
+
+  @include breakpoints('sm') {
+    @include text-base;
+  }
+}
+
+.modal__form {
+ // @include space-y(24px)
+  .button {
+    margin-left: auto;
+  }
+}
+
+.modal__collumn {
+  @include space-y(24px);
+
+  @include breakpoints('sm') {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include space-y(0px);
+    gap: rem(16px);
+
+  }
+}
+
+.modal__form__wrapper {
+  @include space-y(24px)
+}
+.modal__button {
+  position: absolute;
+  right: rem(8px);
+  top: rem(8px);
+}

@@ -61,3 +61,18 @@ $breakpoint-list: (
     display: initial !important;
   }
 }
+
+
+//Visibility
+@mixin v-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin v-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+

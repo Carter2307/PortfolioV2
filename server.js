@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000
 
 const app = express()
 
-//PUG template engine
+// PUG template engine
 app.set('views', './views')
 app.set('view engine', 'pug')
 
@@ -21,7 +21,17 @@ app.get('/', (req, res) => {
   })
 })
 
+app.get('/about', (req, res) => {
+  res.render('pages/about', {
+    data
+  })
+})
 
+app.get('/projects', (req, res) => {
+  res.render('pages/projects', {
+    data
+  })
+})
 
 // Page no found handler
 app.use((req, res) => {

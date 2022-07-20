@@ -18,11 +18,12 @@ html(lang="en")
   body
     include components/preloader
     include components/header/header
+    include components/modal
 
     .content#content(data-template=template)
       block content
 
-    //include components/footer
+    include components/form
     include partials/scripts
 
 
