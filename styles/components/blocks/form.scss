@@ -3,22 +3,29 @@
     padding-top: rem(64px);
     @include space-y(64px);
     background-color: rgba($color-white, .05);
+    margin-top: rem(48px);
   }
 
   @include breakpoints('md') {
     @include space-y(96px);
+    margin-top: rem(64px);
   }
 
   @include breakpoints('lg') {
     @include space-y(128px);
+    margin-top: rem(96px);
   }
 
   @include breakpoints('xlg') {
     @include space-y(196px);
+    margin-top: rem(128px);
+
   }
 
   @include breakpoints('2xlg') {
     @include space-y(256px);
+    margin-top: rem(196px);
+
   }
 }
 .connect__wrapper {

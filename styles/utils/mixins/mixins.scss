@@ -24,6 +24,12 @@
   justify-content: space-between;
 }
 
+@mixin flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 //Manage flex direction and gap between items
 @mixin flex-col-gap($size) {
   display: flex;

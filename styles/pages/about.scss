@@ -1,0 +1,123 @@
+.about__header {
+  margin: rem(48px) 0;
+  @include space-y(48px);
+
+  @include breakpoints('lg') {
+    margin: rem(64px) 0;
+    @include space-y(64px);
+  }
+
+  @include breakpoints('xlg') {
+    margin: rem(96px) 0;
+    @include space-y(128px);
+  }
+}
+.about__header__title {
+  text-align: left;
+  font-size: calc(100vw / 10);
+  font-family: $font-rische;
+  font-weight: bold;
+  line-height: 1;
+
+  @include breakpoints('md') {
+    font-size: calc(100vw / 10.3);
+  }
+
+  @include breakpoints('lg') {
+    font-size: calc(100vw / 10.5);
+  }
+}
+
+.about__header__title__text {
+  @include flex-between;
+
+  &__line {
+    display: inline-block;
+    width: 100%;
+    height: rem(1.5px);
+    margin-left: rem(16px);
+    background-color: $color-white;
+    border-radius: rem(1.5px);
+  }
+}
+
+.about__img {
+  border-radius: rem(16px);
+  width: 100%;
+  height: 100%;
+  max-height: rem(786px);
+  min-height: rem(340px);
+  background-color: rgba($color-white, .5);
+
+  @include breakpoints('md') {
+    height: rem(420px);
+  }
+
+  @include breakpoints('lg') {
+    height: rem(520px);
+  }
+
+  @include breakpoints('xlg') {
+    height: rem(620px);
+  }
+}
+
+.about__text {
+  @include space-y(32px);
+
+  @include breakpoints('lg') {
+    padding-top: rem(128px);
+    padding-bottom: rem(128px);
+
+    max-width: rem(720px);
+    margin: 0 auto !important;
+  }
+
+  @include breakpoints('xlg') {
+    @include space-y(0px);
+    @include flex-around;
+    align-items: flex-start;
+    max-width: rem(1190px);
+  }
+
+}
+.about__text__title {
+  @include text-3xl;
+  font-family: $font-rische;
+  font-weight: bold;
+
+  @include breakpoints('md') {
+    @include text-4xl
+  }
+
+  @include breakpoints('lg') {
+    @include text-5xl
+  }
+
+  @include breakpoints('xlg') {
+    @include text-7xl
+  }
+
+  @include breakpoints('2xlg') {
+    @include text-8xl
+  }
+}
+
+.about__text__desc {
+  @include space-y(24px);
+  max-width: rem(600px);
+
+  @include breakpoints('xlg') {
+    @include text-lg
+  }
+}
+
+.about__text__content {
+  margin-left: rem(64px);
+
+  @include breakpoints('xlg') {
+    margin-left: 0;
+  }
+}
+
+.about__img {}

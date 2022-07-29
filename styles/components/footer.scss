@@ -17,11 +17,14 @@
   @include flex-between;
   align-items: center;
   flex-direction: column;
-  gap: rem(16px);
+  @include  space-x(16px);
+  @include  space-y(16px);
 
   @include breakpoints('md') {
     padding: rem(8px) rem(24px);
     flex-direction: row;
+    @include  space-y(0px);
+
   }
 
 
@@ -29,7 +32,7 @@
 
 .footer__content {
   @include flex-center;
-  gap: rem(16px);
+  @include space-x(16px);
 
   &__name {
     @include text-xs;

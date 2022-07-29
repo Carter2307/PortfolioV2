@@ -7,7 +7,7 @@
 
   border-radius : rem(20px);
 
-  //display: none;
+  display: none;
   flex-direction: column;
   padding: rem(12px) rem(16px) rem(24px) rem(16px);
 
@@ -22,6 +22,10 @@
     flex-direction: row;
     background: none;
     border: none;
+
+    &::after {
+      display: none;
+    }
   }
   &::after {
     content: '';

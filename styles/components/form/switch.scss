@@ -1,6 +1,7 @@
 .switch {
   @include flex-center;
-  gap: rem(8px);
+  //gap: rem(8px);
+  @include space-x(8px);
   width: max-content;
 }
 
