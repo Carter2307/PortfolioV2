@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 
-//-----plugins-----//
+//-----widgets-----//
 
 /**
  * Un plugin webpack pour supprimer/nettoyer

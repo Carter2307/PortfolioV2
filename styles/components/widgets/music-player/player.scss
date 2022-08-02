@@ -1,0 +1,31 @@
+.player {
+  display: inline-block;
+  bottom: rem(32px);
+  right: rem(32px);
+  z-index: 9999;
+  position: fixed;
+}
+
+.player__body {
+  display: grid;
+  grid-gap: rem(16px);
+
+  &__wrapper {
+    //max-width: rem(496px);
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 76px;
+    grid-gap: rem(16px);
+  }
+}
+
+.player__content {
+  max-width: rem(265px);
+  border-radius: rem(24px);
+  padding: rem(16px);
+  box-shadow: $shadow-300;
+
+  @include support-blur(30px, $color-white, .05)
+}
+

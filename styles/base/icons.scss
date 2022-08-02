@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icons/icomoon.eot");
+  src: url("fonts/icons/icomoon.eot") format("embedded-opentype"),
+  url("fonts/icons/icomoon.ttf") format("truetype"),
+  url("fonts/icons/icomoon.woff") format("woff"),
+  url("fonts/icons/icomoon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon", sans-serif !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-backward-15-seconds:before {
+  content: "\62";
+}
+.icon-close:before {
+  content: "\63";
+}
+.icon-Edit:before {
+  content: "\65";
+}
+.icon-forward-15-seconds:before {
+  content: "\66";
+}
+.icon-maximize-circle:before {
+  content: "\7a";
+}
+.icon-minimize-circle:before {
+  content: "\6d";
+}
+.icon-pause:before {
+  content: "\70";
+}
+.icon-Play:before {
+  content: "\79";
+}
+.icon-screenmirroring:before {
+  content: "\73";
+}
+.icon-volume-cross:before {
+  content: "\76";
+}
+.icon-volume-high:before {
+  content: "\6f";
+}

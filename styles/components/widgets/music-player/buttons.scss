@@ -1,0 +1,29 @@
+.player__button__wrapper {
+  overflow: hidden;
+  width: rem(265px);
+  @include flex-between;
+
+  &:nth-child(1) {
+    //left: 0;
+
+  }
+  &:nth-child(2) {
+    //right: 0;
+  }
+}
+
+.player__button {
+  all : unset;
+  cursor: pointer;
+  padding: rem(8px) rem(16px);
+  text-transform: capitalize;
+
+  border-radius: rem(12px);
+  border: 1px solid rgba($color-white, .25);
+
+  @include flex-between;
+  @include text-xs;
+  @include space-x(8px);
+
+  @include support-blur(30px, $color-white, .05)
+}
