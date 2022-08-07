@@ -3,16 +3,16 @@
       .player__button__wrapper
         button.player__button.expand
           span expand
-          i.icon-maximize-circle
+          i.rb-maximize-circle
         button.player__button.close
           span close
-          i.icon-close
+          i.rb-close
 
       //Music cover
       .player__body__wrapper
         .player__content
           .player__cover
-            img(src='images/home-link-preview.png')
+            img(src='covers/tayc.jpeg')
 
           //Music details
           .player__detail
@@ -24,33 +24,31 @@
 
             //timer slider
             .player__timer__progress
-              input.player__timer__progress__range#range(type="range" min="0" max="100" step="1")
-              span.player__timer__progress__bar
-              span.player__timer__progress__elapse
+             input.player__timer__progress__range#range(type="range" min="0" max="100" step="1")
+             span.player__timer__progress__bar
+             span.player__timer__progress__elapse
 
             //Elapse time values
             .player__timer__times
-              span.player__timer__times__starttime 00:00
-              span.player__timer__times__endtime 00:00
+              span.player__timer__times__starttime 00:39
+              span.player__timer__times__endtime -04:20
 
           //Navigation
           .player__navigation
             //Backward
             button.player__navigation__button
-              i.icon-backward-15-seconds
+              i.rb-backward
 
               //Play/Pause
             button.player__navigation__button
-              i.icon-Play
+              i.rb-play
 
               //Forward
             button.player__navigation__button
-              i.icon-forward-15-seconds
-
-
+              i.rb-forward
 
         .player__volume
           .player__volume__wrapper
             .player__volume__slider
               .player__volume__grap
-            i.icon-volume-high.player__volume__icon
+              i.rb-volume-high.player__volume__icon

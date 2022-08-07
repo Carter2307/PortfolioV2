@@ -1,5 +1,10 @@
 .player__volume {
   padding-right: rem(16px);
+  display: none;
+
+  @include breakpoints('lg') {
+    display: inline-block;
+  }
 }
 
 .player__volume__wrapper {
@@ -22,13 +27,21 @@
 
 .player__volume__grap {
   position: absolute;
-  top: rem(-4px);
+  top: rem(-3px);
   left: 50%;
   transform: translateX(-50%);
-  height: rem(6px);
+  height: rem(4px);
   width: rem(18px);
   border-radius: rem(6px);
+  border: 1px solid transparent;
+  background-color: white;
   @include flex-center;
+  cursor: row-resize;
+  transition: .3s;
+
+  &:hover {
+    border-color: $color-accent-blue;
+  }
 }
 
 .player__volume__icon {

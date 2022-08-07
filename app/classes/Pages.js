@@ -1,15 +1,14 @@
-import each from 'lodash/each'
-import Preloader from '../components/Preloader'
 import Components from './Components'
 
 export default class Pages extends Components {
-  constructor(elements) {
+  constructor (elements) {
     super(elements)
+    this.create()
   }
 
-  create() {}
+  create () {}
 
-  show() {}
+  show () {}
 
-  hide() {}
+  hide () {}
 }

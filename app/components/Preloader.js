@@ -10,9 +10,9 @@ export default class Preloader extends Components {
     this.startIndex = 1
 
     this.size = {
-      height :  Number(this.elements.text.getBoundingClientRect().height),
-      width :  Number(this.elements.wrapper.clientWidth),
-      gap : 2
+      height: Number(this.elements.text.getBoundingClientRect().height),
+      width: Number(this.elements.wrapper.clientWidth),
+      gap: 2
     }
 
     this.createPreloader()
@@ -36,7 +36,7 @@ export default class Preloader extends Components {
   animPreloaderText(e) {
     e.preventDefault()
     console.log(this.size.width)
-    let length = this.elements.wrapper.children.length
+    const length = this.elements.wrapper.children.length
 
     //Give the wrapper the height of the text
     this.elements.container.style.height = `${this.size.height}px`
@@ -50,7 +50,7 @@ export default class Preloader extends Components {
     }, 1000)
   }
 
-  onProgress(length) {
+  onProgress (length) {
     this.length += 1
     const percent = this.length / length
 

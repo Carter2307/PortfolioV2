@@ -1,19 +1,18 @@
 @font-face {
-  font-family: "icomoon";
-  src: url("fonts/icons/icomoon.eot");
-  src: url("fonts/icons/icomoon.eot") format("embedded-opentype"),
-  url("fonts/icons/icomoon.ttf") format("truetype"),
-  url("fonts/icons/icomoon.woff") format("woff"),
-  url("fonts/icons/icomoon.svg") format("svg");
+  font-family: 'rogerb';
+  src:  url('fonts/icons/rogerb.eot?dmovba');
+  src:  url('fonts/icons/rogerb.eot?dmovba#iefix') format('embedded-opentype'),
+  url('fonts/icons/rogerb.ttf?dmovba') format('truetype'),
+  url('fonts/icons/rogerb.woff?dmovba') format('woff'),
+  url('fonts/icons/rogerb.svg?dmovba#rogerb') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="rb-"], [class*=" rb-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon", sans-serif !important;
+  font-family: 'rogerb' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -26,36 +25,42 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-backward-15-seconds:before {
+.rb-forward:before {
+  content: "\33";
+}
+.rb-backward:before {
+  content: "\30";
+}
+.rb-backward-15-seconds:before {
   content: "\62";
 }
-.icon-close:before {
+.rb-close:before {
   content: "\63";
 }
-.icon-Edit:before {
+.rb-Edit:before {
   content: "\65";
 }
-.icon-forward-15-seconds:before {
+.rb-forward-15-seconds:before {
   content: "\66";
 }
-.icon-maximize-circle:before {
+.rb-maximize-circle:before {
   content: "\7a";
 }
-.icon-minimize-circle:before {
+.rb-minimize-circle:before {
   content: "\6d";
 }
-.icon-pause:before {
+.rb-pause:before {
   content: "\70";
 }
-.icon-Play:before {
+.rb-play:before {
   content: "\79";
 }
-.icon-screenmirroring:before {
+.rb-screen-mirroring:before {
   content: "\73";
 }
-.icon-volume-cross:before {
+.rb-volume-cross:before {
   content: "\76";
 }
-.icon-volume-high:before {
+.rb-volume-high:before {
   content: "\6f";
 }

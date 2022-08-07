@@ -1,15 +1,11 @@
 .player__button__wrapper {
   overflow: hidden;
-  width: rem(265px);
+  width: 100%;
   @include flex-between;
-
-  &:nth-child(1) {
-    //left: 0;
-
+  @include breakpoints('lg') {
+    max-width: rem(300px);
   }
-  &:nth-child(2) {
-    //right: 0;
-  }
+  color: $color-white;
 }
 
 .player__button {

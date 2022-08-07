@@ -1,0 +1,25 @@
+.player__navigation {
+  @include flex-between;
+
+  button:nth-child(1), button:nth-child(3) {
+    @include text-5xl;
+  }
+
+  button:nth-child(2) {
+    padding : rem(4px);
+    padding-left: rem(8px);
+    border-radius: 64px;
+    @include flex-center;
+    height: rem(40px);
+    width: rem(40px);
+    background-color: rgba($color-white, $alpha: .4);
+    @include text-2xl;
+  }
+
+}
+
+.player__navigation__button {
+  all: unset;
+  cursor: pointer;
+}
+

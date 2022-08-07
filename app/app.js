@@ -1,6 +1,4 @@
 'use strict'
-
-// import each from 'lodash/each'
 import Home from './pages/home'
 import Preloader from './components/Preloader'
 
