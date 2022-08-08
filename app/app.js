@@ -1,12 +1,19 @@
 'use strict'
 import Home from './pages/home'
 import Preloader from './components/Preloader'
+import Navigation from './components/Navigation'
+import Canvas from './animation/canvas'
 
 class App {
   constructor () {
+    this.init()
     this.createPreloader()
+    this.initNavigation()
     this.getContent()
     this.initPages()
+  }
+  init() {
+    this.canvas = new Canvas()
   }
 
   createPreloader () {
@@ -33,6 +40,10 @@ class App {
     if (this.page && this.page.create()) {
       this.page.create()
     }
+  }
+
+  initNavigation () {
+    this.navigation = new Navigation()
   }
 }
 

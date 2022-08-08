@@ -10,7 +10,7 @@
   font-display: block;
 }
 
-[class^="rb-"], [class*=" rb-"] {
+[class^="rob-"], [class*=" rob-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'rogerb' !important;
   speak: never;
@@ -25,42 +25,42 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.rb-forward:before {
+.rob-forward:before {
   content: "\33";
 }
-.rb-backward:before {
+.rob-backward:before {
   content: "\30";
 }
-.rb-backward-15-seconds:before {
+.rob-backward-15-seconds:before {
   content: "\62";
 }
-.rb-close:before {
+.rob-close:before {
   content: "\63";
 }
-.rb-Edit:before {
+.rob-Edit:before {
   content: "\65";
 }
-.rb-forward-15-seconds:before {
+.rob-forward-15-seconds:before {
   content: "\66";
 }
-.rb-maximize-circle:before {
+.rob-maximize-circle:before {
   content: "\7a";
 }
-.rb-minimize-circle:before {
+.rob-minimize-circle:before {
   content: "\6d";
 }
-.rb-pause:before {
+.rob-pause:before {
   content: "\70";
 }
-.rb-play:before {
+.rob-play:before {
   content: "\79";
 }
-.rb-screen-mirroring:before {
+.rob-screen-mirroring:before {
   content: "\73";
 }
-.rb-volume-cross:before {
+.rob-volume-cross:before {
   content: "\76";
 }
-.rb-volume-high:before {
+.rob-volume-high:before {
   content: "\6f";
 }

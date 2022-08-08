@@ -2,12 +2,11 @@
   width: rem(240px);
 
   position: absolute;
-  top: rem(24px);
-  right: rem(16px);
+  top: 0;
+  right: 0;
 
   border-radius : rem(20px);
 
-  //display: none;
   visibility: hidden;
   opacity: 0;
 
@@ -28,6 +27,9 @@
     background: none;
     border: none;
 
+    opacity: 1;
+    visibility: visible;
+
     &::after {
       display: none;
     }
@@ -46,6 +48,7 @@
     opacity: 1;
     visibility: visible;
   }
+
 }
 
 //divider
@@ -67,6 +70,7 @@
 
 .menu__links {
   @include space-y(8px);
+  position: relative;
   display: flex;
   flex-direction: column;
 

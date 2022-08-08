@@ -35,7 +35,6 @@ export default class Preloader extends Components {
 
   animPreloaderText(e) {
     e.preventDefault()
-    console.log(this.size.width)
     const length = this.elements.wrapper.children.length
 
     //Give the wrapper the height of the text

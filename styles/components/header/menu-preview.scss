@@ -1,12 +1,17 @@
 .menu__links__preview {
   position: absolute;
-  top: rem(24px);
+  top: calc(100% + 1rem);
   right: 0;
   border-radius: rem(24px);
   box-shadow: $shadow-200;
   @include support-blur(100px, $color-white, .05);
   width: max-content;
   height: auto;
+
+  @include v-hidden;
+  transform: translateY(1rem);
+
+  transition: all .3s cubic-bezier(.5,.74,.43,.62);
 }
 
 .menu__links__media {

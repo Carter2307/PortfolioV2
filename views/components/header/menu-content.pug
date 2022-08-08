@@ -1,13 +1,14 @@
-- const links = [{ name : 'Works', img : 'img-1', url : "/projects"}, { name : 'Services', img : 'img-2', url : "/#services"}, { name : 'About me', img : 'img-4', url : "/about"}  ]
+- const links = [{ name : 'Works', img : 'images/previews/img-1', url : "/projects"}, { name : 'Services', img : 'images/previews/img-2', url : "/#services"}, { name : 'About me', img : 'images/previews/img-3', url : "/about"}  ]
 
 .menu__content
-  button.button-icon.mobile-only
+  button.button-icon.button-close.mobile-only
     include ../svg/close.svg
 
   ul.menu__links
     each link in links
       li.menu__links__item(data-snap="image" data-snap-image=link.img)
         a.menu__links__item__link(href=link.url)=link.name
+
 
   hr.divider.mobile-only
 
