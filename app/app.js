@@ -3,6 +3,7 @@ import Home from './pages/home'
 import Preloader from './components/Preloader'
 import Navigation from './components/Navigation'
 import Canvas from './animation/canvas'
+import Player from './components/widgets/music-player/player'
 
 class App {
   constructor () {
@@ -12,8 +13,10 @@ class App {
     this.getContent()
     this.initPages()
   }
-  init() {
+
+  init () {
     this.canvas = new Canvas()
+    this.player = new Player()
   }
 
   createPreloader () {

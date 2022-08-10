@@ -14,6 +14,7 @@ export default class Shapes {
 
   init () {
     this.createShape()
+    this.events()
   }
 
   createShape () {
@@ -26,7 +27,8 @@ export default class Shapes {
     this.shapeFrame.style.width = this.width + 'px'
     this.shapeFrame.style.borderRadius = this.height + 'px'
     this.shapeFrame.style.filter = `blur(${this.blur}px)`
-    this.shapeFrame.style.background = this.background
+    this.shapeFrame.style.backgroundColor = this.background
+    this.shapeFrame.style.transition = 'all 8s'
 
     // set shape position
     this.shapeFrame.style.position = 'absolute'
@@ -37,7 +39,28 @@ export default class Shapes {
     this.shapeFrame.style.bottom = this.bottom + 'px'
   }
 
+  animshapes (animationArr) {
+    let index = 0
+    let animFlow = null
+
+    setInterval(() => {
+      if (index >= animationArr.length) index = 0
+      animFlow = animationArr[index]
+      this.shapeFrame.style.top = animFlow.to.top + 'px'
+      this.shapeFrame.style.left = animFlow.to.left + 'px'
+      this.shapeFrame.style.bottom = animFlow.to.bottom + 'px'
+      this.shapeFrame.style.right = animFlow.to.right + 'px'
+      this.shapeFrame.style.filter = `blur(${this.blur}px)`
+
+      index++
+    }, 4000)
+  }
+
   mountShape (parent) {
     parent.append(this.shapeFrame)
+  }
+
+  events () {
+
   }
 }
