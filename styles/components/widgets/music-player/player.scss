@@ -4,11 +4,19 @@
   bottom: rem(24px);
   right: rem(24px);
   left: rem(24px);
-  z-index: 9999;
+  z-index: z('player');
   max-width: rem(396px);
 
   @include breakpoints('lg') {
     left: initial;
+  }
+
+  &.isHidden {
+    @include v-hidden
+  }
+
+  &.isVisible {
+    @include v-visible
   }
 
 }
