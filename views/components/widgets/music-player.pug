@@ -1,4 +1,6 @@
 .player
+    .player__audio
+      audio.player__media(src="")
     .player__body
       .player__button__wrapper
         button.player__button.expand
@@ -8,7 +10,6 @@
           span close
           i.rob-close
 
-      //Music cover
       .player__body__wrapper
         .player__content
           .player__cover.isExpand
@@ -36,15 +37,15 @@
           //Navigation
           .player__navigation
             //Backward
-            button.player__navigation__button
+            button.player__navigation__button(data-icon="rob-backward")
               i.rob-backward
 
               //Play/Pause
-            button.player__navigation__button
+            button.player__navigation__button(data-icon="rob-play")
               i.rob-play
 
               //Forward
-            button.player__navigation__button
+            button.player__navigation__button(data-icon="rob-forward")
               i.rob-forward
 
         .player__volume

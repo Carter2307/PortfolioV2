@@ -17,14 +17,14 @@ module.exports = merge(config, {
   mode: 'production',
 
   output: {
-    path: path.resolve(__dirname, '../public'),
+    path: path.resolve(__dirname, '../public')
   },
 
   optimization: {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        extractComments: false,
+        extractComments: false
       }),
       new ImageMinimizerPlugin({
         minimizer: {
@@ -33,11 +33,11 @@ module.exports = merge(config, {
             plugins: [
               ['gifsicle', { interlaced: true }],
               ['jpegtran', { progressive: true }],
-              ['optipng', { optimizationLevel: 8 }],
-            ],
-          },
-        },
-      }),
-    ],
-  },
+              ['optipng', { optimizationLevel: 8 }]
+            ]
+          }
+        }
+      })
+    ]
+  }
 })

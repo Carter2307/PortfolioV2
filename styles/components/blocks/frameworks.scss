@@ -47,7 +47,11 @@
   background-color: rgba($color: $color-white, $alpha: .05);
   align-items: center;
   justify-content: center;
-  max-width: rem(300px);
+  width: 100%;
+
+  @include breakpoints('md') {
+    max-width: rem(300px);
+  }
 
   @include breakpoints('lg') {
     max-width: rem(400px);
@@ -146,6 +150,7 @@
   align-items: center;
   justify-content: center;
   flex-grow: 2;
+  width: 100%;
 
   @include breakpoints('lg') {
     padding-top: rem(48px);
@@ -158,6 +163,7 @@
   display: flex;
   flex-direction: column;
   @include space-y(16px);
+  width: 100%;
 
   @include breakpoints('lg') {
     width: rem(532px);

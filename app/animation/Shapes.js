@@ -8,12 +8,14 @@ export default class Shapes {
     this.width = width
     this.blur = blur
     this.background = background
+    this.windowWidth = window.innerWidth
 
     this.init()
   }
 
   init () {
     this.createShape()
+    this.onWindowResize()
     this.events()
   }
 
@@ -22,17 +24,14 @@ export default class Shapes {
     this.shapeFrame.className = 'shapes'
     this.id = 'shapes'
 
-    // Style shape
-    this.shapeFrame.style.height = this.height + 'px'
-    this.shapeFrame.style.width = this.width + 'px'
-    this.shapeFrame.style.borderRadius = this.height + 'px'
-    this.shapeFrame.style.filter = `blur(${this.blur}px)`
+    this.testBreakpoint()
+    // style
+    this.shapeFrame.style.borderRadius = this.height[2] + 'px'
     this.shapeFrame.style.backgroundColor = this.background
-    this.shapeFrame.style.transition = 'all 8s'
-
-    // set shape position
+    // this.shapeFrame.style.transition = 'all 8s'
     this.shapeFrame.style.position = 'absolute'
 
+    // set shape position
     this.shapeFrame.style.top = this.top + 'px'
     this.shapeFrame.style.left = this.left + 'px'
     this.shapeFrame.style.right = this.right + 'px'
@@ -60,7 +59,28 @@ export default class Shapes {
     parent.append(this.shapeFrame)
   }
 
-  events () {
+  onWindowResize () {
+    this.windowWidth = window.innerWidth
+    this.testBreakpoint()
+  }
 
+  testBreakpoint () {
+    if (this.windowWidth >= 640 && this.windowWidth < 1024) {
+      this.shapeFrame.style.height = this.height[1] + 'px'
+      this.shapeFrame.style.width = this.width[1] + 'px'
+      this.shapeFrame.style.filter = `blur(${this.blur[0]}px)`
+    } else if (this.windowWidth >= 1024) {
+      this.shapeFrame.style.height = this.height[2] + 'px'
+      this.shapeFrame.style.width = this.width[2] + 'px'
+      this.shapeFrame.style.filter = `blur(${this.blur[1]}px)`
+    } else {
+      this.shapeFrame.style.height = this.height[0] + 'px'
+      this.shapeFrame.style.width = this.width[0] + 'px'
+      this.shapeFrame.style.filter = `blur(${this.blur[0]}px)`
+    }
+  }
+
+  events () {
+    addEventListener('resize', this.onWindowResize.bind(this))
   }
 }

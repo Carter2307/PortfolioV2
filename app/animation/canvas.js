@@ -15,26 +15,26 @@ export default class Canvas extends Components {
     if (!this.isMounted) return
     const shape1 = new Shapes({
       position: {
-        top: -200,
-        left: -100,
+        top: -1,
         right: -1,
-        bottom: -1
+        left: -100,
+        bottom: -100
       },
-      height: 600,
-      width: 600,
-      blur: 100,
+      height: [400, 500, 600],
+      width: [400, 500, 600],
+      blur: [50, 100],
       background: this.shapeGradient
     })
     const shape2 = new Shapes({
       position: {
-        top: -1,
+        top: -200,
+        right: -100,
         left: -1,
-        right: -40,
-        bottom: -30
+        bottom: -1
       },
-      height: 600,
-      width: 600,
-      blur: 100,
+      height: [400, 500, 600],
+      width: [400, 500, 600],
+      blur: [50, 100],
       background: this.shapeGradient
     })
     shape1.mountShape($('#frame'))

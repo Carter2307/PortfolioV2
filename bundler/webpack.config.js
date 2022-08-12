@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 
-//-----widgets-----//
+// -----widgets-----//
 
 /**
  * Un plugin webpack pour supprimer/nettoyer
@@ -21,11 +21,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-//const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const IS_DEVELOPPEMENT = process.ENV === 'dev'
 
-//Resolve directory
+// Resolve directory
 const dirApp = path.join(__dirname, '../app')
 const dirShared = path.join(__dirname, '../shared')
 const dirStyles = path.join(__dirname, '../styles')
@@ -34,67 +34,67 @@ const dirNode = 'node_modules'
 module.exports = {
   entry: [path.join(dirApp, 'app.js'), path.join(dirStyles, 'main.scss')],
 
-  //Simplifie l'utilisation des chemin -> path
+  // Simplifie l'utilisation des chemin -> path
   resolve: {
-    modules: [dirApp, dirShared, dirStyles, dirNode],
+    modules: [dirApp, dirShared, dirStyles, dirNode]
   },
 
   plugins: [
     new webpack.DefinePlugin({
-      IS_DEVELOPPEMENT,
+      IS_DEVELOPPEMENT
     }),
 
     new CopyWebpackPlugin({
       patterns: [
         {
           from: './shared',
-          to: '',
-        },
-      ],
+          to: ''
+        }
+      ]
     }),
 
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].css'
     }),
 
     // new HtmlWebpackPlugin({
     //   template: path.join(__dirname, '../index.html'),
     // }),
 
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin()
   ],
   module: {
     rules: [
-      //HTML
+      // HTML
       // {
       // 	test: /\.html$/,
       // 	use: {
       // 		loader: 'html-loader',
       // 	},
       // },
-      //JS
+      // JS
       {
         test: /\.js$/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+            presets: ['@babel/preset-env']
+          }
+        }
       },
 
-      //CSS
+      // CSS
       {
         test: /\.scss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '',
-            },
+              publicPath: ''
+            }
           },
           {
-            loader: 'css-loader',
+            loader: 'css-loader'
           },
           {
             loader: 'postcss-loader',
@@ -104,27 +104,27 @@ module.exports = {
                   [
                     'postcss-preset-env',
                     {
-                      browsers: 'last 2 versions ',
-                    },
-                  ],
-                ],
-              },
-            },
+                      browsers: 'last 2 versions '
+                    }
+                  ]
+                ]
+              }
+            }
           },
           {
-            loader: 'sass-loader',
-          },
-        ],
+            loader: 'sass-loader'
+          }
+        ]
       },
 
-      //IMAGES
+      // IMAGES && SOUND
       {
-        test: /\.(png|jpg|gif|jpe?g|svg|woff2?|fnt|webp|mp4)$/,
+        test: /\.(png|jpg|gif|jpe?g|svg|woff2?|fnt|webp|mp4|mp3)$/,
         type: 'asset/resource',
         generator: {
-          filename: '[name].[hash].[ext]',
-        },
-      },
-    ],
-  },
+          filename: '[name].[hash].[ext]'
+        }
+      }
+    ]
+  }
 }

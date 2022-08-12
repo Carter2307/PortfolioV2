@@ -23,10 +23,16 @@ export default class Components extends EventEmitter {
       player: {
         button: {
           expand: $('.player__button.expand'),
-          close: $('.player__button.close')
+          close: $('.player__button.close'),
+          play: $('[data-icon="rob-play"]'),
+          next: $('[data-icon="rob-forward"]'),
+          prev: $('[data-icon="rob-backward"]')
         },
-        cover: $('.player__cover'),
-        self: $('.player')
+        cover: $('.player__cover img'),
+        self: $('.player'),
+        media: $('.player__media'),
+        artist: $('.player__detail__name'),
+        title: $('.player__detail__title')
       },
 
       images: [...$All('img')]
