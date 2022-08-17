@@ -4,7 +4,7 @@
   top: 50%;
   transform: translateY(50%);
   border-radius: rem(2px);
-  width: 50%;
+  width: 0;
   height: rem(4px);
   display: inline-block;
   cursor: pointer;
@@ -18,7 +18,7 @@
   left: 0;
   transform: translateY(50%);
   border-radius: rem(2px);
-  width: 80%;
+  width: 0;
   height: 4px;
   display: inline-block;
   background-color: rgba($color-white, $alpha: 0.3);

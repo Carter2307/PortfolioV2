@@ -1,13 +1,15 @@
 import Components from '../../../classes/Components'
 import MediaManager from './MediaManager'
+import Timer from './Timer'
+import Volume from './volume'
 
 export default class Player extends Components {
-  constructor () {
+  constructor() {
     super('player')
     this.init()
   }
 
-  init () {
+  init() {
     this.isExpand = false
     this.src = this.elements.media.getAttribute('src')
     this.media = this.elements.media
@@ -19,45 +21,48 @@ export default class Player extends Components {
     this.mediaManager = new MediaManager()
     this.length = this.mediaManager.data.length
     this.randomId = Math.floor(Math.random() * this.length)
+
     this.componentsHandler(this.randomId)
     this.eventsListerner()
   }
 
-  expand () {
-    if (this.selectors.player.cover.classList.contains('isExpand')) {
-      this.selectors.player.cover.classList.remove('isExpand')
-      this.selectors.player.cover.style.height = '0px'
+  expand() {
+    if (this.selectors.player.coverContainer.classList.contains('isExpand')) {
+      this.selectors.player.coverContainer.classList.remove('isExpand')
+      this.selectors.player.coverContainer.style.height = '0px'
     } else {
-      this.selectors.player.cover.classList.add('isExpand')
-      this.selectors.player.cover.style.height = '180px'
+      this.selectors.player.coverContainer.classList.add('isExpand')
+      this.selectors.player.coverContainer.style.height = '180px'
     }
   }
 
-  close () {
+  close() {
     this.elements.self.classList.add('isHidden')
   }
 
-  componentsHandler (id) {
+  componentsHandler(id) {
     this.sound = this.mediaManager.data[id]
     this.media.src = this.sound.link
     this.setComponents(this.sound)
+    this.timerHandler(this.media)
   }
 
-  setComponents (sound) {
+  setComponents(sound) {
     this.coverHandler(sound)
+    this.volumeHandler(this.media)
     this.setSoundDetails(sound)
   }
 
-  coverHandler (sound) {
+  coverHandler(sound) {
     this.elements.cover.src = sound.album.cover
   }
 
-  setSoundDetails (sound) {
+  setSoundDetails(sound) {
     this.elements.artist.innerText = sound.artist.name
     this.elements.title.innerText = sound.title
   }
 
-  play () {
+  play() {
     if (this.elements.button.play.dataset.icon === 'rob-play') {
       this.elements.button.play.setAttribute('data-icon', 'rob-pause')
       this.icon.setAttribute('class', 'rob-pause')
@@ -69,7 +74,7 @@ export default class Player extends Components {
     }
   }
 
-  pause () {
+  pause() {
     if (this.elements.button.play.dataset.icon === 'rob-play') {
       this.elements.button.play.setAttribute('data-icon', 'rob-pause')
       this.icon.setAttribute('class', 'rob-pause')
@@ -80,14 +85,14 @@ export default class Player extends Components {
     }
   }
 
-  stop () {
+  stop() {
     this.media.pause()
     this.media.currentTime = 0
     this.elements.button.play.setAttribute('data-icon', 'rob-play')
     this.icon.setAttribute('class', 'rob-play')
   }
 
-  next () {
+  next() {
     this.randomId++
     if (this.randomId > this.length - 1) this.randomId = 0
     this.stop()
@@ -95,7 +100,7 @@ export default class Player extends Components {
     this.play()
   }
 
-  prev () {
+  prev() {
     this.randomId--
     if (this.randomId < 0) this.randomId = this.length - 1
     this.stop()
@@ -103,14 +108,31 @@ export default class Player extends Components {
     this.play()
   }
 
-  timerHandler () {
+  timerHandler(media) {
+    this.time = new Timer(
+      this.elements.timer.startTime,
+      this.elements.timer.endTime,
+      this.elements.timer.range,
+      this.elements.timer.progress,
+      this.elements.timer.preload,
+      media
+    )
   }
 
-  controlHandler () {}
-  volumeHandler () {}
+  volumeHandler(sound) {
+    this.volume = new Volume(
+      this.elements.volume.container,
+      this.elements.volume.grapper,
+      this.elements.volume.slider,
+      sound
+    )
+  }
 
-  eventsListerner () {
-    this.elements.button.expand.addEventListener('click', this.expand.bind(this))
+  eventsListerner() {
+    this.elements.button.expand.addEventListener(
+      'click',
+      this.expand.bind(this)
+    )
     this.elements.button.close.addEventListener('click', this.close.bind(this))
     // Control
     this.elements.button.play.addEventListener('click', this.play.bind(this))
