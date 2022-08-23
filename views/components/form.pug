@@ -5,19 +5,22 @@ section.connect
     .connect__title__icon
       span.connect__title__icon__img
       h4.connect__title__text touch
-   form.connect__form
+   form.connect__form(autocomplete="off")
      .connect__form__wrapper
        .form__group
          label.form__group__label(for="name") Name
-         input.form__group__input#name(type="text" name="name")
+         input.form__group__input.input__name#name(type="text" name="name" required)
+         span.input__alert-name.input__alert
        .form__group
         label.form__group__label(for="mail") Email
-        input.form__group__input#mail(type="email" name="email")
+        input.form__group__input.input__email#mail(type="email" name="email" required)
+        span.input__alert-email.input__alert
 
      .form__group
        label.form__group__label(for="message") Message
-       textarea.form__group__input#message(name="message")
-     +button('/', 'Let connect')(class='button button__primary button-bg')
+       textarea.form__group__input#message(name="message" required)
+       span.input__alert-message.input__alert
+     +button('/contact', 'Let connect')(class='button button__primary button-bg')
       include svg/arrow-2-right.svg
 
  include footer

@@ -1,11 +1,17 @@
-import Pages from 'classes/Pages'
+import Pages from '../../classes/Pages'
+import Slider from '../../components/slider/Slider'
+
 export default class Home extends Pages {
-  constructor() {
+  constructor () {
     super('home')
     console.log('home')
+    this.create()
   }
 
-  create() {
+  create () {
     super.create()
+    this.slider = new Slider()
   }
+
+  hide () {}
 }

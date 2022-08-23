@@ -4,8 +4,8 @@
  * @returns {HTMLElement}
  */
 export const $ = (element) => {
-	return document.querySelector(`${element}`);
-};
+  return document.querySelector(`${element}`)
+}
 
 /**
  * Select elements in DOM HTML
@@ -13,8 +13,8 @@ export const $ = (element) => {
  * @returns {NodeList}
  */
 export const $All = (elements) => {
-	return document.querySelectorAll(`${elements}`);
-};
+  return [...document.querySelectorAll(`${elements}`)]
+}
 
 /**
  * Get Attribute of Element
@@ -23,5 +23,5 @@ export const $All = (elements) => {
  * @returns {string}
  */
 export const $Attribute = (element, name) => {
-	return element.getAttribute(name)
-};
+  return element.getAttribute(name)
+}

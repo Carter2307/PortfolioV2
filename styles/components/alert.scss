@@ -1,0 +1,74 @@
+.alert{
+  padding: rem(8px);
+  border-radius: rem(16px);
+  border: 2px solid transparent;
+  width: 100%;
+  max-width: rem(288px);
+  position: fixed;
+  top: rem(64px);
+  right: -100%;
+  z-index: z('alert');
+  transition: right .6s;
+
+  &__success {
+    background-color: $color-green-100;
+    .alert__icon {
+      background-color: $color-green-300;
+    }
+    .alert__message {
+      color: $color-green-500;
+    }
+    border-color: $color-green-200;
+  }
+
+  &__error {
+    background-color: $color-red-100;
+    .alert__icon {
+      background-color: $color-red-300;
+    }
+    .alert__message {
+      color: $color-red-500;
+    }
+    border-color: $color-red-200;
+  }
+
+}
+
+.alert__wrapper{
+  @include flex-between;
+}
+
+.alert__content{
+  @include space-x(12px);
+  @include flex-center;
+}
+
+.alert__icon{
+  display: inline-block;
+  height: rem(32px);
+  width: rem(32px);
+  border-radius: rem(8px);
+  background-color: transparent;
+}
+
+.alert__message{
+  @include text-xs;
+  font-weight: 500;
+}
+
+.alert__closeIcon {
+  color: $color-gray-900;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 50%;
+  height: rem(32px);
+  width: rem(32px);
+  @include flex-center;
+  background-color: $color-gray-100;
+  &:hover {
+    background-color: $color-gray-200;
+  }
+}
+
+
+

@@ -20,11 +20,11 @@ html(lang="en")
     include components/header/header
     include components/modal
     include components/widgets/music-player
+    .wrapper
+      .content#content(data-template=template)
+        block content
 
-    .content#content(data-template=template)
-      block content
-
-    include components/form
+      include components/form
     include partials/scripts
 
 

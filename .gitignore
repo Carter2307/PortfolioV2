@@ -6,4 +6,5 @@
 .env
 .prettierrc
 package-lock.json
+.babelrc
 

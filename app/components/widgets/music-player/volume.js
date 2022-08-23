@@ -1,5 +1,5 @@
 export default class Volume {
-  constructor(container, grapper, slider, media) {
+  constructor (container, grapper, slider, media) {
     this.container = container
     this.grapper = grapper
     this.containerBottom = this.container.getBoundingClientRect().bottom
@@ -12,7 +12,7 @@ export default class Volume {
     this.addEventListener()
   }
 
-  onPointerDown(e) {
+  onPointerDown (e) {
     e.preventDefault()
     this.isDown = true
     this.container.addEventListener(
@@ -22,20 +22,19 @@ export default class Volume {
     this.container.addEventListener('pointerup', this.onPointerUp.bind(this))
   }
 
-  onPointerMove(e) {
+  onPointerMove (e) {
     e.preventDefault()
     if (!this.isDown) return
     this.ratio = this.containerHeight - (e.pageY - this.containerTop)
     this.slider.style.height = `${(this.ratio / this.containerHeight) * 100}%`
     this.media.volume = this.ratio / this.containerHeight
-    console.log(this.media.volume)
   }
 
-  onPointerUp() {
+  onPointerUp () {
     this.isDown = false
   }
 
-  addEventListener() {
+  addEventListener () {
     this.container.addEventListener(
       'pointerdown',
       this.onPointerDown.bind(this),

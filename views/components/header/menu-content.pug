@@ -1,4 +1,4 @@
-- const links = [{ name : 'Works', img : 'images/previews/img-1', url : "/projects"}, { name : 'Services', img : 'images/previews/img-2', url : "/#services"}, { name : 'About me', img : 'images/previews/img-3', url : "/about"}  ]
+- const links = [{ name : 'Works', img : 'images/previews/img-1', url : "#projects", data: 'false'}, { name : 'Services', img : 'images/previews/img-2', url : "/#services", data :'false'}, { name : 'About me', img : 'images/previews/img-3', url : "/about", data : 'true'}  ]
 
 .menu__content
   button.button-icon.button-close.mobile-only
@@ -7,7 +7,7 @@
   ul.menu__links
     each link in links
       li.menu__links__item(data-snap="image" data-snap-image=link.img)
-        a.menu__links__item__link(href=link.url)=link.name
+        a.menu__links__item__link(href=link.url data-links=link.data)=link.name
 
 
   hr.divider.mobile-only

@@ -56,7 +56,10 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "@babel/runtime": "^7.18.9",
     "express": "^4.17.3",
+    "mongoose": "^6.5.2",
     "multer": "^1.4.4",
     "pug": "^3.0.2"
   }

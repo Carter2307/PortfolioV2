@@ -1,7 +1,8 @@
 .rb-slider {
-  @include container;
+  //@include container;
   overflow: hidden;
-  @include space-y(24px)
+  @include space-y(24px);
+  min-width: 100%;
 }
 
 .rb-slider-navigation {
@@ -11,6 +12,7 @@
   border-radius: rem(18px);
   max-width: rem(96px);
   margin-left: auto;
+  margin-right: rem(32px);
   background-color:  rgba($color-white, .05);
   @include space-x(8px);
 }
@@ -27,14 +29,21 @@
 }
 
 .rb-slider-wrapper {
-  display: flex;
-  flex-direction: column;
-
-  @include breakpoints('md') {
-    flex-direction: row;
-  }
+  overflow: hidden;
+  touch-action: none;
+  //padding: 0 rem(32px);
 }
 
 .rb-slider-items {
-  width: 100%;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  //@include space-x(32px);
+  transition: transform .6s;
+}
+
+.rb-slider-item {
+  display: inline-block;
+  &:not(:last-child) {
+    padding-right: rem(24px);
+  }
 }

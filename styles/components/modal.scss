@@ -31,7 +31,6 @@
   position: relative;
   transform: translateY(32px);
   transition: transform .6s, opacity .4s, visibility .2s;
-  @include v-hidden;
 }
 
 .modal__content__wrapper {

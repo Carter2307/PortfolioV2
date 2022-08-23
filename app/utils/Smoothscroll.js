@@ -2,35 +2,34 @@ import { lerp, clamp } from './function'
 import normalizeWheel from 'normalize-wheel'
 
 export default class Smoothscroll {
-  constructor(element, opts) {
+  constructor (element, opts) {
     this.element = element
 
     this.defaultOptions = {
       direction: 'v', // v: vertical or  v- : vertical bottom to top;  h: Horizontal or h- horizontal right to left
-      smooth: 0.1, // Smooth amount -> Lerp function
+      smooth: 0.1 // Smooth amount -> Lerp function
     }
     this.smoothOptions = Object.assign(this.defaultOptions, {
-      ...opts,
+      ...opts
     })
 
     this.init()
   }
 
-  init() {
+  init () {
     this.scroll = {
       current: 0,
       target: 0,
-      limit: 0,
+      limit: 0
     }
 
     this.scroll.limit = this.element.clientHeight - window.innerHeight
-    console.log(this.element.clientHeight)
 
     this.addListener()
     this.update()
   }
 
-  onMouseWheel(e) {
+  onMouseWheel (e) {
     const event = normalizeWheel(e)
 
     if (
@@ -46,16 +45,16 @@ export default class Smoothscroll {
     }
   }
 
-  onResize() {
-    this.element.clientHeight - window.innerHeight
+  onResize () {
+    this.scroll.limit = this.element.clientHeight - window.innerHeight
   }
 
-  addListener() {
+  addListener () {
     window.addEventListener('wheel', this.onMouseWheel.bind(this))
     window.addEventListener('resize', this.onResize.bind(this))
   }
 
-  update() {
+  update () {
     this.scroll.target = clamp(this.scroll.target, 0, this.scroll.limit)
     this.scroll.current = lerp(
       this.scroll.current,
@@ -71,7 +70,7 @@ export default class Smoothscroll {
     window.requestAnimationFrame(this.update.bind(this))
   }
 
-  translateByCase() {
+  translateByCase () {
     switch (this.smoothOptions.direction) {
       case 'v':
         this.element.style.transform = `translateY(-${this.scroll.current}px)`

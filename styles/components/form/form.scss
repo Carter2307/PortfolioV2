@@ -16,8 +16,18 @@
   border: 1px solid rgba($color-white, .1);
   border-radius: rem(14px);
   padding: rem(14px) rem(16px);
+  box-shadow: 0 0 0 3px transparent;
+
+  &:focus {
+    box-shadow: 0 0 0 3px $color-accent-blue;
+  }
 }
 
 textarea.form__group__input {
   max-height: rem(140px);
+}
+
+.input__alert {
+  color: $color-red-200;
+  font-style: italic;
 }

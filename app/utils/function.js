@@ -56,7 +56,7 @@ export const validFileType = (file, type) => {
  * @param {string} url - le lien de la page
  * @returns {boolean} Boolean
  */
-async function UrlExist(url) {
+export async function UrlExist (url) {
   const options = {
     mode: 'no-cors',
     headers: {
@@ -65,4 +65,19 @@ async function UrlExist(url) {
   }
   const response = await fetch(url, options)
   return response.status !== '404'
+}
+
+/**
+ * Verifie si un email est valide
+ * @param email
+ * @returns {boolean}
+ */
+
+export function validEmail (email) {
+  const regex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
+  if (regex.test(email)) {
+    return true
+  }
 }
