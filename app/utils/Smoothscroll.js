@@ -22,8 +22,9 @@ export default class Smoothscroll {
       target: 0,
       limit: 0
     }
+    this.offsetHeight = 156
 
-    this.scroll.limit = this.element.clientHeight - window.innerHeight
+    this.scroll.limit = this.element.getBoundingClientRect().height - window.innerHeight
 
     this.addListener()
     this.update()
@@ -46,7 +47,7 @@ export default class Smoothscroll {
   }
 
   onResize () {
-    this.scroll.limit = this.element.clientHeight - window.innerHeight
+    this.scroll.limit = (this.element.clientHeight) - (window.innerHeight - this.offsetHeight)
   }
 
   addListener () {
@@ -73,11 +74,11 @@ export default class Smoothscroll {
   translateByCase () {
     switch (this.smoothOptions.direction) {
       case 'v':
-        this.element.style.transform = `translateY(-${this.scroll.current}px)`
+        this.element.style.transform = `translate3D(0, -${Math.floor(this.scroll.current)}px , 0)`
         break
 
       case 'v-':
-        this.element.style.transform = `translateY(${this.scroll.current}px)`
+        this.element.style.transform = `translate3D(0, ${Math.floor(this.scroll.current)}px, 0)`
         break
 
       case 'h':

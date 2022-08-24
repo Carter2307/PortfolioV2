@@ -8,4 +8,8 @@ export default class About extends Pages {
   create () {
     super.create()
   }
+
+  hide () {
+    console.log('hide')
+  }
 }

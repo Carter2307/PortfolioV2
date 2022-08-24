@@ -36,7 +36,7 @@ class App {
 
   getContent () {
     this.content = document.querySelector('#content')
-    this.template = this.content.getAttribute('[data-template]')
+    this.template = this.content.getAttribute('data-template')
   }
 
   initPages () {
@@ -45,6 +45,7 @@ class App {
       about: new About()
     }
 
+    console.log(this.template)
     this.page = this.pages[this.template]
 
     if (this.page && this.page.create()) {
@@ -62,8 +63,10 @@ class App {
   }
 
   async onChange ({ url }) {
-    // this.page.hide()
+    await this.page.hide()
+
     const res = await window.fetch(url)
+
     if (res.status === 200) {
       const html = await res.text()
 
@@ -87,18 +90,20 @@ class App {
   eventListener () {
     const links = $All('[data-links]')
     links.forEach(link => {
+      const { href } = link
+      const linkData = href.split('#')
+      const [url, hash] = linkData
+
       if (link.getAttribute('data-links') === 'true') {
         link.onclick = (e) => {
           e.preventDefault()
-          const { href } = link
+          if (url === window.location.href) return
           this.onChange({ url: href })
         }
       } else {
         link.onclick = (e) => {
           e.preventDefault()
-          const { href } = link
-          const linkData = href.split('#')
-          const [url, hash] = linkData
+          if (url === window.location.href) return
           this.onChange({ url })
 
           setTimeout(() => {

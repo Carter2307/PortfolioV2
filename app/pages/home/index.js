@@ -13,5 +13,7 @@ export default class Home extends Pages {
     this.slider = new Slider()
   }
 
-  hide () {}
+  hide () {
+    console.log('hide home')
+  }
 }
