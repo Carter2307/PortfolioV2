@@ -22,9 +22,9 @@ export default class Smoothscroll {
       target: 0,
       limit: 0
     }
-    this.offsetHeight = 156
+    this.offsetHeight = this.element.getBoundingClientRect().top
 
-    this.scroll.limit = this.element.getBoundingClientRect().height - window.innerHeight
+    this.scroll.limit = (this.element.clientHeight + this.offsetHeight) - window.innerHeight
 
     this.addListener()
     this.update()
@@ -47,7 +47,8 @@ export default class Smoothscroll {
   }
 
   onResize () {
-    this.scroll.limit = (this.element.clientHeight) - (window.innerHeight - this.offsetHeight)
+    this.offsetHeight = this.element.getBoundingClientRect().top
+    this.scroll.limit = (this.element.clientHeight + this.offsetHeight) - window.innerHeight
   }
 
   addListener () {
