@@ -7,7 +7,6 @@ const port = process.env.PORT || 3000
 
 const app = express()
 
-console.log(projectsData)
 // Use .env file to store password or key api
 require('dotenv').config()
 

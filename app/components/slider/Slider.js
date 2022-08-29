@@ -12,7 +12,7 @@ export default class Slider extends Components {
     this.padding = 24
     this.currentPosition = 0
     this.treshold = 0
-    this.dragIntervall = 40
+    this.dragIntervall = 80
     this.setChildWidth()
     this.setPosition()
     this.eventListener()

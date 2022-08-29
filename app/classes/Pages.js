@@ -18,7 +18,8 @@ export default class Pages extends Components {
       document.body.style.overflow = 'visible'
       document.body.style.position = 'relative'
     } else {
-      this.smootscroll = new Smoothscroll(this.wrapper, { direction: 'v', smooth: 0.1 })
+      console.log('init smooth')
+      this.smootscroll = new Smoothscroll(this.wrapper, { direction: 'v', smooth: 0.2 })
     }
   }
 

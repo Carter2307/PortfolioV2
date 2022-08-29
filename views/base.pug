@@ -2,8 +2,8 @@ block variables
 
 // ** Start of Mixin **//
 //Button
-mixin button(href, text)
-  a(class!=attributes.class href=href)
+mixin button(href, text, bool)
+  a(class!=attributes.class href=href data-links=bool)
     span.button__wrapper__flex
       | #{text}
       if block
