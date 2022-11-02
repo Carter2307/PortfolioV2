@@ -42,8 +42,6 @@
   gap: rem($size);
 }
 
-
-
 // Auto width with container
 @mixin mx-auto {
   margin-right: auto;
@@ -52,7 +50,7 @@
 
 @mixin mx-w-auto($width) {
   max-width: $width;
-  @include mx-auto()
+  @include mx-auto();
 }
 
 //Support blur
@@ -66,17 +64,17 @@
 
 //Support aspect-radio
 @mixin support-ratio($w, $h) {
-  aspect-ratio: $w / $h ;
+  aspect-ratio: calc($w / $h);
   @supports not (aspect-ratio: 1 / 1) {
     &::before {
       float: left;
       padding-top: 100%;
-      content: "";
+      content: '';
     }
 
     &::after {
       display: block;
-      content: "";
+      content: '';
       clear: both;
     }
   }

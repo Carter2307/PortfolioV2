@@ -7,12 +7,16 @@ export default class Slider extends Components {
   }
 
   init () {
+    if (!this.elements.items) return
+
     this.child = [...this.elements.items.children]
     this.index = 1
     this.padding = 24
     this.currentPosition = 0
     this.treshold = 0
     this.dragIntervall = 80
+
+
     this.setChildWidth()
     this.setPosition()
     this.eventListener()

@@ -76,7 +76,6 @@ export default class Timer {
 
   #progress() {
     const duration = this.media.duration
-    console.log(duration)
     if (duration > 0) {
       for (let i = 0; i < this.media.buffered.length; i++) {
         if (

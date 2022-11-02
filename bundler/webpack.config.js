@@ -1,27 +1,11 @@
+/* eslint-disable no-undef */
 const path = require('path')
 const webpack = require('webpack')
 
-// -----widgets-----//
-
-/**
- * Un plugin webpack pour supprimer/nettoyer
- * votre ou vos dossiers de construction.
- */
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-
-/**
- * Copie des fichiers individuels ou des répertoires entiers,
- * qui existent déjà, dans le répertoire de construction
- */
+//PLUGINS
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-
-/**
- * Ce plugin extrait le CSS dans des fichiers séparés.
- * Il crée un fichier CSS par fichier JS contenant du CSS
- */
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
+const miniCssExtractPlugin = require('mini-css-extract-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 const IS_DEVELOPPEMENT = process.ENV === 'dev'
 
@@ -32,99 +16,61 @@ const dirStyles = path.join(__dirname, '../styles')
 const dirNode = 'node_modules'
 
 module.exports = {
-  entry: [path.join(dirApp, 'app.js'), path.join(dirStyles, 'main.scss')],
+  entry: {
+    app: path.join(dirApp, 'app.js'),
+    main: path.join(dirStyles, 'main.scss'),
+  },
 
-  // Simplifie l'utilisation des chemin -> path
   resolve: {
-    modules: [dirApp, dirShared, dirStyles, dirNode]
+    modules: [dirApp, dirShared, dirStyles, dirNode],
   },
 
   plugins: [
-    new webpack.DefinePlugin({
-      IS_DEVELOPPEMENT
+    new webpack.DefinePlugin({ IS_DEVELOPPEMENT }),
+    new miniCssExtractPlugin({
+      filename: '[name].css',
     }),
-
     new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: './shared',
-          to: ''
-        }
-      ]
+      patterns: [{ from: './shared/', to: '../public/' }],
     }),
-
-    new MiniCssExtractPlugin({
-      filename: '[name].css'
-    }),
-
-    // new HtmlWebpackPlugin({
-    //   template: path.join(__dirname, '../index.html'),
-    // }),
-
-    new CleanWebpackPlugin()
+    new ESLintPlugin(),
   ],
+
   module: {
     rules: [
-      // HTML
-      // {
-      // 	test: /\.html$/,
-      // 	use: {
-      // 		loader: 'html-loader',
-      // 	},
-      // },
-      // JS
-      {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader'
-        }
-      },
+      { test: /\.js$/, use: { loader: 'babel-loader' } },
 
       // CSS
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: ''
-            }
-          },
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
+          { loader: miniCssExtractPlugin.loader },
+
+          { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: [
-                  [
-                    'postcss-preset-env',
-                    {
-                      browsers: 'last 2 versions '
-                    }
-                  ]
-                ]
-              }
-            }
+                  ['postcss-preset-env', { browsers: 'last 2 versions ' }],
+                ],
+              },
+            },
           },
           {
-            loader: 'sass-loader'
-          }
-        ]
+            loader: 'sass-loader',
+          },
+        ],
       },
 
       // IMAGES && SOUND
       {
-        test: /\.(png|jpg|gif|jpe?g|svg|woff2?|fnt|webp|mp4|mp3)$/,
+        test: /\.(png|jpg|gif|jpe?g|svg|woff?2|eot|ttf|fnt|webp|mp4|mp3)$/,
         type: 'asset/resource',
         generator: {
-          filename: '[name].[hash].[ext]'
-        }
-      }
-    ]
-  }
+          filename: '[name].[hash].[ext]',
+        },
+      },
+    ],
+  },
 }

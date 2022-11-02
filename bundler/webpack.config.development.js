@@ -12,13 +12,14 @@ module.exports = merge(config, {
   devServer: {
     devMiddleware: {
       writeToDisk: true,
+      publicPath: path.resolve(__dirname, '../public/'),
     },
-    hot: false,
+    hot: true,
   },
 
   output: {
-    path: path.resolve(__dirname, '../public'),
-    assetModuleFilename: '[name][ext]',
+    path: path.resolve(__dirname, '../public/'),
     clean: true,
+    publicPath : '/'
   },
 })

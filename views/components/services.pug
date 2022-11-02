@@ -4,8 +4,8 @@ section.services#services
     .services__content
       .services__description
         span.services__description__icons
-        h3.services__description__title Services
-        p.services__description__text
+        h3.services__description__title(data-animation='title') Services
+        p.services__description__text(data-animation='paragraph')
          | Hey i’m roger bentcha i help small company and people
          | to communicate with thiers customers. I turn thier idea
          | in creative design and code
@@ -19,8 +19,8 @@ section.services#services
           .services__list__items__content
             span.services__list__items__icon
             .services__list__items__desc
-              h4.services__list__items__title Integration web
-              p.services__list__items__text
+              h4.services__list__items__title(data-animation='title') Integration web
+              p.services__list__items__text(data-animation='paragraph')
                | Hey i’m roger bentcha i help small company and people to
                | communicate with thiers customers. I turn thier idea in.
           +button('#', 'commander')(class="button button__primary button-bg services__cta" data-service="integration-web")

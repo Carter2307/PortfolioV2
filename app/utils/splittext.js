@@ -6,21 +6,21 @@
  * @return {Array.<HTML element>} Array of span html element
  */
 export default function (element, split) {
-  var words = splitText(element.innerHTML.toString(), split);
-  var str = "";
+  var words = splitText(element.innerHTML.toString(), split)
+  var str = ''
   words.forEach(function (line) {
-    if (line.indexOf("<br>") > -1) {
-      var lines = line.split("<br>");
-      lines.forEach(function (line, id, arr) {
-        str += id > 0 ? "<br>" + parseLine(line) : parseLine(line);
-      });
+    if (line.indexOf('<br>') > -1) {
+      var lines = line.split('<br>')
+      lines.forEach(function (line, id) {
+        str += id > 0 ? '<br>' + parseLine(line) : parseLine(line)
+      })
     } else {
-      str += parseLine(line);
+      str += parseLine(line)
     }
-  });
-  element.innerHTML = str;
-  return element.querySelectorAll("span");
-};
+  })
+  element.innerHTML = str
+  return element.querySelectorAll('span')
+}
 
 /**
  * This function split text into array including <br>
@@ -29,13 +29,13 @@ export default function (element, split) {
  * @return {Array.<string>} result of split using separator including <br>
  */
 function splitText(txt, split) {
-  var splits = txt.split("<br>");
-  var arr = [];
+  var splits = txt.split('<br>')
+  var arr = []
   splits.forEach(function (item, id) {
-    if (id > 0) arr.push("<br>");
-    arr = arr.concat(item.split(split));
-  });
-  return arr;
+    if (id > 0) arr.push('<br>')
+    arr = arr.concat(item.split(split))
+  })
+  return arr
 }
 /**
  * This function will wrap passed argument with <span> if passed argument is not empty, space, or <br>
@@ -43,11 +43,11 @@ function splitText(txt, split) {
  * @return {string} it is either '', ' ', <br> , or <span>line<span>
  */
 function parseLine(line) {
-  if (line === "" || line === " ") {
-    return line;
+  if (line === '' || line === ' ') {
+    return line
   } else {
-    return line === "<br>"
-      ? "<br>"
-      : "<span>" + line + "</span>" + (line.length > 1 ? " " : "");
+    return line === '<br>'
+      ? '<br>'
+      : '<span>' + line + '</span>' + (line.length > 1 ? ' ' : '')
   }
 }

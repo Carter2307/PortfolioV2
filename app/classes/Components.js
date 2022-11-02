@@ -10,7 +10,7 @@ export default class Components extends EventEmitter {
         text: $('.preloader__text__item'),
         container: $('.preloader__text'),
         loader: $('.preloader__loader__bar'),
-        wrapper: $('.preloader__text__wrapper')
+        wrapper: $('.preloader__text__wrapper'),
       },
       navigation: {
         header: $('.header'),
@@ -18,7 +18,7 @@ export default class Components extends EventEmitter {
         previewImg: $('.menu__links__media__image'),
         content: $('.menu__content'),
         openMenu: $('.button-open'),
-        closeMenu: $('.button-close')
+        closeMenu: $('.button-close'),
       },
       player: {
         button: {
@@ -26,7 +26,7 @@ export default class Components extends EventEmitter {
           close: $('.player__button.close'),
           play: $('[data-icon="rob-play"]'),
           next: $('[data-icon="rob-forward"]'),
-          prev: $('[data-icon="rob-backward"]')
+          prev: $('[data-icon="rob-backward"]'),
         },
         coverContainer: $('.player__cover'),
         cover: $('.player__cover img'),
@@ -39,13 +39,13 @@ export default class Components extends EventEmitter {
           endTime: $('.player__timer__times__endtime'),
           range: $('.player__timer__progress__range'),
           progress: $('.player__timer__progress__bar'),
-          preload: $('.player__timer__progress__elapse')
+          preload: $('.player__timer__progress__elapse'),
         },
         volume: {
           grapper: $('.player__volume__grap'),
           slider: $('.player__volume__slider'),
-          container: $('.player__volume__wrapper')
-        }
+          container: $('.player__volume__wrapper'),
+        },
       },
       form: {
         connect: {
@@ -57,32 +57,39 @@ export default class Components extends EventEmitter {
           nameAlert: $('.input__alert-name'),
           emailAlert: $('.input__alert-email'),
           messageAlert: $('.input__alert-message'),
-          alert: $All('.input__alert')
-
+          alert: $All('.input__alert'),
         },
         modal: {
           form: $('.modal__form'),
-          button: $('.modal__form .button')
+          button: $('.modal__form .button'),
         },
-        alert: $('.alert')
+        alert: $('.alert'),
       },
       slider: {
         button: {
           prev: $('#rb-slider-button-prev'),
-          next: $('#rb-slider-button-next')
+          next: $('#rb-slider-button-next'),
         },
         wrapper: $('.rb-slider-wrapper'),
         items: $('.rb-slider-items'),
-        container: $('.rb-slider')
+        container: $('.rb-slider'),
       },
       services: {
-        buttons: $All('.services__cta')
+        buttons: $All('.services__cta'),
       },
       modal: {
         self: $('.modal'),
-        button: $('.modal__button button')
+        button: $('.modal__button button'),
       },
-      images: [...$All('img')]
+      images: [...$All('img')],
+      about: {
+        titles: [...$All('[data-animation=\'title\']')],
+        paragraphes: [...$All('[data-animation=\'paragraph\']')],
+      },
+      home: {
+        titles: [...$All('[data-animation=\'title\']')],
+        paragraphes: [...$All('[data-animation=\'paragraph\']')],
+      }
     }
     this.elements = this.selectors[componentName]
   }

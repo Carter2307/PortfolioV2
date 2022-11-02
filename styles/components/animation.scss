@@ -1,0 +1,28 @@
+//Animme title css
+[data-animation] {
+  line-height: 1;
+}
+
+[data-animation] > span {
+  display: inline-block;
+  overflow: hidden;
+}
+
+[data-animation] span span {
+  display: inline-block;
+  transform: translatey(100%);
+  //animation: animateWord 0.7s 0s both;
+  opacity: 0;
+}
+
+@keyframes animateWord {
+  from {
+    transform: translatey(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translatey(0);
+    opacity: 1;
+  }
+}

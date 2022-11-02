@@ -23,11 +23,11 @@ export default class Preloader extends Components {
     if (this.selectors.images) {
       const imgLoad = imagesLoaded(document.body)
 
-      imgLoad.on('progress', (_) => {
+      imgLoad.on('progress', () => {
         this.onProgress(imgLoad.images.length)
       })
 
-      imgLoad.on('always', (_) => {
+      imgLoad.on('always', () => {
         this.onLoad()
       })
     }

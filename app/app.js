@@ -1,4 +1,5 @@
 'use strict'
+
 import Home from './pages/home'
 import About from './pages/about'
 import Preloader from './components/Preloader'
@@ -10,7 +11,7 @@ import Services from './components/Services'
 import { $All, $ } from './utils/selectors'
 
 class App {
-  constructor () {
+  constructor() {
     this.init()
     this.createPreloader()
     this.initNavigation()
@@ -20,49 +21,49 @@ class App {
     this.eventListener()
   }
 
-  init () {
+  init() {
     this.canvas = new Canvas()
     this.player = new Player()
   }
 
-  createPreloader () {
+  createPreloader() {
     this.preloader = new Preloader()
-    this.preloader.once('completed', (_) => this.onPreloadEnd())
+    this.preloader.once('completed', () => this.onPreloadEnd())
   }
 
-  onPreloadEnd () {
+  onPreloadEnd() {
     this.preloader.destroy()
   }
 
-  getContent () {
+  getContent() {
     this.content = document.querySelector('#content')
     this.template = this.content.getAttribute('data-template')
   }
 
-  initPages () {
+  initPages() {
     this.pages = {
       home: new Home(),
-      about: new About()
+      about: new About(),
     }
 
-    console.log(this.template)
     this.page = this.pages[this.template]
 
     if (this.page && this.page.create()) {
       this.page.create()
     }
+    this.page.show()
   }
 
-  initNavigation () {
+  initNavigation() {
     this.navigation = new Navigation()
   }
 
-  config () {
+  config() {
     this.formHandler = new FormHandler('connect', 'connect', 'POST')
     this.services = new Services()
   }
 
-  async onChange ({ url }) {
+  async onChange({ url }) {
     await this.page.hide()
 
     const res = await window.fetch(url)
@@ -87,9 +88,9 @@ class App {
     }
   }
 
-  eventListener () {
+  eventListener() {
     const links = $All('[data-links]')
-    links.forEach(link => {
+    links.forEach((link) => {
       const { href } = link
       const linkData = href.split('#')
       const [url, hash] = linkData
@@ -103,9 +104,8 @@ class App {
       } else {
         link.onclick = (e) => {
           e.preventDefault()
-          if (url === window.location.href) return
+          //if (url === window.location.href) return
           this.onChange({ url })
-
           setTimeout(() => {
             scrollToElement(hash)
           }, 300)
@@ -113,10 +113,12 @@ class App {
       }
     })
 
-    function scrollToElement (className) {
+    function scrollToElement(className) {
       const element = $(`.${className}`)
       const top = element.getBoundingClientRect().top
-      window.scrollTo({ top })
+      console.log(element, top)
+      //$('.content').style.transform = `translateY(${-top}px)`
+      //window.scrollTo({ top: top, behavior: 'smooth' })
     }
   }
 }
