@@ -1,10 +1,15 @@
 section.hero
   .hero__wrapper
     .hero__text
-      h1.hero__title(data-animation='title')
-        | #[strong.hero__title__highlight-green Creative]
-        | frontend developper and #[strong.hero__title__highlight-gradient ui designer]
-        | from France
+      h1.hero__title
+        div.hero__title__child(data-animation='title')
+          strong.hero__title__highlight-green Creative
+          |  frontend
+        div.hero__title__child(data-animation='title') developper and 
+          strong.hero__title__highlight-gradient ui
+        div.hero__title__child(data-animation='title')
+          strong.hero__title__highlight-green designer
+          |  from France
     p.hero__description(data-animation="paragraph") Hey i’m roger bentcha i help small company and people to communicate with thiers customers. I turn thier idea in creative design and code
     .hero__quote
       .hero__quote__container
