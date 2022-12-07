@@ -15,40 +15,50 @@ export default class Pages extends Components {
     }
   }
 
-  create() {
+  load() {
+    console.log('laod test')
     window.onload = () => {
-      if (this.device.mobile && this.device.tablet) {
-        document.body.style.overflow = 'visible'
-        document.body.style.position = 'relative'
-      } else {
-        this.smootscroll = new Smoothscroll(this.wrapper, {
-          direction: 'v',
-          smooth: 0.2,
-        })
-      }
+      this.testDeviceForSmoothScroll()
     }
+  }
 
+  create() {
+    this.testDeviceForSmoothScroll()
+  }
+
+  testDeviceForSmoothScroll() {
+    if (this.device.mobile && this.device.tablet) {
+      document.body.style.overflow = 'visible'
+      document.body.style.position = 'relative'
+    } else {
+      console.log('test in smooth condition')
+      this.smootscroll = new Smoothscroll(this.wrapper, {
+        direction: 'v',
+        smooth: 0.2,
+      })
+    }
   }
 
   createAnimation() {
-    this.elements.titles.forEach(element => {
-      new Title(element)
+    this.elements.titles.forEach((element) => {
+      this.title = new Title(element)
       //Spliter(element)
     })
 
-    this.elements.paragraphes.forEach(p => {
+    this.elements.paragraphes.forEach((p) => {
       new Paragraph(p)
     })
-
   }
 
   show() {
+    // this.el = {
+    //   titles: [...$All('[data-animation="title"]')],
+    //   paragraphes: [...$All('[data-animation="paragraph"]')],
+    // }
     this.createAnimation()
-    console.log('show')
   }
 
   hide() {
-    console.log('hide')
     return new Promise((resolve) => {
       this.animateOut = GSAP.timeline()
 

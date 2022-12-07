@@ -22,7 +22,7 @@ export default class Canvas extends Components {
       },
       height: [400, 500, 600],
       width: [400, 500, 600],
-      blur: [50, 100],
+      blur: [50, 100] ,
       background: this.shapeGradient
     })
     const shape2 = new Shapes({

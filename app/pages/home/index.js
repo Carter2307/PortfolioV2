@@ -4,7 +4,6 @@ import Slider from '../../components/slider/Slider'
 export default class Home extends Pages {
   constructor () {
     super('home')
-    this.create()
   }
 
   create () {

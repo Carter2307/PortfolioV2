@@ -1,6 +1,7 @@
 import Animation from '../classes/Animation'
 import splittext from '../utils/splittext'
 import GSAP from 'gsap'
+
 export default class Title extends Animation{
   constructor(element) {
     super(element)

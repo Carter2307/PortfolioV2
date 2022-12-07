@@ -4,11 +4,12 @@ import Home from './pages/home'
 import About from './pages/about'
 import Preloader from './components/Preloader'
 import Navigation from './components/Navigation'
-import Canvas from './animation/canvas'
 import Player from './components/widgets/music-player/player'
 import FormHandler from './config/forms'
 import Services from './components/Services'
+import Canvas from './animation/canvas'
 import { $All, $ } from './utils/selectors'
+import Project from './pages/project'
 
 class App {
   constructor() {
@@ -16,9 +17,6 @@ class App {
     this.createPreloader()
     this.initNavigation()
     this.getContent()
-    this.initPages()
-    this.config()
-    this.eventListener()
   }
 
   init() {
@@ -33,6 +31,9 @@ class App {
 
   onPreloadEnd() {
     this.preloader.destroy()
+    this.initPages()
+    this.config()
+    this.eventListener()
   }
 
   getContent() {
@@ -44,13 +45,13 @@ class App {
     this.pages = {
       home: new Home(),
       about: new About(),
+      project: new Project(),
     }
 
     this.page = this.pages[this.template]
 
-    if (this.page && this.page.create()) {
-      this.page.create()
-    }
+    this.page.load()
+    this.page.create()
     this.page.show()
   }
 
@@ -79,8 +80,8 @@ class App {
       const divContent = div.querySelector('.content')
       this.template = divContent.getAttribute('data-template')
       this.content.innerHTML = divContent.innerHTML
-      window.scrollTo(0, 0)
       this.page = this.pages[this.template]
+
       this.page.create()
       this.page.show()
     } else {
@@ -93,10 +94,11 @@ class App {
     links.forEach((link) => {
       const { href } = link
       const linkData = href.split('#')
-      const [url, hash] = linkData
+      const [url] = linkData
 
       if (link.getAttribute('data-links') === 'true') {
         link.onclick = (e) => {
+          console.log('has been cllicked')
           e.preventDefault()
           if (url === window.location.href) return
           this.onChange({ url: href })
@@ -107,19 +109,19 @@ class App {
           //if (url === window.location.href) return
           this.onChange({ url })
           setTimeout(() => {
-            scrollToElement(hash)
+            // scrollToElement(hash)
           }, 300)
         }
       }
     })
+  }
 
-    function scrollToElement(className) {
-      const element = $(`.${className}`)
-      const top = element.getBoundingClientRect().top
-      console.log(element, top)
-      //$('.content').style.transform = `translateY(${-top}px)`
-      //window.scrollTo({ top: top, behavior: 'smooth' })
-    }
+  scrollToElement(className) {
+    const element = $(`.${className}`)
+    const top = element.getBoundingClientRect().top
+    console.log(element, top)
+    //$('.content').style.transform = `translateY(${-top}px)`
+    //window.scrollTo({ top: top, behavior: 'smooth' })
   }
 }
 

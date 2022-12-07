@@ -81,3 +81,42 @@ export function validEmail (email) {
     return true
   }
 }
+
+
+
+//https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
+/**
+ * Observe et execuse un callback lorsque les noeuds enfants(DOM) de la cible ont été modifier
+ * @param {HTMLElement} node - Le noeud DOM à observé
+ * @param {Function} callback - la fonction à éxécuter lorsque le DOM de la cible à changé
+ * @param {selector} selector 
+ */
+export function ObserveNodeDomChange(node, cb, selector) {
+  // Select the node that will be observed for mutations
+  const targetNode = document.querySelector(`.${node}`)
+
+  // Options for the observer (which mutations to observe)
+  const config = { childList: true, subtree: true }
+
+  //Callback function to execute when mutations are observed
+  const callback = (mutationsList) => {
+    // Use traditional 'for loops' for IE 11
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'childList') {
+        cb(selector)
+      } else if (mutation.type === 'attributes') {
+        cb(selector)
+      }
+    }
+  }
+
+  // Create an observer instance linked to the callback function
+  const observer = new MutationObserver(callback)
+
+  // Start observing the target node for configured mutations
+  targetNode ? observer.observe(targetNode, config) : void 0
+  //observer.observe(targetNode, config);
+
+  // Later, you can stop observing
+  //observer.disconnect();
+}

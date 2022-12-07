@@ -7,9 +7,9 @@ export default class Animation extends Components {
     this.createObserver()
   }
 
-  createObserver () {
+  createObserver() {
     this.observer = new window.IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           this.animateIn()
         } else {
@@ -19,7 +19,4 @@ export default class Animation extends Components {
     })
     this.observer.observe(this.element)
   }
-
-  animateIn () {}
-  animateOut () {}
 }

@@ -5,8 +5,8 @@ const router = express.Router()
 // Load Users Form model  (mongoose schema/model)
 const Projects = require('../Models/Projects')
 
-router.post('/', (req, res) => {
-  res.sendStatus(200)
+router.get('/', (req, res) => {
+  res.render('pages/projects')
   // Save data to dataBase
 })
 
