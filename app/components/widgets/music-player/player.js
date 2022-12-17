@@ -27,12 +27,12 @@ export default class Player extends Components {
   }
 
   expand() {
-    if (this.selectors.player.coverContainer.classList.contains('isExpand')) {
-      this.selectors.player.coverContainer.classList.remove('isExpand')
-      this.selectors.player.coverContainer.style.height = '0px'
+    if (this.root.player.coverContainer.classList.contains('isExpand')) {
+      this.root.player.coverContainer.classList.remove('isExpand')
+      this.root.player.coverContainer.style.height = '0px'
     } else {
-      this.selectors.player.coverContainer.classList.add('isExpand')
-      this.selectors.player.coverContainer.style.height = '180px'
+      this.root.player.coverContainer.classList.add('isExpand')
+      this.root.player.coverContainer.style.height = '180px'
     }
   }
 

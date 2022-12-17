@@ -3,7 +3,7 @@
 }
 
 .services__wrapper {
-  @include space-y(32px)
+  @include space-y(32px);
 }
 
 .services__title {
@@ -17,11 +17,11 @@
   @include breakpoints('lg') {
     display: flex;
     @include space-y(0px);
-    @include space-x(56px)
+    @include space-x(56px);
   }
 
   @include breakpoints('xlg') {
-    @include space-x(96px)
+    @include space-x(96px);
   }
 }
 
@@ -35,7 +35,7 @@
   flex-direction: column;
   overflow: hidden;
   @include space-y(32px);
-  background-color: rgba($color-white, .05);
+  background-color: rgba($color-white, 0.05);
 
   @include breakpoints('sm') {
     padding: rem(64px);
@@ -55,7 +55,6 @@
   @include breakpoints('2xlg') {
     max-width: rem(500px);
   }
-
 }
 
 .services__description__icons {
@@ -67,7 +66,7 @@
   font-weight: 600;
 
   @include breakpoints('md') {
-    @include text-3xl
+    @include text-3xl;
   }
 }
 
@@ -101,7 +100,8 @@
   border: 2px solid $color-accent-blue;
   border-radius: rem(16px);
   padding: rem(16px);
-  background-color: rgba($color-white, .05);
+  background-color: rgba($color-white, 0.05);
+  @include space-y(16px);
 }
 
 .services__list__items {
@@ -110,22 +110,23 @@
   justify-content: flex-start;
   @include space-y(12px);
   border-radius: rem(12px);
-  background-color: rgba($color-white, .05);
+  background-color: rgba($color-white, 0.05);
   border: 2px solid transparent;
   padding: rem(16px);
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     border-color: $color-accent-green;
   }
 
   @include breakpoints('sm') {
     flex-direction: row;
     align-items: center;
-    @include space-x(8px)
+    @include space-x(8px);
   }
 
   @include breakpoints('lg') {
-    @include space-x(16px)
+    @include space-x(16px);
   }
 }
 
@@ -150,18 +151,17 @@
   height: rem(48px);
   width: rem(48px);
   border-radius: rem(8px);
-  background-color: rgba($color-white, .15);
+  background-color: rgba($color-white, 0.15);
   @include flex-center;
 }
 
 .services__list__items__desc {
-  @include space-y(8px)
+  @include space-y(8px);
 }
 
 .services__list__items__title {
   font-weight: 600;
 }
 .services__list__items__text {
-  @include text-sm
+  @include text-sm;
 }
-

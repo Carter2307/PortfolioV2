@@ -2,26 +2,30 @@
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-	height: 100%;
+  height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
-	font-family: $font-satoshi;
-	scroll-behavior: smooth;
-	overflow-x: hidden;
-	font-size: $base-font;
+  font-family: $font-satoshi;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-size: $base-font;
   @include text-base;
   background-color: $color-primary-black;
   color: $color-white;
   scroll-behavior: smooth;
   @extend %cover;
+}
+
+.wrapper {
+  opacity: 0;
 }
 
 //debugging

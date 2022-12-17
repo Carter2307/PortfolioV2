@@ -9,7 +9,4 @@ export default class Project extends Pages {
     super.create()
   }
 
-  hide() {
-    console.log('hide project page')
-  }
 }

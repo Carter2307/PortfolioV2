@@ -10,7 +10,7 @@ export default class Preloader extends Components {
     this.startIndex = 1
 
     this.size = {
-      height: Number(this.elements.text.getBoundingClientRect().height),
+      height: Number(this.elements.text[0].getBoundingClientRect().height),
       width: Number(this.elements.wrapper.clientWidth),
       gap: 2
     }
@@ -20,7 +20,7 @@ export default class Preloader extends Components {
   }
 
   createPreloader () {
-    if (this.selectors.images) {
+    if (this.root.images) {
       const imgLoad = imagesLoaded(document.body)
 
       imgLoad.on('progress', () => {
@@ -62,7 +62,7 @@ export default class Preloader extends Components {
 
   onResize(e) {
     this.size = {
-      height :  Number(this.elements.text.getBoundingClientRect().height),
+      height :  Number(this.elements.text[0].getBoundingClientRect().height),
       width :  Number(this.elements.wrapper.clientWidth),
       gap : 2
     }
