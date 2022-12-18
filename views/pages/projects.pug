@@ -2,11 +2,22 @@
 extends ../base.pug
 
 block variables
-  - const title = 'My projects.'
-  - const description = 'Project i have/am work in '
+  - const title = 'My projects'
+  - const description = 'Project i have/am work in'
 
   - let template = 'project'
 
 block content
   .project
-    .project__wrapper Projects
+    section.project__wrapper
+      .project__title Projects
+      .project__wrapper__grid
+        each projects, index in projectsData
+          .projects__items
+            .projects__items__description
+              h4.projects__items__description__number=`0${index}`
+              a.projects__items__link(href=projects.link target="_blank")
+                h3.projects__items__description__title=projects.title
+                span.projects__items__link__icon ⇗
+              p.projects__items__description__detail=projects.description
+

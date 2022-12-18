@@ -5,23 +5,23 @@
   top: 0;
   right: 0;
 
-  border-radius : rem(20px);
+  border-radius: rem(20px);
 
   visibility: hidden;
   opacity: 0;
 
-  transition: visibility .5s, opacity .6s;
+  transition: visibility 0.5s, opacity 0.6s;
 
   flex-direction: column;
   padding: rem(12px) rem(16px) rem(24px) rem(16px);
 
-  border: 1px solid rgba($color:$color-white, $alpha: .08);
-  background-color : rgba($color:$color-primary, $alpha: .9);
+  border: 1px solid rgba($color: $color-white, $alpha: 0.08);
+  background-color: rgba($color: $color-primary, $alpha: 0.9);
 
   @include breakpoints('md') {
     position: static;
     padding: 0;
-    width : max-content;
+    width: max-content;
     display: flex;
     flex-direction: row;
     background: none;
@@ -40,15 +40,14 @@
     inset: 0;
     height: 100vh;
     z-index: -1;
-    background-color: rgba($color-white, .8);
-    @include support-blur(25px, $color-primary-black, .5);
+    background-color: rgba($color-white, 0.8);
+    @include support-blur(25px, $color-primary-black, 0.5);
   }
 
   &.menu__content-visible {
     opacity: 1;
     visibility: visible;
   }
-
 }
 
 //divider
@@ -61,12 +60,11 @@
 }
 
 .menu__content {
-  .button-icon, .button-bg {
+  .button-icon,
+  .button-bg {
     margin-left: auto;
   }
-
 }
-
 
 .menu__links {
   @include space-y(8px);
@@ -83,34 +81,51 @@
 }
 
 .menu__links__item {
-  transition: text-decoration .4s;
+  transition: text-decoration 0.4s;
   display: inline-block;
   position: relative;
 
   &:hover {
+    .menu__links__item__link {
+      color: $color-white;
+    }
+
     &::after {
       width: 100%;
     }
+
   }
 
-  &::after {
-    content: "";
+  &::after, &-active::after {
+    content: '';
     position: absolute;
     left: 0;
     bottom: rem(-2px);
     width: 0%;
     height: 1px;
     background: $color-gradient-orange;
-    transition: width .4s;
+    transition: width 0.4s;
   }
+}
+
+.menu__links__item.menu__links__item-active {
+   .menu__links__item__link {
+      color: $color-white;
+    }
+
+    &::after {
+      width: 100%;
+    }
 }
 
 .menu__links__item__link {
   @include text-lg;
   font-weight: 600;
-  color: rgba($color: $color-white, $alpha: .5);
+  color: rgba($color: $color-white, $alpha: 0.5);
+}
 
-  &:hover {
-    color: $color-white;
-  }
+.menu__links__item__link[data-links-disabled='true'] {
+  opacity: 0.4;
+  cursor: none;
+  pointer-events: none;
 }

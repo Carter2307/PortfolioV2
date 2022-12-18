@@ -10,6 +10,15 @@ export default class Navigation extends Components {
   init () {
     const defaultSource = 'images/previews/img-1'
     this.root.navigation.previewImg.src = `${defaultSource}.png`
+    this.setActiveLinkStyles()
+  }
+
+  setActiveLinkStyles() {
+    this.root.navigation.navList.forEach((link, index) => {
+      if (index === 0) {
+          link.classList.add('menu__links__item-active')
+        }
+    } )
   }
 
   onMouseHoverLinks(e) {

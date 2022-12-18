@@ -1,0 +1,60 @@
+.project {
+  @include container;
+  margin-top: rem(64px);
+}
+.project__wrapper {
+  border-radius: rem(24px);
+  border: 2px solid rgba($color: $color-white, $alpha: 0.05);
+  background: rgba($color: $color-white, $alpha: 0.05);
+  padding: rem(32px);
+  @include collumns(24px);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+
+    @include breakpoints('sm') {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    gap: rem(24px);
+  }
+}
+
+.project__title {
+  font-size: rem(24px);
+  font-weight: 800;
+  font-family: $font-rische;
+}
+
+.projects__items {
+  margin: 0 !important;
+  border-radius: rem(16px);
+  border: 2px solid rgba($color: $color-white, $alpha: 0.05);
+  background: rgba($color: $color-white, $alpha: 0.05);
+  padding: rem(24px);
+  @include collumns(24px);
+}
+
+.projects__items__description__number {
+  opacity: 0.6;
+  font-weight: 500;
+}
+.projects__items__link {
+  display: flex;
+  align-items: baseline;
+  font-style: italic;
+  @include space-x(8px);
+}
+.projects__items__description__title {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.projects__items__link__icon {
+  font-size: rem(24px);
+}
+
+.projects__items__description__detail {
+  opacity: 0.6;
+}

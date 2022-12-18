@@ -1,5 +1,7 @@
+import {clamp} from '../../../utils/function'
+
 export default class Volume {
-  constructor (container, grapper, slider, media) {
+  constructor(container, grapper, slider, media) {
     this.container = container
     this.grapper = grapper
     this.containerBottom = this.container.getBoundingClientRect().bottom
@@ -12,9 +14,10 @@ export default class Volume {
     this.addEventListener()
   }
 
-  onPointerDown (e) {
+  onPointerDown(e) {
     e.preventDefault()
     this.isDown = true
+
     this.container.addEventListener(
       'pointermove',
       this.onPointerMove.bind(this)
@@ -22,19 +25,26 @@ export default class Volume {
     this.container.addEventListener('pointerup', this.onPointerUp.bind(this))
   }
 
-  onPointerMove (e) {
+  onPointerMove(e) {
     e.preventDefault()
-    if (!this.isDown) return
-    this.ratio = this.containerHeight - (e.pageY - this.containerTop)
-    this.slider.style.height = `${(this.ratio / this.containerHeight) * 100}%`
-    this.media.volume = this.ratio / this.containerHeight
+    if (!this.isDown && !this.isOutOfVolumeView(this.container))  return
+    this.ratio = (this.containerHeight - (e.pageY - this.containerTop))
+    this.slider.style.height = `${clamp(((this.ratio / this.containerHeight) * 100), 0, 100)}%`
+    this.media.volume = clamp(this.ratio / this.containerHeight, 0, 1)
+
   }
 
-  onPointerUp () {
+  onPointerUp() {
     this.isDown = false
   }
 
-  addEventListener () {
+  isOutOfVolumeView(element) {
+    element.onmouseleave = () => {
+      return true
+    }
+  }
+
+  addEventListener() {
     this.container.addEventListener(
       'pointerdown',
       this.onPointerDown.bind(this),

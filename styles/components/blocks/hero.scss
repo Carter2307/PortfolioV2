@@ -114,7 +114,7 @@
 .hero__quote__text {
   font-family: $font-rische;
   @include text-2xl;
-  font-weight: 700;
+  font-weight: 900;
   text-align: center;
 
   @include breakpoints('md') {

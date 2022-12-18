@@ -16,6 +16,8 @@
   display: flex;
   justify-content: flex-end;
   touch-action: none;
+  display: flex;
+  align-items: flex-end;
 
   :hover .player__volume__grap {
     background-color: $color-gradient-green;
@@ -24,18 +26,18 @@
 
 .player__volume__slider {
   position: relative;
-  margin-top: auto;
   width: 100%;
   height: 50%;
-  background-color: $color-white;
+  background-color:  rgba($color-white, 0.7);
+  border-top: 2px solid rgba($color-white, 1);
 }
 
 .player__volume__grap {
   position: absolute;
-  top: -8px;
+  top: -5px;
   left: 50%;
   transform: translateX(-50%);
-  height: rem(16px);
+  height: rem(8px);
   width: 50%;
   border-radius: rem(6px);
   border: 1px solid transparent;

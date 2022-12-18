@@ -1,33 +1,29 @@
 //on top
-@import "./utils/variables";
-@import "./utils/mixins/fontSize";
+@import './utils/variables';
+@import './utils/mixins/fontSize';
+//Layout = Mixin for layout
+@import './layout';
 
-@import "./base/reset";
-@import "./utils/functions";
-@import "./utils/colors";
-@import "./utils/shadows";
-@import "./utils/mixins";
-@import "./utils/responsive";
+@import './base/reset';
+@import './utils/functions';
+@import './utils/colors';
+@import './utils/shadows';
+@import './utils/mixins';
+@import './utils/responsive';
 
 //library
-@import "./utils/gallery";
-@import "./utils/slides";
+@import './utils/gallery';
+@import './utils/slides';
 
-@import "./shared/divider";
-@import "./shared/title";
+@import './shared/divider';
+@import './shared/title';
 // @import "./shared/inputs";
 
-@import "./base/font";
-@import "./base/icons";
-@import "./base/config";
+@import './base/font';
+@import './base/icons';
+@import './base/config';
 
-@import "./components";
-
-//Layout
-@import "./layout/collumns";
-@import "./layout/rows";
+@import './components';
 
 //Page
-@import "./pages/home";
-//@import "./pages/project";
-@import "./pages/about";
+@import './pages';

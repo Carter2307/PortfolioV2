@@ -1,11 +1,11 @@
-each projects, index in projectsData
+each projects, index in datas
   .rb-slider-item
     .project__items
-          .project__items__description
-            h4.project__items__description__number=`0${index}`
-            h3.project__items__description__title=projects.title
-            p.project__items__description__detail=projects.description
-            +button(projects.link,'View project')(class="button button__primary button-bg")
-              include ../svg/plug.svg
-          .project__items__image
-            img(src=projects.image)
+      .project__items__description
+        h4.project__items__description__number=`0${index}`
+        h3.project__items__description__title=projects.title
+        p.project__items__description__detail=projects.description
+        +button(projects.link,'View project')(class="button button__primary button-bg")
+          include ../svg/plug.svg
+      .project__items__image
+        img(src=projects.image)

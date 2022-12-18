@@ -32,8 +32,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '/public')))
 
 app.get('/', (req, res) => {
+  const datas = projectsData.filter((items) => projectsData.indexOf(items) <= 2)
   res.render('pages/home', {
-    projectsData
+    datas
   })
 })
 

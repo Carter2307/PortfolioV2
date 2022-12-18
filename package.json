@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "node server.js",
+    "server": "nodemon server.js",
     "build": "webpack --progress --config bundler/webpack.config.build.js"
   },
   "keywords": [],

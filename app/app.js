@@ -93,24 +93,25 @@ class App {
 
   eventListener() {
     const links = $All('[data-links]')
+    //const menulist = $('.menu__links').childNodes
+    //const linkList = $All('.menu__links__item__link')
+
     links.forEach((link) => {
       const { href } = link
       const linkData = href.split('#')
       const [url] = linkData
 
-      if (link.getAttribute('data-links') === 'true') {
-        link.onclick = (e) => {
-          console.log('has been clicked')
-          e.preventDefault()
-          if (url === window.location.href) return
-          this.onChange({ url: href })
-        }
-      } else {
-        link.onclick = (e) => {
-          e.preventDefault()
-          if (url === window.location.href) return
-          this.onChange({ url })
-        }
+      link.onclick = (e) => {
+        e.preventDefault()
+        if (url === window.location.href) return
+        // menulist.forEach((li) => {
+        //   if (li.classList.contains('menu__links__item-active')) {
+        //     li.classList.remove('menu__links__item-active')
+        //   }
+        // })
+
+        // link.parentNode.classList.add('menu__links__item-active')
+        this.onChange({ url: href })
       }
     })
   }
