@@ -1,24 +1,30 @@
 import Components from '../classes/Components'
+import { $All } from '../utils/selectors'
 
 export default class Navigation extends Components {
-  constructor () {
+  constructor() {
     super('navigation')
     this.init()
     this.eventsListener()
   }
 
-  init () {
+  init() {
     const defaultSource = 'images/previews/img-1'
     this.root.navigation.previewImg.src = `${defaultSource}.png`
     this.setActiveLinkStyles()
   }
 
   setActiveLinkStyles() {
-    this.root.navigation.navList.forEach((link, index) => {
-      if (index === 0) {
-          link.classList.add('menu__links__item-active')
-        }
-    } )
+    const links = $All('[data-links]')
+    const url = window.location.href
+    let parent
+
+    links.forEach((link) => {
+      if (link.href === url) {
+        parent = link.parentNode
+        parent.classList.add('menu__links__item-active')
+      }
+    })
   }
 
   onMouseHoverLinks(e) {
@@ -36,12 +42,18 @@ export default class Navigation extends Components {
     this.root.navigation.content.classList.remove('menu__content-visible')
   }
 
-  eventsListener () {
-    this.root.navigation.navList.forEach(link => {
+  eventsListener() {
+    this.root.navigation.navList.forEach((link) => {
       link.addEventListener('mouseover', this.onMouseHoverLinks.bind(this))
     })
 
-    this.root.navigation.openMenu.addEventListener('click', this.openMenu.bind(this))
-    this.root.navigation.closeMenu.addEventListener('click', this.closeMenu.bind(this))
+    this.root.navigation.openMenu.addEventListener(
+      'click',
+      this.openMenu.bind(this)
+    )
+    this.root.navigation.closeMenu.addEventListener(
+      'click',
+      this.closeMenu.bind(this)
+    )
   }
 }
