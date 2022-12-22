@@ -19,7 +19,7 @@ export const validFileType = (file, type) => {
     'application/doc',
     'application/docx',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'application/msword'
+    'application/msword',
   ]
 
   const images = [
@@ -27,7 +27,7 @@ export const validFileType = (file, type) => {
     'image/jpeg',
     'image/jpg',
     'image/webp',
-    'image/bmp'
+    'image/bmp',
   ]
 
   if (type === 'documents') {
@@ -56,12 +56,12 @@ export const validFileType = (file, type) => {
  * @param {string} url - le lien de la page
  * @returns {boolean} Boolean
  */
-export async function UrlExist (url) {
+export async function UrlExist(url) {
   const options = {
     mode: 'no-cors',
     headers: {
-      'Access-Control-Allow-Origin': '*'
-    }
+      'Access-Control-Allow-Origin': '*',
+    },
   }
   const response = await fetch(url, options)
   return response.status !== '404'
@@ -73,7 +73,7 @@ export async function UrlExist (url) {
  * @returns {boolean}
  */
 
-export function validEmail (email) {
+export function validEmail(email) {
   const regex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
@@ -82,14 +82,12 @@ export function validEmail (email) {
   }
 }
 
-
-
 //https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 /**
  * Observe et execuse un callback lorsque les noeuds enfants(DOM) de la cible ont été modifier
  * @param {HTMLElement} node - Le noeud DOM à observé
  * @param {Function} callback - la fonction à éxécuter lorsque le DOM de la cible à changé
- * @param {selector} selector 
+ * @param {selector} selector
  */
 export function ObserveNodeDomChange(node, cb, selector) {
   // Select the node that will be observed for mutations

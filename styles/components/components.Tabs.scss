@@ -1,0 +1,85 @@
+.tabs {
+}
+.tabs__group {
+}
+
+.tabs__list {
+}
+
+.tabs__item {
+}
+.tabs__panels {
+}
+
+.tabs__panel {
+  display: none;
+  &-active {
+    display: inline-block;
+  }
+}
+
+//User
+.tabs__group-style {
+  @include collumns(32px);
+}
+
+.tabs__list-style {
+  @include rows(8px);
+  padding: rem(4px);
+  border-radius: rem(18px);
+  max-height: rem(64px);
+  border: 1px solid rgba($color: $color-white, $alpha: 0.08);
+  background-color: rgba($color: $color-white, $alpha: 0.08);
+  max-width: rem(600px);
+}
+
+.tabs__items-style {
+  @include rows(8px);
+  align-items: center;
+  flex: auto;
+  flex-grow: 1;
+
+  &:last-child {
+    span {
+      display: none;
+    }
+  }
+}
+
+.tabs__item-style {
+  all: unset;
+  font-weight: 500;
+  @include text-base;
+  @include flex-center;
+  color: $color-white;
+  cursor: pointer;
+  padding: rem(14px) rem(16px);
+  border-radius: rem(14px);
+  width: 100%;
+  transition: all 0.4s;
+  color: rgba($color: $color-white, $alpha: 0.48);
+
+  &:hover {
+    background-color: rgba($color: $color-white, $alpha: 0.12);
+  }
+}
+
+.tabs__item-style-active {
+  background-color: rgba($color: $color-white, $alpha: 0.12);
+  color: rgba($color: $color-white, $alpha: 1);
+}
+
+.tabs__item__divider {
+  display: inline-block;
+  height: 80%;
+  width: rem(1px);
+  background-color: rgba($color: $color-white, $alpha: 0.08);
+}
+
+.tabs__panels-style {
+  padding: rem(16px);
+  border-radius: rem(24px);
+  @include collumns(32px);
+  background-color: rgba($color: $color-white, $alpha: 0.05);
+  border: 1px solid rgba($color: $color-white, $alpha: 0.12);
+}

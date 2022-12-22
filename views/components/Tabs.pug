@@ -1,0 +1,26 @@
+- const list = ['Website', 'Logo design', 'UI Design']
+
+.tabs
+  .tabs__group.tabs__group-style
+    .tabs__list.tabs__list-style
+      each item in list
+        .tabs__items.tabs__items-style
+          button.tabs__item.tabs__item-style(type="button")=item
+          span.tabs__item__divider
+    .tabs__panels.tabs__panels-style
+      .tabs__panel
+        .project__grids
+          .projects__grids__item
+            img.projects__grids__item__img(src="")
+            .projects__grids__item__detail
+              h4 Hiddencode Website
+              +button-icon('hiddencode.fr', 'View project', true)
+
+          .projects__grids__item
+            img.projects__grids__item__img(src="")
+            .projects__grids__item__detail
+              h4 Hiddencode Website
+              +button-icon('hiddencode.fr', 'View project')
+      .tabs__panel Content 2
+      .tabs__panel Content 3
+

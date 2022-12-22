@@ -10,6 +10,7 @@ import Canvas from './animation/canvas'
 import Smoothscroll from './utils/Smoothscroll'
 import { $All, $ } from './utils/selectors'
 import Project from './pages/project'
+import DefinedCustomELements from './components/CustomElements'
 
 class App {
   constructor() {
@@ -22,6 +23,7 @@ class App {
   init() {
     this.player = new Player()
     this.canvas = new Canvas()
+    //this.customElements = DefinedCustomELements()
   }
 
   createPreloader() {

@@ -1,30 +1,49 @@
 .project {
   @include container;
   margin-top: rem(64px);
+
+  @include breakpoints('md') {
+    margin-top: rem(96px);
+  }
 }
 .project__wrapper {
-  border-radius: rem(24px);
-  border: 2px solid rgba($color: $color-white, $alpha: 0.05);
-  background: rgba($color: $color-white, $alpha: 0.05);
-  padding: rem(32px);
+  //border-radius: rem(24px);
+  //border: 2px solid rgba($color: $color-white, $alpha: 0.05);
+  //background: rgba($color: $color-white, $alpha: 0.05);
+  //padding: rem(32px);
   @include collumns(24px);
 
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  //   &__grid {
+  //     display: grid;
+  //     grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
 
-    @include breakpoints('sm') {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
+  //     @include breakpoints('sm') {
+  //       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  //     }
 
-    gap: rem(24px);
+  //     gap: rem(24px);
+  //   }
+  @include breakpoints('md') {
+    @include collumns(48px);
   }
 }
 
+.project__wrapper__content {
+  @include collumns(24px);
+  max-width: rem(600px);
+}
+
 .project__title {
-  font-size: rem(24px);
+  @include text-2xl;
   font-weight: 800;
   font-family: $font-rische;
+
+  @include breakpoints('md') {
+    @include text-3xl;
+  }
+  @include breakpoints('lg') {
+    @include text-5xl;
+  }
 }
 
 .projects__items {
@@ -57,4 +76,65 @@
 
 .projects__items__description__detail {
   opacity: 0.6;
+}
+
+//PROJECT PREVIEW GRID
+.project__grids {
+  display: grid;
+  gap: rem(16px);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.projects__grids__item {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba($color: $color-white, $alpha: 0.16);
+  border-radius: rem(8px);
+  min-height: rem(330px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: rem(8px);
+
+  &:hover {
+    .projects__grids__item__detail {
+      transform: translateY(0px);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.projects__grids__item__img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.projects__grids__item__detail {
+  z-index: 2;
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: rem(8px);
+  border-radius: rem(12px);
+  padding: rem(12px);
+  background-color: rgba($color: $color-white, $alpha: 0.08);
+  transform: translateY(24px);
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.4s ease-in;
+
+  h4 {
+    @include text-base;
+    font-weight: 500;
+  }
+
+  .button {
+    flex: auto;
+  }
 }

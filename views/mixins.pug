@@ -1,0 +1,12 @@
+mixin button(href, text, bool)
+  a(class!=attributes.class href=href data-links=bool)
+    span.button__wrapper__flex
+      | #{text}
+      if block
+        block
+
+
+mixin button-icon(href, text)
+  a.button.button-primary.button-bg.mobile-only(href=href)
+    span.button__wrapper__flex=text
+      include components/svg/arrow-right.svg
