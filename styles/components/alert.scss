@@ -1,4 +1,4 @@
-.alert{
+.alert {
   padding: rem(8px);
   border-radius: rem(16px);
   border: 2px solid transparent;
@@ -8,7 +8,7 @@
   top: rem(64px);
   right: -100%;
   z-index: z('alert');
-  transition: right .6s;
+  transition: right 0.6s;
 
   &__success {
     background-color: $color-green-100;
@@ -31,19 +31,20 @@
     }
     border-color: $color-red-200;
   }
-
 }
 
-.alert__wrapper{
+.alert__wrapper {
   @include flex-between;
+  @include space-x(8px);
 }
 
-.alert__content{
+.alert__content {
   @include space-x(12px);
   @include flex-center;
 }
 
-.alert__icon{
+.alert__icon {
+  flex: none;
   display: inline-block;
   height: rem(32px);
   width: rem(32px);
@@ -51,12 +52,13 @@
   background-color: transparent;
 }
 
-.alert__message{
+.alert__message {
   @include text-xs;
   font-weight: 500;
 }
 
 .alert__closeIcon {
+  flex: none;
   color: $color-gray-900;
   font-weight: 800;
   cursor: pointer;
@@ -64,11 +66,8 @@
   height: rem(32px);
   width: rem(32px);
   @include flex-center;
-  background-color: $color-gray-100;
+  background-color: $color-gray-300;
   &:hover {
     background-color: $color-gray-200;
   }
 }
-
-
-

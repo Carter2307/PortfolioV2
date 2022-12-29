@@ -1,6 +1,7 @@
 import Pages from '../../classes/Pages'
 import Slider from '../../components/slider/Slider'
 import Services from '../../components/Services'
+import FormHandler from '../../config/forms'
 
 export default class Home extends Pages {
   constructor() {
@@ -9,8 +10,8 @@ export default class Home extends Pages {
 
   create() {
     super.create()
-    this.slider = new Slider()
-    this.services = new Services()
+    new Slider()
+    new Services()
+    new FormHandler('modal', 'projects/usersProjects', 'POST')
   }
-
 }

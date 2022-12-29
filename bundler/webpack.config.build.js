@@ -1,13 +1,13 @@
-const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
-const { merge } = require('webpack-merge')
-const config = require('./webpack.config')
+import { resolve } from 'path'
+import TerserPlugin from 'terser-webpack-plugin'
+import { merge } from 'webpack-merge'
+import config from './webpack.config'
 
-module.exports = merge(config, {
+export const conf = merge(config, {
   mode: 'production',
 
   output: {
-    path: path.resolve(__dirname, '../public/'),
+    path: resolve(__dirname, '../public/'),
     clean: true,
   },
 

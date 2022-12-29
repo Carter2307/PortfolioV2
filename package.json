@@ -37,6 +37,7 @@
     "postcss": "^8.4.14",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.4.3",
+    "resize-observer": "^1.0.4",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "terser-webpack-plugin": "^5.3.6",

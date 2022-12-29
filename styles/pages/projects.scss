@@ -82,7 +82,11 @@
 .project__grids {
   display: grid;
   gap: rem(16px);
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+
+  @include breakpoints('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .projects__grids__item {
@@ -90,11 +94,15 @@
   overflow: hidden;
   background-color: rgba($color: $color-white, $alpha: 0.16);
   border-radius: rem(8px);
-  min-height: rem(330px);
+  min-height: rem(380px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: rem(8px);
+
+  @include breakpoints('sm') {
+    min-height: rem(600px);
+  }
 
   &:hover {
     .projects__grids__item__detail {

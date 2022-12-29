@@ -20,7 +20,7 @@ section.connect
        label.form__group__label(for="message") Message
        textarea.form__group__input#message(name="message" required)
        span.input__alert-message.input__alert
-     +button('/contact', 'Let connect')(class='button button__primary button-bg')
+     +Button('Let connect', 'submit')(class='button button__primary button-bg')
       include svg/arrow-2-right.svg
 
  include footer

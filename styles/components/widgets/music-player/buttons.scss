@@ -11,17 +11,17 @@
 }
 
 .player__button {
-  all : unset;
+  all: unset;
   cursor: pointer;
   padding: rem(8px) rem(16px);
   text-transform: capitalize;
 
   border-radius: rem(12px);
-  border: 1px solid rgba($color-white, .25);
+  border: 1px solid rgba($color-white, 0.25);
 
   @include flex-between;
   @include text-xs;
   @include space-x(8px);
 
-  @include support-blur(30px, $color-white, .05)
+  @include support-blur(30px, $color-black, 0.35);
 }

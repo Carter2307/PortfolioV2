@@ -17,7 +17,7 @@ app.use(
   webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
   })
-);
+)
 
 // Use .env file to store password or key api
 require('dotenv').config()
@@ -34,19 +34,13 @@ app.use(express.static(path.join(__dirname, '/public')))
 app.get('/', (req, res) => {
   const datas = projectsData.filter((items) => projectsData.indexOf(items) <= 2)
   res.render('pages/home', {
-    datas
+    datas,
   })
 })
 
 app.get('/about', (req, res) => {
   res.render('pages/about')
 })
-
-/* app.get('/projects', (req, res) => {
-  res.render('pages/projects', {
-    data
-  })
-}) */
 
 // MIDDLEWARE
 app.use('/connect', require('./Routes/Users'))
@@ -64,14 +58,17 @@ const uri = process.env.MONGODB_URI
 const ops = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  dbName: 'portfolioDB'
+  dbName: 'portfolioDB',
 }
 
-mongoose.connect(uri, ops).then(() => {
-  console.log('Succefully connect to the database')
-}).catch(error => {
-  console.log(error)
-})
+mongoose
+  .connect(uri, ops)
+  .then(() => {
+    console.log('Succefully connect to the database')
+  })
+  .catch((error) => {
+    console.log(error)
+  })
 
 // Start Server
 app.listen(port, () => {

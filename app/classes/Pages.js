@@ -4,10 +4,30 @@ import GSAP from 'gsap'
 import { $ } from '../utils/selectors'
 import Title from '../animation/Title'
 import Paragraph from '../animation/Paragraph'
+import { ResizeObserver } from 'resize-observer'
 export default class Pages {
   constructor(elements) {
     this.element = elements
     this.animateOut = GSAP.timeline()
+
+    window.onload = () => {
+      const initialHeight = $('.wrapper').getBoundingClientRect().height
+      //https://github.com/devrelm/resize-observer
+      const resize = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+          const currentHeight = entry.contentRect.height
+          if (
+            currentHeight - initialHeight > 300 ||
+            initialHeight - currentHeight > 300
+          ) {
+            console.log(this)
+            this.onElementResize()
+          }
+        }
+        //this.onElementResize()
+      })
+      resize.observe($('.wrapper'))
+    }
   }
 
   create() {
@@ -20,13 +40,17 @@ export default class Pages {
       document.body.style.overflow = 'visible'
       document.body.style.position = 'relative'
     } else {
-      window.setTimeout(() => {
-        this.smootscroll = new Smoothscroll($('.wrapper'), {
-          direction: 'v',
-          smooth: 0.2,
-        })
-      }, 300)
+      this.onElementResize()
     }
+  }
+
+  onElementResize() {
+    window.setTimeout(() => {
+      this.smootscroll = new Smoothscroll($('.wrapper'), {
+        direction: 'v',
+        smooth: 0.2,
+      })
+    }, 300)
   }
 
   createAnimation() {

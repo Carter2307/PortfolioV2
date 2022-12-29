@@ -5,6 +5,12 @@ mixin button(href, text, bool)
       if block
         block
 
+mixin Button(text, type)
+  button(class!=attributes.class type=type)
+    span.button__wrapper__flex
+      | #{text}
+      if block
+        block
 
 mixin button-icon(href, text)
   a.button.button-primary.button-bg.mobile-only(href=href)

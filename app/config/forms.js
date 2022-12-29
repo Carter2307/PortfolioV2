@@ -3,7 +3,7 @@ import Alert from '../components/Alert'
 import { validEmail } from '../utils/function'
 
 export default class FormHandler extends Components {
-  constructor (type, url, method) {
+  constructor(type, url, method) {
     super('form')
     this.formType = type
     this.method = method
@@ -13,17 +13,17 @@ export default class FormHandler extends Components {
     this.init()
   }
 
-  init () {
+  init() {
     this.eventListener()
   }
 
   // SendToDb () {}
 
-  async fetch (url, method, data) {
+  async fetch(url, method, data) {
     const options = {
       method,
       mode: 'no-cors',
-      body: data
+      body: data,
     }
     const res = await fetch(url, options)
     if (res.status === 200) {
@@ -42,16 +42,23 @@ export default class FormHandler extends Components {
     }
   }
 
-  sendData (e) {
+  sendData(e) {
+    console.log(this.elements)
     e.preventDefault()
-    const validNumber = this.verifyData(this.elements.mail, this.elements.name, this.elements.message)
+    const validNumber = this.verifyData(
+      this.elements.mail,
+      this.elements.name,
+      this.elements.message
+    )
     if (!validNumber) return
-    this.elements.alert.forEach(el => { el.innerText = '' })
+    this.elements.alert.forEach((el) => {
+      el.innerText = ''
+    })
     const formElements = new URLSearchParams(new FormData(this.elements.form))
     this.fetch(this.url, this.method, formElements)
   }
 
-  verifyData (mail, name, message) {
+  verifyData(mail, name, message) {
     this.val = 0
     // email
     if (validEmail(mail.value)) {
@@ -65,17 +72,21 @@ export default class FormHandler extends Components {
     // name
     if (name.value === '') {
       this.elements.nameAlert.innerText = 'Required*'
-    } else { this.val++ }
+    } else {
+      this.val++
+    }
 
     // message
     if (message.value === '') {
       this.elements.messageAlert.innerText = 'Required*'
-    } else { this.val++ }
+    } else {
+      this.val++
+    }
 
     return this.val === 3
   }
 
-  eventListener () {
+  eventListener() {
     this.elements.button.addEventListener('click', this.sendData.bind(this))
   }
 }

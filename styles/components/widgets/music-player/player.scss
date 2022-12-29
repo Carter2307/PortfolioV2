@@ -17,13 +17,12 @@
   }
 
   &.isHidden {
-    @include v-hidden
+    @include v-hidden;
   }
 
   &.isVisible {
-    @include v-visible
+    @include v-visible;
   }
-
 }
 
 .player__body {
@@ -52,7 +51,7 @@
   display: grid;
   grid-gap: rem(8px);
 
-  @include support-blur(30px, $color-white, .05);
+  @include support-blur(30px, $color-white, 0.05);
 
   @include breakpoints('md') {
     max-width: rem(300px);
@@ -60,11 +59,11 @@
 }
 
 .player__cover {
-  background-color: rgba($color-white, .1);
+  background-color: rgba($color-white, 0.1);
   border-radius: rem(8px);
   overflow: hidden;
   object-fit: cover;
-  transition: height .5s ease;
+  transition: height 0.5s ease;
   height: rem(180px);
 
   img {
@@ -76,10 +75,10 @@
 .player__detail {
   display: grid;
   grid-gap: rem(0px);
-  opacity: .7;
+  opacity: 0.7;
 
-  &__name  {
-   @include text-base;
+  &__name {
+    @include text-base;
   }
 
   &__title {

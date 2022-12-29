@@ -1,18 +1,18 @@
 import { $ } from '../utils/selectors'
 
 export default class Alert {
-  constructor (message, type) {
+  constructor(message, type) {
     this.message = message
     this.type = type
     this.init()
   }
 
-  init () {
+  init() {
     this.create()
     this.self = $('.alert')
   }
 
-  create () {
+  create() {
     this.div = document.createElement('DIV')
     this.div.className = 'alert'
     if (this.type === 'success') this.div.classList.add('alert__success')
@@ -44,25 +44,25 @@ export default class Alert {
     this.self = this.div
     this.hide()
 
-    function createElement (tag, className) {
+    function createElement(tag, className) {
       const element = document.createElement(tag)
       element.className = className
       return element
     }
   }
 
-  show () {
+  show() {
     setTimeout(() => {
       this.self.style.right = '.5rem'
     }, 1000)
   }
 
-  hide () {
+  hide() {
     this.self.style.right = '-100%'
     this.self.transition = 'right .6s'
   }
 
-  destroy () {
+  destroy() {
     document.body.removeChild(this.div)
   }
 }

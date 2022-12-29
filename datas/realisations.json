@@ -1,0 +1,66 @@
+{
+  "website": [],
+  "logos": [
+    {
+      "title": "Smile Cake",
+      "imgUrl": "images/logos/smile-cake.png",
+      "url": "#"
+    },
+    {
+      "title": "Code designer",
+      "imgUrl": "images/logos/code-designer.png",
+      "url": "#"
+    },
+    {
+      "title": "Tara Pro",
+      "imgUrl": "images/logos/tara-pro.png",
+      "url": "#"
+    },
+    {
+      "title": "Twistt ",
+      "imgUrl": "images/logos/twistt-1.png",
+      "url": "#"
+    },
+    {
+      "title": "Home Market",
+      "imgUrl": "images/logos/home-market.png",
+      "url": "#"
+    },
+    {
+      "title": "Vélo Fine",
+      "imgUrl": "images/logos/velo-fine.png",
+      "url": "#"
+    },
+    {
+      "title": "SH Building",
+      "imgUrl": "images/logos/sh-building.png",
+      "url": "#"
+    },
+    {
+      "title": "Twistt ",
+      "imgUrl": "images/logos/twistt-2.png",
+      "url": "#"
+    },
+    {
+      "title": "Féminine Charm",
+      "imgUrl": "images/logos/feminine-charm-1.png",
+      "url": "#"
+    },
+    {
+      "title": "Féminine Charm",
+      "imgUrl": "images/logos/feminine-charm-2.png",
+      "url": "#"
+    },
+    {
+      "title": "Book ShARING ",
+      "imgUrl": "images/logos/book-sharing.png",
+      "url": "#"
+    },
+    {
+      "title": "Herman D'Aquin ",
+      "imgUrl": "images/logos/hd-2.png",
+      "url": "#"
+    }
+  ],
+  "design": []
+}

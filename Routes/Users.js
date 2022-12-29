@@ -11,21 +11,25 @@ router.post('/', (req, res) => {
   if (name === '' || email === '' || message === '') return
 
   const user = new Users({
-    name, email, message, createAt: Date.now()
+    name,
+    email,
+    message,
+    createAt: Date.now(),
   })
 
-  user.save()
+  user
+    .save()
     .then(() => {
       res.send({
         text: 'Merci mon amie',
-        type: 'success'
+        type: 'success',
       })
       res.status(200).end()
     })
-    .catch(error => {
+    .catch((error) => {
       res.send({
-        text: 'Une erreur c\'est produite:' + error,
-        classes: 'error'
+        text: "Une erreur c'est produite:" + error,
+        classes: 'error',
       })
     })
 })
