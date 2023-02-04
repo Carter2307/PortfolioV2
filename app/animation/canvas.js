@@ -3,45 +3,46 @@ import { $ } from '../utils/selectors'
 import Shapes from './Shapes'
 
 export default class Canvas extends Components {
-  constructor () {
+  constructor() {
     super()
     this.isMounted = false
-    this.shapeGradient = '#066D5B'
+    this.shapeGradient = '#00FF47'
     this.init()
   }
 
-  init () {
+  init() {
     this.mountFrame()
     if (!this.isMounted) return
     const shape1 = new Shapes({
       position: {
-        top: -1,
+        top: -100,
         right: -1,
         left: -100,
-        bottom: -100
+        bottom: -1,
       },
-      height: [400, 500, 600],
-      width: [400, 500, 600],
-      blur: [50, 100] ,
-      background: this.shapeGradient
+
+      height: [280, 380, 480],
+      width: [280, 380, 480],
+      blur: [200, 300],
+      background: this.shapeGradient,
     })
     const shape2 = new Shapes({
       position: {
-        top: -200,
+        top: -1,
         right: -100,
         left: -1,
-        bottom: -1
+        bottom: -100,
       },
-      height: [400, 500, 600],
-      width: [400, 500, 600],
-      blur: [50, 100],
-      background: this.shapeGradient
+      height: [280, 380, 480],
+      width: [280, 380, 480],
+      blur: [200, 300],
+      background: this.shapeGradient,
     })
     shape1.mountShape($('#frame'))
     shape2.mountShape($('#frame'))
   }
 
-  createFrame () {
+  createFrame() {
     this.frame = document.createElement('DIV')
     this.frame.className = 'frame'
     this.frame.style.position = 'fixed'
@@ -53,21 +54,21 @@ export default class Canvas extends Components {
     this.frame.id = 'frame'
   }
 
-  mountFrame () {
+  mountFrame() {
     this.createFrame()
     document.body.append(this.frame)
     this.eventListener()
     this.isMounted = true
   }
 
-  onResize (e) {
+  onResize(e) {
     e.preventDefault()
     this.mountedFrame = $('#frame')
     this.mountedFrame.style.width = `${window.innerWidth}px`
     this.mountedFrame.style.height = `${window.innerHeight}px`
   }
 
-  eventListener () {
+  eventListener() {
     window.addEventListener('resize', this.onResize.bind(this))
   }
 }

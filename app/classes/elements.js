@@ -91,4 +91,8 @@ export default {
     titles: "[data-animation='title']",
     paragraphes: "[data-animation='paragraph']",
   },
+  project: {
+    titles: "[data-animation='title']",
+    paragraphes: "[data-animation='paragraph']",
+  },
 }

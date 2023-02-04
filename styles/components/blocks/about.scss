@@ -1,19 +1,19 @@
 .about {
-  @include container
+  @include container;
 }
 
 .about__wrappper {
   @include space-y(32px);
 }
 
-.about__title  {
-  @extend %title
+.about__title {
+  @extend %title;
 }
 
 .about__content {
   @include space-y(32px);
   border-radius: rem(16px);
-  background-color: rgba($color-white, .05);
+  background-color: rgba($color-white, 0.05);
   padding: rem(24px);
 
   @include breakpoints('sm') {
@@ -24,7 +24,6 @@
     display: flex;
     align-items: center;
     @include space-y(0px);
-
   }
 }
 .about__description {
@@ -35,25 +34,25 @@
   }
 }
 
-.about__description__number  {
+.about__description__number {
   font-family: $font-rische;
   @include text-2xl;
   font-weight: bold;
 
   @include breakpoints('md') {
-    @include text-3xl
+    @include text-3xl;
   }
 
   @include breakpoints('lg') {
-    @include text-4xl
+    @include text-4xl;
   }
 
   @include breakpoints('xlg') {
-    @include text-5xl
+    @include text-5xl;
   }
 }
-.about__description__title   {
-  @extend .about__description__number
+.about__description__title {
+  @extend .about__description__number;
 }
 
 .about__description__text {

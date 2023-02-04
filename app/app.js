@@ -84,7 +84,7 @@ class App {
       this.page.show()
       new Smoothscroll($('.wrapper'), {
         direction: 'v',
-        smooth: 0.2,
+        smooth: 0.1,
       })
     } else {
       console.error('error: ' + res)

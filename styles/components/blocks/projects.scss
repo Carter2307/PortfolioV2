@@ -1,4 +1,3 @@
-
 .projects__wrapper {
   @include space-y(32px);
 }
@@ -18,7 +17,7 @@
   flex-direction: column;
   @include space-y(24px);
   border-radius: rem(24px);
-  background-color: rgba($color: $color-white, $alpha: .05);
+  background-color: rgba($color: $color-white, $alpha: 0.05);
   padding: rem(24px);
 
   @include breakpoints('sm') {
@@ -51,7 +50,7 @@
   @include space-y(16px);
 
   @include breakpoints('md') {
-    @include space-y(24px)
+    @include space-y(24px);
   }
 
   @include breakpoints('lg') {
@@ -84,7 +83,7 @@
   }
 }
 
-.project__items__description__title  {
+.project__items__description__title {
   @include text-5xl;
   font-weight: 600;
   font-family: $font-rische;
@@ -96,7 +95,6 @@
   @include breakpoints('2xlg') {
     @include text-8xl;
   }
-
 }
 .project__items__description__detail {
   @include text-sm;
@@ -114,7 +112,7 @@
   @include support-ratio(1.4, 1);
   width: 100%;
   border-radius: rem(16px);
-  background-color: rgba($color: $color-white, $alpha: .2);
+  background-color: rgba($color: $color-white, $alpha: 0.2);
   padding: rem(8px);
 
   img {
@@ -123,8 +121,4 @@
     height: 100%;
     object-fit: cover;
   }
-
-
-
-
 }

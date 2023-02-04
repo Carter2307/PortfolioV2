@@ -24,7 +24,7 @@ export default class Pages {
             this.onElementResize()
           }
         }
-        //this.onElementResize()
+        this.onElementResize()
       })
       resize.observe($('.wrapper'))
     }
@@ -48,7 +48,7 @@ export default class Pages {
     window.setTimeout(() => {
       this.smootscroll = new Smoothscroll($('.wrapper'), {
         direction: 'v',
-        smooth: 0.2,
+        smooth: 0.1,
       })
     }, 300)
   }
@@ -69,7 +69,7 @@ export default class Pages {
     this.createAnimation()
 
     this.animateOut.to($('.wrapper'), {
-      duration: 3,
+      duration: 2,
       ease: 'power1.out',
       autoAlpha: 1,
       onComplete: () => {

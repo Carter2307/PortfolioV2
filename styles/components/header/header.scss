@@ -20,7 +20,7 @@
   border: 1px solid rgba($color: $color-white, $alpha: 0.1);
   border-radius: rem(18px);
   background-color: rgba($color: $color-primary-black, $alpha: 0.8);
-  @include support-blur(100px, $color-black, 0.35);
+  @include support-blur(100px, $color-black, 0.08);
   @include flex-between;
   align-items: center;
 

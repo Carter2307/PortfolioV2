@@ -33,7 +33,7 @@ export default class Paragraph extends Animation {
     })
 
     GSAP.set(this.spans, {
-      delay: .6,
+      delay: 0.6,
       duration: 1.6,
       opacity: 0,
       ease: 'expo.inOut',

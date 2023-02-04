@@ -2,7 +2,7 @@ import Animation from '../classes/Animation'
 import splittext from '../utils/splittext'
 import GSAP from 'gsap'
 
-export default class Title extends Animation{
+export default class Title extends Animation {
   constructor(element) {
     super(element)
     this.element = element
@@ -18,9 +18,9 @@ export default class Title extends Animation{
     })
 
     GSAP.to(this.spans, {
-      delay: .5,
+      delay: 0.5,
       duration: 1.6,
-      stagger: 0.2,
+      stagger: 0.3,
       ease: 'expo.inOut',
       y: '0%',
       opacity: 1,
@@ -34,7 +34,7 @@ export default class Title extends Animation{
 
     GSAP.set(this.spans, {
       delay: 0,
-      duration: 1.6,
+      duration: 1,
       opacity: 0,
       ease: 'expo.inOut',
       stagger: 0.1,
@@ -42,4 +42,3 @@ export default class Title extends Animation{
     })
   }
 }
-

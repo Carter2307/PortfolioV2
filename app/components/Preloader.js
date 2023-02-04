@@ -12,14 +12,14 @@ export default class Preloader extends Components {
     this.size = {
       height: Number(this.elements.text[0].getBoundingClientRect().height),
       width: Number(this.elements.wrapper.clientWidth),
-      gap: 2
+      gap: 2,
     }
 
     this.createPreloader()
     this.addEventListener()
   }
 
-  createPreloader () {
+  createPreloader() {
     if (this.root.images) {
       const imgLoad = imagesLoaded(document.body)
 
@@ -28,7 +28,10 @@ export default class Preloader extends Components {
       })
 
       imgLoad.on('always', () => {
-        this.onLoad()
+        setTimeout(() => {
+          this.onLoad()
+        }, 5000)
+        //this.onLoad()
       })
     }
   }
@@ -43,13 +46,15 @@ export default class Preloader extends Components {
 
     window.setInterval(() => {
       if (this.startIndex < length) {
-        this.elements.wrapper.style.top = `${(-this.size.height - this.size.gap) * this.startIndex}px`
+        this.elements.wrapper.style.top = `${
+          (-this.size.height - this.size.gap) * this.startIndex
+        }px`
         this.startIndex++
       }
     }, 1000)
   }
 
-  onProgress (length) {
+  onProgress(length) {
     this.length += 1
     const percent = this.length / length
 
@@ -62,9 +67,9 @@ export default class Preloader extends Components {
 
   onResize(e) {
     this.size = {
-      height :  Number(this.elements.text[0].getBoundingClientRect().height),
-      width :  Number(this.elements.wrapper.clientWidth),
-      gap : 2
+      height: Number(this.elements.text[0].getBoundingClientRect().height),
+      width: Number(this.elements.wrapper.clientWidth),
+      gap: 2,
     }
     this.animPreloaderText(e)
   }

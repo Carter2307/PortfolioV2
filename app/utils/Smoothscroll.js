@@ -53,7 +53,7 @@ export default class Smoothscroll {
 
   addListener() {
     window.addEventListener('wheel', this.onMouseWheel.bind(this))
-     window.addEventListener('resize', this.onResize.bind(this))
+    window.addEventListener('resize', this.onResize.bind(this))
   }
 
   update() {
