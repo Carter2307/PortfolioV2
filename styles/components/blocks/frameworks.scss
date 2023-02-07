@@ -112,13 +112,25 @@
 }
 
 .tools__frameworks__icons__content__list {
-  @include flex-between;
+  //@include flex-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(8px);
+  justify-items: center;
   border-radius: rem(24px);
   padding: rem(8px);
   background-color: rgba($color: $color-white, $alpha: 0.1);
   border: 0.5px solid rgba($color: $color-black, $alpha: 0.1);
   box-shadow: $shadow-200;
-  @include space-x(8px);
+}
+.tools__frameworks__icons__content__list__tools {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @include space-x(0px);
+
+  @include breakpoints('md') {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .tools__frameworks__icons__items {
@@ -133,11 +145,16 @@
   overflow: hidden;
   padding: rem(4px);
   flex: none;
+  height: 100%;
+  width: 100%;
 
   &__small {
     flex: auto;
     height: 100%;
     width: 100%;
+    svg {
+      border-radius: 0px;
+    }
   }
 
   svg {
