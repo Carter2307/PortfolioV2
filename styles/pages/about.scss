@@ -103,8 +103,8 @@
   @include space-y(32px);
 
   @include breakpoints('lg') {
-    padding-top: rem(128px);
-    padding-bottom: rem(128px);
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
 
     max-width: rem(720px);
     margin: 0 auto !important;

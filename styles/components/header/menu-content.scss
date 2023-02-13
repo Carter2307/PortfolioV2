@@ -93,10 +93,10 @@
     &::after {
       width: 100%;
     }
-
   }
 
-  &::after, &-active::after {
+  &::after,
+  &-active::after {
     content: '';
     position: absolute;
     left: 0;
@@ -109,19 +109,19 @@
 }
 
 .menu__links__item.menu__links__item-active {
-   .menu__links__item__link {
-      color: $color-white;
-    }
+  .menu__links__item__link {
+    color: $color-white;
+  }
 
-    &::after {
-      width: 100%;
-    }
+  &::after {
+    width: 100%;
+  }
 }
 
 .menu__links__item__link {
-  @include text-lg;
+  @include text-base;
   font-weight: 600;
-  color: rgba($color: $color-white, $alpha: 0.5);
+  color: rgba($color: $color-white, $alpha: 0.7);
 }
 
 .menu__links__item__link[data-links-disabled='true'] {

@@ -19,8 +19,9 @@
   padding: rem(8px) rem(12px);
   border: 1px solid rgba($color: $color-white, $alpha: 0.1);
   border-radius: rem(18px);
-  background-color: rgba($color: $color-primary-black, $alpha: 0.8);
-  @include support-blur(100px, $color-black, 0.08);
+  background-color: rgba($color: $color-primary-black, $alpha: 0.08);
+  box-shadow: 4px 8px 24px rgba($color: $color-black, $alpha: 0.1);
+  @include support-blur(100px, $color-white, 0.08);
   @include flex-between;
   align-items: center;
 

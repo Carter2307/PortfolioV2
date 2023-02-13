@@ -1,4 +1,4 @@
-import {clamp} from '../../../utils/function'
+import { clamp } from '../../../utils/function'
 
 export default class Volume {
   constructor(container, grapper, slider, media) {
@@ -27,11 +27,14 @@ export default class Volume {
 
   onPointerMove(e) {
     e.preventDefault()
-    if (!this.isDown && !this.isOutOfVolumeView(this.container))  return
-    this.ratio = (this.containerHeight - (e.pageY - this.containerTop))
-    this.slider.style.height = `${clamp(((this.ratio / this.containerHeight) * 100), 0, 100)}%`
+    if (!this.isDown && !this.isOutOfVolumeView(this.container)) return
+    this.ratio = this.containerHeight - (e.pageY - this.containerTop)
+    this.slider.style.height = `${clamp(
+      (this.ratio / this.containerHeight) * 100,
+      0,
+      100
+    )}%`
     this.media.volume = clamp(this.ratio / this.containerHeight, 0, 1)
-
   }
 
   onPointerUp() {

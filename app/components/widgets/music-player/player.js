@@ -28,18 +28,26 @@ export default class Player extends Components {
 
   expand() {
     if (this.root.player.coverContainer.classList.contains('isExpand')) {
-      this.root.player.button.expand.querySelector('span').textContent = 'Expand'
+      this.root.player.button.expand.querySelector('span').textContent =
+        'Expand'
       this.root.player.coverContainer.classList.remove('isExpand')
       this.root.player.coverContainer.style.height = '0px'
     } else {
       this.root.player.coverContainer.classList.add('isExpand')
-      this.root.player.button.expand.querySelector('span').textContent ='Reduce'
+      this.root.player.button.expand.querySelector('span').textContent =
+        'Reduce'
       this.root.player.coverContainer.style.height = '180px'
     }
   }
 
   close() {
     this.elements.self.classList.add('isHidden')
+    this.elements.button.toggler.style.display = 'flex'
+  }
+
+  show() {
+    this.elements.self.classList.remove('isHidden')
+    this.elements.button.toggler.style.display = 'none'
   }
 
   componentsHandler(id) {
@@ -140,5 +148,6 @@ export default class Player extends Components {
     this.elements.button.play.addEventListener('click', this.play.bind(this))
     this.elements.button.next.addEventListener('click', this.next.bind(this))
     this.elements.button.prev.addEventListener('click', this.prev.bind(this))
+    this.elements.button.toggler.addEventListener('click', this.show.bind(this))
   }
 }

@@ -1,12 +1,12 @@
 import Components from '../../classes/Components'
 
 export default class Slider extends Components {
-  constructor () {
+  constructor() {
     super('slider')
     this.init()
   }
 
-  init () {
+  init() {
     if (!this.elements.items) return
 
     this.child = [...this.elements.items.children]
@@ -16,39 +16,42 @@ export default class Slider extends Components {
     this.treshold = 0
     this.dragIntervall = 80
 
-
     this.setChildWidth()
     this.setPosition()
     this.eventListener()
   }
 
-  setChildWidth () {
-    this.child.forEach(item => {
+  setChildWidth() {
+    this.child.forEach((item) => {
       item.style.flex = 'none'
-      item.style.width = `${window.innerWidth * 0.80}px`
+      item.style.width = `${window.innerWidth * 0.8}px`
     })
   }
 
-  setPosition () {
+  setPosition() {
     this.width = this.elements.items.getBoundingClientRect().width
-    this.currentPosition = -(((this.width - window.innerWidth - 24) / 2)) * this.index
+    this.currentPosition =
+      -((this.width - window.innerWidth - 24) / 2) * this.index
     this.elements.items.style.transform = `translate3D(${this.currentPosition}px, 0, 0)`
     return this.currentPosition
   }
 
-  next () {
+  next() {
     if (this.index >= this.child.length - 1) return
     this.index++
     if (this.index === 2) {
       this.width = this.elements.items.getBoundingClientRect().width
-      this.currentPosition = -(((this.width - window.innerWidth) / 2)) * this.index
-      this.elements.items.style.transform = `translate3D(${this.currentPosition - this.padding}px, 0, 0)`
+      this.currentPosition =
+        -((this.width - window.innerWidth) / 2) * this.index
+      this.elements.items.style.transform = `translate3D(${
+        this.currentPosition - this.padding
+      }px, 0, 0)`
     } else {
       this.setPosition()
     }
   }
 
-  prev () {
+  prev() {
     if (this.index <= 0) {
       this.index = 0
       return
@@ -56,30 +59,35 @@ export default class Slider extends Components {
     this.index--
     if (this.index === 0) {
       this.width = this.elements.items.getBoundingClientRect().width
-      this.currentPosition = -(((this.width - window.innerWidth - 24) / 2)) * this.index
+      this.currentPosition =
+        -((this.width - window.innerWidth - 24) / 2) * this.index
       this.elements.items.style.transform = `translate3D(${this.padding}px, 0, 0)`
     } else {
       this.setPosition()
     }
   }
 
-  onMouseDown (e) {
+  onMouseDown(e) {
     e.preventDefault()
+    this.elements.wrapper.style.cursor = 'grabbing'
+
     this.isDown = true
     this.dragStart = e.x
     this.dragStarty = e.y
   }
 
-  onMouseMove (e) {
+  onMouseMove(e) {
     e.preventDefault()
     if (!this.isDown) return
     this.treshold = e.x - this.dragStart
-    this.elements.items.style.transform = `translate3D(${this.currentPosition + this.treshold}px, 0, 0)`
+    this.elements.items.style.transform = `translate3D(${
+      this.currentPosition + this.treshold
+    }px, 0, 0)`
   }
 
-  onMouseUp (e) {
+  onMouseUp(e) {
     e.preventDefault()
-
+    this.elements.wrapper.style.cursor = 'grab'
     if (this.treshold > 0 && this.treshold >= this.dragIntervall) {
       this.prev()
       console.log('prev')
@@ -93,19 +101,25 @@ export default class Slider extends Components {
     this.isDown = false
   }
 
-  onWindowResize (e) {
+  onWindowResize(e) {
     e.preventDefault()
     this.setChildWidth()
     this.setPosition()
   }
 
-  eventListener () {
+  eventListener() {
     this.elements.button.next.addEventListener('click', this.next.bind(this))
     this.elements.button.prev.addEventListener('click', this.prev.bind(this))
 
-    this.elements.wrapper.addEventListener('pointerdown', this.onMouseDown.bind(this))
-    this.elements.wrapper.addEventListener('pointermove', this.onMouseMove.bind(this))
-    this.elements.wrapper.addEventListener('pointerup', this.onMouseUp.bind(this))
+    this.elements.wrapper.addEventListener(
+      'mousedown',
+      this.onMouseDown.bind(this)
+    )
+    this.elements.wrapper.addEventListener(
+      'mouseover',
+      this.onMouseMove.bind(this)
+    )
+    this.elements.wrapper.addEventListener('mouseup', this.onMouseUp.bind(this))
 
     addEventListener('resize', this.onWindowResize.bind(this))
   }

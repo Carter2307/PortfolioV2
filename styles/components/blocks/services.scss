@@ -153,6 +153,14 @@
   border-radius: rem(8px);
   background-color: rgba($color-white, 0.15);
   @include flex-center;
+  padding: rem(12px);
+
+  svg {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    opacity: 0.7;
+  }
 }
 
 .services__list__items__desc {

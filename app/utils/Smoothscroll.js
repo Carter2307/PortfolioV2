@@ -5,9 +5,11 @@ export default class Smoothscroll {
   __defaultOptions = {
     direction: 'v', // v: vertical or  v- : vertical bottom to top;  h: Horizontal or h- horizontal right to left
     smooth: 0.1, // Smooth amount -> Lerp function
+    startedPoint: 0,
   }
   constructor(element, opts) {
     this.element = element
+    this.__defaultOptions.startedPoint = opts.startedPoint || 0
     this.smoothOptions = Object.assign(this.__defaultOptions, {
       ...opts,
     })

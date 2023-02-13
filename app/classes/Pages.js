@@ -5,10 +5,22 @@ import { $ } from '../utils/selectors'
 import Title from '../animation/Title'
 import Paragraph from '../animation/Paragraph'
 import { ResizeObserver } from 'resize-observer'
+import { Scale } from './../animation/Scale'
+
 export default class Pages {
   constructor(elements) {
     this.element = elements
     this.animateOut = GSAP.timeline()
+    this.device = {
+      mobile: /mobile/i.test(navigator.userAgent),
+      tablet: !/ipad|tablet/i.test(navigator.userAgent),
+    }
+
+    this.init()
+  }
+
+  init() {
+    this.scaleAnimation = new Scale("[data-animation='scale']")
 
     window.onload = () => {
       const initialHeight = $('.wrapper').getBoundingClientRect().height
@@ -25,16 +37,17 @@ export default class Pages {
           }
         }
         this.onElementResize()
+        console.log(this)
       })
       resize.observe($('.wrapper'))
     }
   }
 
   create() {
-    this.device = {
-      mobile: /mobile/i.test(navigator.userAgent),
-      tablet: !/ipad|tablet/i.test(navigator.userAgent),
-    }
+    new Smoothscroll($('.wrapper'), {
+      direction: 'v',
+      smooth: 0.1,
+    })
 
     if (this.device.mobile && this.device.tablet) {
       document.body.style.overflow = 'visible'
@@ -79,6 +92,8 @@ export default class Pages {
   }
 
   hide() {
+    console.log('hidden current page')
+
     this.animateOut.to($('.wrapper'), {
       duration: 1,
       ease: 'power1.in',

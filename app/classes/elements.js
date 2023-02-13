@@ -21,6 +21,7 @@ export default {
       play: "[data-icon='rob-play']",
       next: "[data-icon='rob-forward']",
       prev: "[data-icon='rob-backward']",
+      toggler: '.player__cta',
     },
     coverContainer: '.player__cover',
     cover: '.player__cover img',

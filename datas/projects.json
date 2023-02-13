@@ -1,26 +1,30 @@
 [
   {
-    "title" : "Collectio",
+    "title": "HiddenCode",
     "description": "Hey i’m roger bentcha i help small company and people to communicate with thiers customers. I turn thier idea in creative design and code",
-    "link" : "href",
-    "image" : "path-to-projet-image-link"
+    "link": "https://www.hiddencode.fr",
+    "image": "/images/hiddencode.png",
+    "role": ["Frontend dev", "UI designer"]
   },
   {
-    "title" : "Greendy",
+    "title": "Incub",
     "description": "Hey i’m roger bentcha i help small company and people to communicate with thiers customers. I turn thier idea in creative design and code",
-    "link" : "href",
-    "image" : "path-to-projet-image-link"
+    "link": "https://incub-server.onrender.com",
+    "image": "images/incub.png",
+    "role": ["Frontend dev", "UI designer", "Backend dev"]
   },
   {
-    "title" : "Hidden code",
+    "title": "Afroteats",
     "description": "Hey i’m roger bentcha i help small company and people to communicate with thiers customers. I turn thier idea in creative design and code",
-    "link" : "href",
-    "image" : "path-to-projet-image-link"
+    "link": "https://incub-server.onrender.com",
+    "image": "images/afroeats.png",
+    "role": ["UI designer"]
   },
   {
-    "title": "sfdfsd code",
+    "title": "Greendy",
     "description": "Hey i’m roger bentcha i help small company and people to communicate with thiers customers. I turn thier idea in creative design and code",
-    "link": "href",
-    "image": "path-to-projet-image-link"
+    "link": "https://greendy-landing-page.vercel.app",
+    "image": "images/greendy.png",
+    "role": ["Frontend dev"]
   }
 ]

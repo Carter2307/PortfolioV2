@@ -43,9 +43,9 @@ export default class Navigation extends Components {
   }
 
   eventsListener() {
-    this.root.navigation.navList.forEach((link) => {
+    /*this.root.navigation.navList.forEach((link) => {
       link.addEventListener('mouseover', this.onMouseHoverLinks.bind(this))
-    })
+    })*/
 
     this.root.navigation.openMenu.addEventListener(
       'click',

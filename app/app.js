@@ -17,6 +17,7 @@ class App {
     this.initNavigation()
     this.init()
     this.getContent()
+    this.observer($('.wrapper'))
   }
 
   init() {
@@ -62,6 +63,20 @@ class App {
     this.formHandler = new FormHandler('connect', 'connect', 'POST')
   }
 
+  observer(element) {
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        console.log(entry)
+        new Smoothscroll($('.wrapper'), {
+          direction: 'v',
+          smooth: 0.1,
+        })
+      }
+    })
+
+    observer.observe(element)
+  }
+
   async onChange({ url }) {
     await this.page.hide()
 
@@ -79,13 +94,8 @@ class App {
       this.template = divContent.getAttribute('data-template')
       this.content.innerHTML = divContent.innerHTML
       this.page = this.pages[this.template]
-
       this.page.create()
       this.page.show()
-      new Smoothscroll($('.wrapper'), {
-        direction: 'v',
-        smooth: 0.1,
-      })
     } else {
       console.error('error: ' + res)
     }

@@ -87,3 +87,28 @@
     text-transform: uppercase;
   }
 }
+
+.player__cta {
+  height: rem(64px);
+  width: rem(64px);
+  border-radius: rem(64px);
+  @include support-blur(100px, $color-white, 0.1);
+  outline: none;
+  border: none;
+  @include flex-center;
+  position: absolute;
+  right: rem(32px);
+  bottom: rem(32px);
+  padding: rem(8px);
+  cursor: pointer;
+  z-index: z('player-cta');
+  display: none;
+  box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.08);
+
+  &__icon {
+    color: rgba($color-white, 0.8);
+    display: inline-block;
+    height: rem(24px);
+    width: rem(24px);
+  }
+}

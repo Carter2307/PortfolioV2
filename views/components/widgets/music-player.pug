@@ -1,55 +1,59 @@
 .player
-  .player__audio
-    audio.player__media(src="")
-  .player__body
-    .player__button__wrapper
-      button.player__button.expand
-        span Reduce
-        i.rob-maximize-circle
-      button.player__button.close
-        span close
-        i.rob-close
+   .player__audio
+      audio.player__media(src="")
+   .player__body
+      .player__button__wrapper
+         button.player__button.expand
+            span Reduce
+            i.rob-maximize-circle
+         button.player__button.close
+            span close
+            i.rob-close
 
-    .player__body__wrapper
-      .player__content
-        .player__cover.isExpand
-          img(src='covers/tayc.jpeg')
+      .player__body__wrapper
+         .player__content
+            .player__cover.isExpand
+               img(src='covers/tayc.jpeg')
 
-        //Music details
-        .player__detail
-          .player__detail__name Tayc
-          .player__detail__title Donne le moi
+            //Music details
+            .player__detail
+               .player__detail__name Tayc
+               .player__detail__title Donne le moi
 
-        //Progress bar
-        .player__timer
+            //Progress bar
+            .player__timer
 
-          //timer slider
-          .player__timer__progress
-            input.player__timer__progress__range#range(type="range" min="0" max="100" step="1" value="0")
-            span.player__timer__progress__bar
-            span.player__timer__progress__elapse
+               //timer slider
+               .player__timer__progress
+                  input.player__timer__progress__range#range(type="range" min="0" max="100" step="1" value="0")
+                  span.player__timer__progress__bar
+                  span.player__timer__progress__elapse
 
-          //Elapse time values
-          .player__timer__times
-            span.player__timer__times__starttime 00:00
-            span.player__timer__times__endtime 00:00
+               //Elapse time values
+               .player__timer__times
+                  span.player__timer__times__starttime 00:00
+                  span.player__timer__times__endtime 00:00
 
-        //Navigation
-        .player__navigation
-          //Backward
-          button.player__navigation__button(data-icon="rob-backward")
-            i.rob-backward
+            //Navigation
+            .player__navigation
+               //Backward
+               button.player__navigation__button(data-icon="rob-backward")
+                  i.rob-backward
 
-            //Play/Pause
-          button.player__navigation__button(data-icon="rob-play")
-            i.rob-play
+                  //Play/Pause
+               button.player__navigation__button(data-icon="rob-play")
+                  i.rob-play
 
-            //Forward
-          button.player__navigation__button(data-icon="rob-forward")
-            i.rob-forward
+                  //Forward
+               button.player__navigation__button(data-icon="rob-forward")
+                  i.rob-forward
 
-      .player__volume
-        .player__volume__wrapper
-          .player__volume__slider
-            .player__volume__grap
-            i.rob-volume-high.player__volume__icon
+         .player__volume
+            .player__volume__wrapper
+               .player__volume__slider
+                  .player__volume__grap
+                  i.rob-volume-high.player__volume__icon
+
+button.player__cta(data-animation="scale")
+   .player__cta__icon
+      include ../svg/music.svg

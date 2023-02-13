@@ -71,15 +71,27 @@
 
 .tools__frameworks__content__icons {
   @include flex-center;
-  height: rem(48px);
-  width: rem(48px);
-  border-radius: rem(8px);
-  background: $color-gradient-orange;
+  height: rem(64px);
+  width: rem(64px);
+  border-radius: rem(16px);
+  padding: rem(16px);
+  @include support-blur(100px, $color-white, 0.1);
+  box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.08);
+
+  svg {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+  }
 }
 
 .tools__frameworks__content__title {
-  @include text-lg;
-  font-weight: 500;
+  @include text-xl;
+  font-weight: 700;
+
+  @include breakpoints('md') {
+    @include text-2xl;
+  }
 }
 
 .tools__frameworks__content__text {

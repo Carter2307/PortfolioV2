@@ -3,9 +3,17 @@ $font-rische: 'Rische';
 $font-satoshi: 'Satoshi';
 $base-font: 16px;
 
-
 //Breakpoint
 $container: 87.5rem;
 
 //Z-index
-$z-indexes: ('preloader','alert','modal','player', 'navigation', 'menu', 'header');
+$z-indexes: (
+  'preloader',
+  'alert',
+  'modal',
+  'player-cta',
+  'player',
+  'navigation',
+  'menu',
+  'header'
+);
