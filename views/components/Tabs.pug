@@ -10,17 +10,13 @@
       .tabs__panels.tabs__panels-style
          .tabs__panel
             .project__grids
-               .projects__grids__item
-                  img.projects__grids__item__img(src="")
-                  .projects__grids__item__detail
-                     h4 Hiddencode Website
-                     +button-icon('hiddencode.fr', 'View project', true)
-
-               .projects__grids__item
-                  img.projects__grids__item__img(src="")
-                  .projects__grids__item__detail
-                     h4 Hiddencode Website
-                     +button-icon('hiddencode.fr', 'View project')
+               each video in website
+                  .projects__grids__items__video
+                     .projects__grids__item__video
+                        video(src=video.src playinline loop autoplay)
+                        h4=video.title
+                     .projects__grids__item__video__detail
+                        +button-icon(video.url, 'View project')
          .tabs__panel
             .project__grids
                each logo in logos
@@ -28,6 +24,6 @@
                      img.projects__grids__item__img(src=logo.imgUrl)
                      .projects__grids__item__detail
                         h4=logo.title
-                        +button-icon(logo.url, 'View project', true)
+                        +button-icon(logo.url, 'View project')
          .tabs__panel Content 3
 

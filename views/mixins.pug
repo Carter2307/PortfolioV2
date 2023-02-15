@@ -13,6 +13,6 @@ mixin Button(text, type)
         block
 
 mixin button-icon(href, text)
-  a.button.button-primary.button-bg.mobile-only(href=href)
+  a.button.button-primary.button-bg(href=href)
     span.button__wrapper__flex=text
       include components/svg/arrow-right.svg

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { logos } = require('../datas/realisations.json')
+const { logos, website } = require('../datas/realisations.json')
 const userProject = require('../Models/UserProjects')
 
 router.post('/usersProjects', (req, res) => {
@@ -40,7 +40,7 @@ router.post('/usersProjects', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  res.render('pages/projects', { logos })
+  res.render('pages/projects', { logos, website })
 })
 
 module.exports = router
