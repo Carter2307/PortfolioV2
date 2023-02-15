@@ -89,9 +89,9 @@
       bottom: rem(-68px);
     }
 
-    @include breakpoints('lg') {
-      bottom: rem(-30px);
-    }
+    //  @include breakpoints('lg') {
+    //    bottom: rem(-30px);
+    //  }
   }
 }
 

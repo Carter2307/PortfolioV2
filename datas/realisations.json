@@ -83,5 +83,42 @@
       "url": "#"
     }
   ],
-  "design": []
+  "design": {
+    "collum0": [
+      {
+        "title": "My old porfolio",
+        "src": "images/previews/portfolio-old.png",
+        "type": "Interface design"
+      },
+      {
+        "title": "Chronotys",
+        "src": "images/previews/chronotys.png",
+        "type": "Interface design"
+      }
+    ],
+    "collum1": [
+      {
+        "title": "Incub",
+        "src": "images/previews/incub.png",
+        "type": "Interface design"
+      },
+      {
+        "title": "Afroeat app",
+        "src": "images/previews/afroeat-app.png",
+        "type": "Interface design"
+      }
+    ],
+    "collum2": [
+      {
+        "title": "Afroeat Website",
+        "src": "images/previews/afroeats.png",
+        "type": "Interface design"
+      },
+      {
+        "title": "Féminine Charm",
+        "src": "images/previews/flyers.png",
+        "type": "Flyers"
+      }
+    ]
+  }
 }

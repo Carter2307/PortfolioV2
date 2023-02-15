@@ -11,6 +11,13 @@ const app = express()
 const config = require('./bundler/webpack.config.development.js')
 const compiler = webpack(config)
 
+//i18N
+const i18n = require('./i18n/index.js')
+
+const lang = {
+  header: i18n.header,
+}
+
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
 app.use(
@@ -33,18 +40,25 @@ app.use(express.static(path.join(__dirname, '/public')))
 
 app.get('/', (req, res) => {
   const datas = projectsData.filter((items) => projectsData.indexOf(items) <= 2)
+
   res.render('pages/home', {
     datas,
+    lang,
   })
 })
 
 app.get('/about', (req, res) => {
-  res.render('pages/about')
+  res.render('pages/about', { lang })
 })
 
 // MIDDLEWARE
+//Propagate lang object to Route
+const langHandler = (req, res, next) => {
+  res.locals.lang = lang
+  next()
+}
 app.use('/connect', require('./Routes/Users'))
-app.use('/projects', require('./Routes/Projects'))
+app.use('/projects', langHandler, require('./Routes/Projects'))
 
 // Page no found handler
 app.use((req, res) => {

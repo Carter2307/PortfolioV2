@@ -96,7 +96,7 @@
   outline: none;
   border: none;
   @include flex-center;
-  position: absolute;
+  position: fixed;
   right: rem(32px);
   bottom: rem(32px);
   padding: rem(8px);

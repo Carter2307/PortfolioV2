@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const { logos, website } = require('../datas/realisations.json')
+const { logos, website, design } = require('../datas/realisations.json')
+const { collum0, collum1, collum2 } = design
 const userProject = require('../Models/UserProjects')
 
 router.post('/usersProjects', (req, res) => {
@@ -40,7 +41,15 @@ router.post('/usersProjects', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  res.render('pages/projects', { logos, website })
+  const lang = res.locals.lang
+  res.render('pages/projects', {
+    lang,
+    logos,
+    website,
+    collum0,
+    collum1,
+    collum2,
+  })
 })
 
 module.exports = router

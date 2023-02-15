@@ -25,5 +25,30 @@
                      .projects__grids__item__detail
                         h4=logo.title
                         +button-icon(logo.url, 'View project')
-         .tabs__panel Content 3
+         .tabs__panel
+            .projects__design
+               .projects__design__collumn
+                  each item in collum0
+                     .projects__design__item
+                        .projects__design__item__cover
+                           img(src=item.src playinline loop autoplay)
+                        .projects__design__item__detail
+                           h4=item.title
+                           span=item.type
+               .projects__design__collumn
+                  each item in collum1
+                     .projects__design__item
+                        .projects__design__item__cover
+                           img(src=item.src playinline loop autoplay)
+                        .projects__design__item__detail
+                           h4=item.title
+                           span=item.type
+               .projects__design__collumn
+                  each item in collum2
+                     .projects__design__item
+                        .projects__design__item__cover
+                           img(src=item.src playinline loop autoplay)
+                        .projects__design__item__detail
+                           h4=item.title
+                           span=item.type
 
