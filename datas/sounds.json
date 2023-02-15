@@ -3,33 +3,99 @@
     "id": 1,
     "title": "The Descent",
     "link": "sound/BlueWednesdayInMyHead/The Descent.mp3",
-    "artist": {"name":"Blue Wednesday"},
+    "artist": { "name": "Blue Wednesday" },
     "album": {
-      "id" : 1,
-      "title" : "In My Head",
-      "cover" : "sound/BlueWednesdayInMyHead/cover.png"
+      "id": 1,
+      "title": "In My Head",
+      "cover": "sound/BlueWednesdayInMyHead/cover.png"
     }
   },
   {
     "id": 2,
     "title": "Aura",
     "link": "sound/DaniSogenAWorlOfIllusion/Aura.mp3",
-    "artist": {"name":"Dani Sogen"},
+    "artist": { "name": "Dani Sogen" },
     "album": {
-      "id" : 2,
-      "title" : "A World of Illusion",
-      "cover" : "sound/DaniSogenAWorlOfIllusion/cover.png"
+      "id": 1,
+      "title": "A World of Illusion",
+      "cover": "sound/DaniSogenAWorlOfIllusion/cover.png"
     }
   },
   {
     "id": 3,
     "title": "The Look",
     "link": "sound/softyXlucidGreenOvernight/1. The Look.mp3",
-    "artist": {"name":"softy x lucid green"},
+    "artist": { "name": "softy x lucid green" },
     "album": {
-      "id" : 3,
-      "title" : "overnight",
-      "cover" : "sound/softyXlucidGreenOvernight/cover.png"
+      "id": 1,
+      "title": "overnight",
+      "cover": "sound/softyXlucidGreenOvernight/cover.png"
+    }
+  },
+  {
+    "id": 4,
+    "title": "T-Rain",
+    "link": "sound/Niska/t-rain.mp3",
+    "artist": { "name": "Niska" },
+    "album": {
+      "id": 1,
+      "title": "Le monde est méchant",
+      "cover": "sound/Niska/cover.png"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Carry Me",
+    "link": "sound/Tayc/carry-me.mp3",
+    "artist": { "name": "Tayc" },
+    "album": {
+      "id": 1,
+      "title": "Carry Me -Single",
+      "cover": "sound/Tayc/cover.png"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Titanium (feat. Sia)",
+    "link": "sound/DavidGuetta/titanium.mp3",
+    "artist": { "name": "David Guetta" },
+    "album": {
+      "id": 1,
+      "title": "Nothing But The Beat Ultimate",
+      "cover": "sound/DavidGuetta/cover.png"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Cartagine",
+    "link": "sound/EmanueleAloia/cartagine.mp3",
+    "artist": { "name": "Emanuele Aloia" },
+    "album": {
+      "id": 1,
+      "title": "Cartagine - Single",
+      "cover": "sound/EmanueleAloia/cover.png"
+    }
+  },
+  {
+    "id": 8,
+    "title": "On my Way",
+    "link": "sound/AlanWalker/on-my-way.mp3",
+    "artist": { "name": "Alan Walker" },
+    "album": {
+      "id": 1,
+      "title": "On my Way - Single",
+      "cover": "sound/AlanWalker/cover.png"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Loading (ft Bad Boy Timz)",
+    "link": "sound/Olamide/loading.mp3",
+    "artist": { "name": "Olamide" },
+    "album": {
+      "id": 1,
+      "title": "Carpe Diem",
+      "cover": "sound/Olamide/cover.png"
     }
   }
 ]

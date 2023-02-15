@@ -1,30 +1,30 @@
 [
   {
     "title": "HiddenCode",
-    "description": "Hey i’m roger bentcha i help small company and people to communicate with thiers customers. I turn thier idea in creative design and code",
+    "description": "This is one of favorite project. I worked as Designer and Frontend developer. I whas in charged to create all Frontend stuff. From design to code",
     "link": "https://www.hiddencode.fr",
     "image": "/images/hiddencode.png",
     "role": ["Frontend dev", "UI designer"]
   },
   {
     "title": "Incub",
-    "description": "Hey i’m roger bentcha i help small company and people to communicate with thiers customers. I turn thier idea in creative design and code",
+    "description": "I worked here as Fullstack dev and designer. I started by creating Deign in Figma and give life to the project with code. I use Express js for Backend",
     "link": "https://incub-server.onrender.com",
     "image": "images/incub.png",
     "role": ["Frontend dev", "UI designer", "Backend dev"]
   },
   {
     "title": "Afroteats",
-    "description": "Hey i’m roger bentcha i help small company and people to communicate with thiers customers. I turn thier idea in creative design and code",
+    "description": "I was the designer of all the user interface of the project. I also create little design system for this project",
     "link": "https://incub-server.onrender.com",
     "image": "images/afroeats.png",
     "role": ["UI designer"]
   },
   {
     "title": "Greendy",
-    "description": "Hey i’m roger bentcha i help small company and people to communicate with thiers customers. I turn thier idea in creative design and code",
+    "description": "This is one of my first good HTML template. I designed an code the landing page. The idea was to pratice and understant how HTML template are created",
     "link": "https://greendy-landing-page.vercel.app",
     "image": "images/greendy.png",
-    "role": ["Frontend dev"]
+    "role": ["Frontend dev", "UI designer"]
   }
 ]
