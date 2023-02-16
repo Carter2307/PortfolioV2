@@ -1,5 +1,5 @@
 export default class Shapes {
-  constructor ({ position, height, width, blur, background }) {
+  constructor({ position, height, width, blur, background }) {
     this.top = position.top === -1 ? undefined : position.top
     this.left = position.left === -1 ? undefined : position.left
     this.right = position.right === -1 ? undefined : position.right
@@ -13,13 +13,13 @@ export default class Shapes {
     this.init()
   }
 
-  init () {
+  init() {
     this.createShape()
     this.onWindowResize()
     this.events()
   }
 
-  createShape () {
+  createShape() {
     this.shapeFrame = document.createElement('DIV')
     this.shapeFrame.className = 'shapes'
     this.id = 'shapes'
@@ -38,7 +38,7 @@ export default class Shapes {
     this.shapeFrame.style.bottom = this.bottom + 'px'
   }
 
-  animshapes (animationArr) {
+  animshapes(animationArr) {
     let index = 0
     let animFlow = null
 
@@ -55,32 +55,29 @@ export default class Shapes {
     }, 4000)
   }
 
-  mountShape (parent) {
+  mountShape(parent) {
     parent.append(this.shapeFrame)
   }
 
-  onWindowResize () {
+  onWindowResize() {
     this.windowWidth = window.innerWidth
     this.testBreakpoint()
   }
 
-  testBreakpoint () {
+  testBreakpoint() {
     if (this.windowWidth >= 640 && this.windowWidth < 1024) {
       this.shapeFrame.style.height = this.height[1] + 'px'
       this.shapeFrame.style.width = this.width[1] + 'px'
-      this.shapeFrame.style.filter = `blur(${this.blur[0]}px)`
     } else if (this.windowWidth >= 1024) {
       this.shapeFrame.style.height = this.height[2] + 'px'
       this.shapeFrame.style.width = this.width[2] + 'px'
-      this.shapeFrame.style.filter = `blur(${this.blur[1]}px)`
     } else {
       this.shapeFrame.style.height = this.height[0] + 'px'
       this.shapeFrame.style.width = this.width[0] + 'px'
-      this.shapeFrame.style.filter = `blur(${this.blur[0]}px)`
     }
   }
 
-  events () {
+  events() {
     addEventListener('resize', this.onWindowResize.bind(this))
   }
 }

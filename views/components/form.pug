@@ -1,27 +1,26 @@
 section.connect
- .connect__wrapper
-   .connect__title
-    h4.connect__title__text(data-animation='title') Get in
-    .connect__title__icon
-      span.connect__title__icon__img
-      h4.connect__title__text(data-animation='title') touch
-   form.connect__form
-     .connect__form__wrapper
-       .form__group
-         label.form__group__label(for="name") Name
-         input.form__group__input.input__name#name(type="text" name="name" required)
-         span.input__alert-name.input__alert
-       .form__group
-        label.form__group__label(for="mail") Email
-        input.form__group__input.input__email#mail(type="email" name="email" required)
-        span.input__alert-email.input__alert
+   .connect__wrapper
+      .connect__title
+         h4.connect__title__text(data-animation='title') Get in
+         .connect__title__icon
+            span.connect__title__icon__img
+            h4.connect__title__text(data-animation='title') touch
+      form.connect__form
+         .connect__form__wrapper
+            .form__group
+               label.form__group__label(for="name") Name
+               input.form__group__input.input__name#name(type="text" name="name" required)
+               span.input__alert-name.input__alert
+            .form__group
+               label.form__group__label(for="mail") Email
+               input.form__group__input.input__email#mail(type="email" name="email" required)
+               span.input__alert-email.input__alert
 
-     .form__group
-       label.form__group__label(for="message") Message
-       textarea.form__group__input#message(name="message" required)
-       span.input__alert-message.input__alert
-     +Button('Let connect', 'button')(class='button button__primary button-bg')
-      include svg/arrow-2-right.svg
-
- include footer
+         .form__group
+            label.form__group__label(for="message") Message
+            textarea.form__group__input#message(name="message" required)
+            span.input__alert-message.input__alert
+         +Button('Let connect', 'button')(class='button button__primary button-bg')
+            include svg/arrow-2-right.svg
+include footer
 

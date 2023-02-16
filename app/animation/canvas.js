@@ -7,6 +7,7 @@ export default class Canvas extends Components {
     super()
     this.isMounted = false
     this.shapeGradient = '#00FF47'
+    this.blur = 200
     this.init()
   }
 
@@ -23,7 +24,6 @@ export default class Canvas extends Components {
 
       height: [280, 380, 480],
       width: [280, 380, 480],
-      blur: [200, 300],
       background: this.shapeGradient,
     })
     const shape2 = new Shapes({
@@ -35,7 +35,6 @@ export default class Canvas extends Components {
       },
       height: [280, 380, 480],
       width: [280, 380, 480],
-      blur: [200, 300],
       background: this.shapeGradient,
     })
     shape1.mountShape($('#frame'))
@@ -50,6 +49,7 @@ export default class Canvas extends Components {
     this.frame.style.left = 0
     this.frame.style.width = `${window.innerWidth}px`
     this.frame.style.height = `${window.innerHeight}px`
+    this.frame.style.filter = `blur(${this.blur}px)`
     this.frame.style.zIndex = '-1'
     this.frame.id = 'frame'
   }

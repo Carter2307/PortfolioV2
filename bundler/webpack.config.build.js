@@ -1,9 +1,9 @@
- const { resolve }  = require('path')
- const TerserPlugin = require('terser-webpack-plugin')
- const { merge } = require('webpack-merge')
- const { config }=  require('./webpack.config.js')
+const { resolve } = require('path')
+const TerserPlugin = require('terser-webpack-plugin')
+const { merge } = require('webpack-merge')
+const config = require('./webpack.config.js')
 
-module.exports =  merge(config, {
+module.exports = merge(config, {
   mode: 'production',
 
   output: {
