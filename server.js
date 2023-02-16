@@ -1,15 +1,15 @@
 const path = require('path')
 const express = require('express')
 const mongoose = require('mongoose')
-const webpack = require('webpack')
-const webpackDevMiddleware = require('webpack-dev-middleware')
+//const webpack = require('webpack')
+//const webpackDevMiddleware = require('webpack-dev-middleware')
 
 const projectsData = require('./datas/projects.json')
 const port = process.env.PORT || 3001
 
 const app = express()
-const config = require('./bundler/webpack.config.development.js')
-const compiler = webpack(config)
+//const config = require('./bundler/webpack.config.development.js')
+//const compiler = webpack(config)
 
 //i18N
 const i18n = require('./i18n/index.js')
@@ -20,11 +20,11 @@ const lang = {
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
-app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath,
-  })
-)
+// app.use(
+//   webpackDevMiddleware(compiler, {
+//     publicPath: config.output.publicPath,
+//   })
+// )
 
 // Use .env file to store password or key api
 require('dotenv').config()
