@@ -43,7 +43,6 @@ export default class FormHandler extends Components {
   }
 
   sendData(e) {
-    console.log(this.elements)
     e.preventDefault()
     const validNumber = this.verifyData(
       this.elements.mail,

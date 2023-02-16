@@ -27,11 +27,11 @@ export default class Preloader extends Components {
         this.onProgress(imgLoad.images.length)
       })
 
-      imgLoad.on('always', () => {
-        setTimeout(() => {
-          this.onLoad()
-        }, 5000)
-        //this.onLoad()
+      imgLoad.on('done', () => {
+        //   setTimeout(() => {
+        //     this.onLoad()
+        //   }, 5000)
+        this.onLoad()
       })
     }
   }
@@ -75,7 +75,10 @@ export default class Preloader extends Components {
   }
 
   addEventListener() {
-    window.addEventListener('load', this.animPreloaderText.bind(this))
+    window.addEventListener(
+      'DOMContentLoaded',
+      this.animPreloaderText.bind(this)
+    )
     window.addEventListener('resize', this.onResize.bind(this))
   }
 

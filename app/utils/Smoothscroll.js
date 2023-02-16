@@ -23,12 +23,20 @@ export default class Smoothscroll {
       target: 0,
       limit: 0,
     }
-    this.offsetHeight = this.element.getBoundingClientRect().top
 
-    this.scroll.limit =
-      this.element.clientHeight + this.offsetHeight - window.innerHeight
+    this.offsetHeight = 0
+
+    this.dimensionHandler()
+    console.log(this.scroll.limit)
     this.addListener()
-    this.update()
+  }
+
+  dimensionHandler() {
+    this.offsetHeight = this.element.getBoundingClientRect().top
+    this.scroll.limit =
+      this.element.getBoundingClientRect().height +
+      this.offsetHeight -
+      window.innerHeight
   }
 
   onMouseWheel(e) {
@@ -59,6 +67,8 @@ export default class Smoothscroll {
   }
 
   update() {
+    console.log(this.scroll.limit)
+
     this.scroll.target = clamp(this.scroll.target, 0, this.scroll.limit)
     this.scroll.current = lerp(
       this.scroll.current,

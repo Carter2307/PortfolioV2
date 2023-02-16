@@ -5,6 +5,13 @@ mixin button(href, text, bool)
       if block
         block
 
+mixin service-button(href, text, type)
+  button(class!=attributes.class href=href data-service=type)
+    span.button__wrapper__flex
+      | #{text}
+      if block
+        block
+
 mixin Button(text, type)
   button(class!=attributes.class type=type)
     span.button__wrapper__flex

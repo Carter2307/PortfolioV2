@@ -15,6 +15,8 @@ export default class Services extends Components {
     e.preventDefault()
     const button = e.currentTarget
     this.type = button.getAttribute('data-service')
+    console.log(button)
+    this.root.modal.dataServiceInput.value = this.type
     this.root.modal.self.classList.add('modal-visible')
   }
 

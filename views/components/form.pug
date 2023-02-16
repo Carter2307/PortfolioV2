@@ -5,7 +5,7 @@ section.connect
     .connect__title__icon
       span.connect__title__icon__img
       h4.connect__title__text(data-animation='title') touch
-   form.connect__form(autocomplete="off")
+   form.connect__form
      .connect__form__wrapper
        .form__group
          label.form__group__label(for="name") Name
@@ -20,7 +20,7 @@ section.connect
        label.form__group__label(for="message") Message
        textarea.form__group__input#message(name="message" required)
        span.input__alert-message.input__alert
-     +Button('Let connect', 'submit')(class='button button__primary button-bg')
+     +Button('Let connect', 'button')(class='button button__primary button-bg')
       include svg/arrow-2-right.svg
 
  include footer

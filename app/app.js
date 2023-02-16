@@ -17,7 +17,6 @@ class App {
     this.initNavigation()
     this.init()
     this.getContent()
-    this.observer($('.wrapper'))
   }
 
   init() {
@@ -50,7 +49,7 @@ class App {
     }
 
     this.page = this.pages[this.template]
-
+    this.page.init()
     this.page.create()
     this.page.show()
   }
@@ -94,6 +93,7 @@ class App {
       this.template = divContent.getAttribute('data-template')
       this.content.innerHTML = divContent.innerHTML
       this.page = this.pages[this.template]
+
       this.page.create()
       this.page.show()
     } else {

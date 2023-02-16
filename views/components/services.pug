@@ -26,7 +26,7 @@ section.services#services
                      p.services__list__items__text(data-animation='paragraph')
                         | I can conver different type of file to code
                         | with HTML, CSS, and JAVASCRIPT.
-               +button('#', 'commander')(class="button button__primary button-bg services__cta" data-service="integration-web")
+               +service-button('#', 'commander', 'integration-web')(class="button button__primary button-bg services__cta")
                   include svg/arrow-2-right.svg
 
             .services__list__items
@@ -39,7 +39,7 @@ section.services#services
                      p.services__list__items__text(data-animation='paragraph')
                         | I offer UI design services to improve the user interface
                         |  of your website by providing a pleasant and intuitive user experience.
-               +button('#', 'commander')(class="button button__primary button-bg services__cta" data-service="integration-web")
+               +service-button('#', 'commander', 'ui-design')(class="button button__primary button-bg services__cta")
                   include svg/arrow-2-right.svg
 
             .services__list__items
@@ -52,5 +52,5 @@ section.services#services
                      p.services__list__items__text(data-animation='paragraph')
                         | By understanding your need, we can work together to
                         | create a logo that expose the value behind you company
-               +button('#', 'commander')(class="button button__primary button-bg services__cta" data-service="integration-web")
+               +service-button('#', 'commander', 'logo-design')(class="button button__primary button-bg services__cta")
                   include svg/arrow-2-right.svg

@@ -23,7 +23,9 @@ body {
   scroll-behavior: smooth;
   @extend %cover;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 .wrapper {
   opacity: 0;
 }

@@ -1,32 +1,38 @@
 const mongoose = require('mongoose')
 
-const Project = new mongoose.Schema({
-  id: {
-    type: String,
-    require: true
-  },
+const Project = new mongoose.Schema(
+  {
+    id: {
+      type: String,
+      require: true,
+    },
 
-  email: {
-    type: String,
-    require: true
-  },
+    email: {
+      type: String,
+      require: true,
+    },
 
-  name: {
-    type: String,
-    require: true
-  },
+    name: {
+      type: String,
+      require: true,
+    },
 
-  projectDetails: {
-    type: String,
-    require: true
-  },
+    projectDetails: {
+      type: String,
+      require: true,
+    },
 
-  createAt: {
-    type: Date,
-    require: false
-  }
-},
-{ collection: 'Projects' }
+    serviceType: {
+      type: String,
+      require: true,
+    },
+
+    createAt: {
+      type: Date,
+      require: false,
+    },
+  },
+  { collection: 'Projects' }
 )
 
 const Projects = mongoose.model('Projects', Project)

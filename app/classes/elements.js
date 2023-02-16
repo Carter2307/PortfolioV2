@@ -64,6 +64,7 @@ export default {
       emailAlert: '.modal__form__wrapper .input__alert-email',
       messageAlert: '.modal__form__wrapper .input__alert-message',
       alert: '.modal__form__wrapper .input__alert',
+      dataServiceInput: '.modal__data-services',
     },
     alert: '.alert',
   },
@@ -81,6 +82,7 @@ export default {
   },
   modal: {
     self: '.modal',
+    dataServiceInput: '.modal__data-services',
     button: '.modal__button button',
   },
   images: 'img',

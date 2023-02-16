@@ -7,7 +7,8 @@ const userProject = require('../Models/UserProjects')
 
 router.post('/usersProjects', (req, res) => {
   // Save data to dataBase
-  const { projectUserName, projectUserMail, projectDescription } = req.body
+  const { projectUserName, projectUserMail, projectDescription, serviceType } =
+    req.body
 
   if (
     projectUserName === '' ||
@@ -19,6 +20,7 @@ router.post('/usersProjects', (req, res) => {
   const user = new userProject({
     name: projectUserName,
     email: projectUserMail,
+    serviceType,
     projectDetails: projectDescription,
     createAt: Date.now(),
   })
