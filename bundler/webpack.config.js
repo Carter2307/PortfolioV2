@@ -15,7 +15,7 @@ const dirShared = path.join(__dirname, '../shared')
 const dirStyles = path.join(__dirname, '../styles')
 const dirNode = 'node_modules'
 
-module.exports = {
+module.exports.config = {
   entry: {
     app: path.join(dirApp, 'app.js'),
     main: path.join(dirStyles, 'main.scss'),
