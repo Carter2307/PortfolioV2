@@ -1,25 +1,24 @@
 section.hero
-  .hero__wrapper
-    .hero__text
-      h1.hero__title
-        div.hero__title__child(data-animation='title')
-          strong.hero__title__highlight-green Creative
-          |  frontend
-        div.hero__title__child(data-animation='title') developper and
-          strong.hero__title__highlight-gradient ui
-        div.hero__title__child(data-animation='title')
-          strong.hero__title__highlight-green designer
-          |  from France
-    p.hero__description(data-animation="paragraph")
-      | Hey i’m roger bentcha i help small company <br>
-      | and people to communicate with thiers <br>
-      | customers. I turn thier idea in creative design and code
-    .hero__quote
-      .hero__quote__container
-        p.hero__quote__text(data-animation='paragraph')
-          | Don’t let the noise of
-          | #[span.hero__title__highlight-green others’ opinions] drown
-          | out your own #[span.hero__title__highlight-blue inner voice.]
-        span.hero__quote__author(data-animation='paragraph') Steve Jobs
-        span.hero__quote__img
-          include svg/quote.svg
+   .hero__wrapper
+      .hero__text
+         h1.hero__title
+            div.hero__title__child(data-animation='title')
+               strong.hero__title__highlight-green Creative
+               |  frontend
+            div.hero__title__child(data-animation='title') developper and #[strong.hero__title__highlight-gradient ui]
+            div.hero__title__child(data-animation='title')
+               strong.hero__title__highlight-green designer
+               |  from France
+      p.hero__description(data-animation="paragraph")
+         | Hey i’m roger bentcha i help small company <br>
+         | and people to communicate with thiers <br>
+         | customers. I turn thier idea in creative design and code
+      .hero__quote
+         .hero__quote__container
+            p.hero__quote__text(data-animation='paragraph')
+               | Don’t let the noise of
+               | #[span.hero__title__highlight-green others’ opinions] drown
+               | out your own #[span.hero__title__highlight-blue inner voice.]
+            span.hero__quote__author(data-animation='paragraph') Steve Jobs
+            span.hero__quote__img
+               include svg/quote.svg
