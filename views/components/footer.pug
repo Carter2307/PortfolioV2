@@ -1,14 +1,16 @@
 footer.footer
   .footer__wrapper
-    include form/switch
+    .footer__switch
+      include form/switch
+      +badge('Soon')
     .footer__content
       p.footer__content__copy(data-animation='title') COPYRIGHT 2023
       p.footer__content__name(data-animation='title') RØGER BENTCHA
 
     .footer__icons
-      span.header__icons__link__item
+      a.header__icons__link__item(href="https://twitter.com/RBentcha")
         include svg/twitter.svg
 
-      span.header__icons__link__item
+      a.header__icons__link__item(href="mailto:rogerbentcha@gmail.com")
         include svg/mail.svg
 

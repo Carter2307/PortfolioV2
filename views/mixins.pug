@@ -23,3 +23,8 @@ mixin button-icon(href, text)
   a.button.button-primary.button-bg(href=href)
     span.button__wrapper__flex=text
       include components/svg/arrow-right.svg
+
+
+mixin badge(text)
+   .badge
+      span.badge__text=text

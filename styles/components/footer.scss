@@ -4,32 +4,30 @@
 
   @include breakpoints('md') {
     padding-bottom: rem(32px);
-
   }
-
 }
 
 .footer__wrapper {
   padding: rem(8px) rem(12px);
-  border: 1px solid rgba($color: $color-white, $alpha : .1);
-  border-radius : rem(18px);
-  @include support-blur(100px, $color-white, .05);
+  border: 1px solid rgba($color: $color-white, $alpha: 0.1);
+  border-radius: rem(18px);
+  @include support-blur(100px, $color-white, 0.05);
   @include flex-between;
   align-items: center;
   flex-direction: column;
-  @include  space-x(16px);
-  @include  space-y(16px);
+  @include space-x(16px);
+  @include space-y(16px);
 
   @include breakpoints('md') {
     padding: rem(8px) rem(24px);
     flex-direction: row;
-    @include  space-y(0px);
-
+    @include space-y(0px);
   }
-
-
 }
-
+.footer__switch {
+  display: flex;
+  @include space-x(12px);
+}
 .footer__content {
   @include flex-center;
   @include space-x(16px);

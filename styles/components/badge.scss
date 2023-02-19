@@ -1,0 +1,14 @@
+.badge {
+  padding: rem(4px) rem(8px);
+  border-radius: rem(14px);
+  @include text-sm;
+  background-color: $color-accent-blue;
+  border: 2px solid rgba($color: #fff, $alpha: 0.24);
+  @include flex-center;
+  width: fit-content;
+
+  &__text {
+    color: rgba($color: #fff, $alpha: 1);
+    font-weight: 700;
+  }
+}

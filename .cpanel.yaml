@@ -1,7 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/hiddenc1/rogerbentcha.hiddencode.fr/
-    -  #/bin/cp -a . $DEPLOYPATH
-    - /bin/cp -r . $DEPLOYPATH
-    - /bin/chmod u+rwx /home/hiddenc1/rogerbentcha.hiddencode.fr
