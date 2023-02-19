@@ -3,21 +3,31 @@ include mixins
 
 doctype html
 html(lang="en")
-  head
-    include partials/head
+   head
+      include partials/head
 
-  body
-    include components/preloader
-    include components/header/header
-    include components/modal
-    include components/widgets/music-player
-    .wrapper
-      .content#content(data-template=template)
-        block content
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R74H2VY25T"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-      include components/form
+      gtag('config', 'G-R74H2VY25T');
+   </script>
 
-    include partials/scripts
+   body
+      include components/preloader
+      include components/header/header
+      include components/modal
+      include components/widgets/music-player
+      .wrapper
+         .content#content(data-template=template)
+            block content
+
+         include components/form
+
+      include partials/scripts
 
 
 
