@@ -5,16 +5,7 @@ doctype html
 html(lang="en")
    head
       include partials/head
-
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R74H2VY25T"></script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date())
-      gtag('config', 'G-R74H2VY25T')
-   </script>
-
+      include partials/analytics
    body
       include components/preloader
       include components/header/header
