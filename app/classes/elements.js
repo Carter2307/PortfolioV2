@@ -39,7 +39,7 @@ export default {
     volume: {
       grapper: '.player__volume__grap',
       slider: '.player__volume__slider',
-      container: '.player__volume__wrapper',
+      container: '.player__volume',
     },
   },
   form: {

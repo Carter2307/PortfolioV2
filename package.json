@@ -6,7 +6,7 @@
   "scripts": {
     "server": "nodemon server.js",
     "build": "webpack --progress --config bundler/webpack.config.build.js",
-    "dev": "webpack --progress --config bundler/webpack.config.development.js"
+    "dev": "webpack --watch --progress --config bundler/webpack.config.development.js"
   },
   "keywords": [],
   "author": "",
