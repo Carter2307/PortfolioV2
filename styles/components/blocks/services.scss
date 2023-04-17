@@ -97,6 +97,7 @@
 
 //List
 .services__lists {
+  display: grid;
   border: 2px solid $color-accent-blue;
   border-radius: rem(16px);
   padding: rem(16px);

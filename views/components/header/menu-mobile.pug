@@ -1,0 +1,9 @@
+nav.menu-mobile
+   .menu-mobile__wrapper
+      ul.menu-mobile__links
+         each link in mobileLinks
+            li.menu-mobile__links__item(data-snap="image" data-snap-image=link.img)
+               a.menu-mobile__links__item__link(href=link.url data-links=link.data data-links-disabled=link.disabled)
+                  span.menu-mobile__links__item__link__line
+                  span=link.name
+

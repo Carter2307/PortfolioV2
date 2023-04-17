@@ -1,0 +1,51 @@
+.photographies {
+  $photoContainer: rem(1100px);
+  @include container-flex($photoContainer, 24px, 32px, 48px);
+  background-color: red($color: #000000);
+}
+
+.photographies__wrapper {
+  margin: rem(32px) 0;
+  display: grid;
+  gap: rem(8px);
+  overflow: hidden;
+  padding: rem(8px);
+  border-radius: rem(16px);
+
+  border: 1px solid rgba($color: $color-white, $alpha: 0.1);
+  background-color: rgba($color: $color-primary-black, $alpha: 0.08);
+  @include support-blur(100px, $color-white, 0.08);
+
+  @include breakpoints('sm') {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    margin: rem(48px) 0;
+  }
+}
+
+.photographies__item {
+  display: inline-block;
+  height: rem(460px);
+  overflow: hidden;
+  outline: 0;
+  position: relative;
+  border-radius: rem(8px);
+
+  @include breakpoints('sm') {
+    height: rem(500px);
+  }
+
+  @include breakpoints('lg') {
+    height: rem(680px);
+  }
+}
+
+.photographies__item__image {
+  height: 100%;
+}
+
+.photographies__item__pic {
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  object-fit: cover;
+}

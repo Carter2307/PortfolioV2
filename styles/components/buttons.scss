@@ -7,47 +7,67 @@
   height: auto;
   font-weight: 600;
   cursor: pointer;
-  border: .5px solid transparent;
+  border: 0.5px solid transparent;
 
   &__wrapper__flex {
-    @include  flex-between;
+    @include flex-between;
     vertical-align: middle;
     gap: rem(16px);
-    color: rgba($color:$color-white, $alpha: .7);
+    color: rgba($color: $color-white, $alpha: 0.7);
   }
 }
 
 .button-primary {
-
 }
 
 .button-secondary {
-
 }
 
 .button-link {
-
 }
 
-.button-border{
-  border-color: rgba($color: $color-white, $alpha: .25);
+.button-border {
+  border-color: rgba($color: $color-white, $alpha: 0.25);
 }
 
 .button-bg {
-  background-color: rgba($color:$color-white, $alpha: .05);
+  background-color: rgba($color: $color-white, $alpha: 0.05);
 }
 
 .button-disabled {
-
 }
-
 
 .button-icon {
   all: unset;
   cursor: pointer;
   border-radius: rem(8px);
-  background-color: rgba($color: $color-white, $alpha: .2);
+  background-color: rgba($color: $color-white, $alpha: 0.2);
   width: rem(32px);
   height: rem(32px);
   @include flex-center;
+}
+
+//BUTTON MIXINS
+@mixin button-flotting() {
+  @include square-size(64px);
+  border-radius: rem(64px);
+  @include support-blur(100px, $color-white, 0.1);
+  outline: none;
+  border: none;
+  @include flex-center;
+  position: fixed;
+  right: rem(32px);
+  bottom: rem(32px);
+  padding: rem(8px);
+  cursor: pointer;
+  z-index: z('player-cta');
+  display: none;
+  box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.08);
+
+  &__icon {
+    color: rgba($color-white, 0.8);
+    display: inline-block;
+    height: rem(24px);
+    width: rem(24px);
+  }
 }

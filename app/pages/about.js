@@ -1,11 +1,10 @@
-import Pages from '../../classes/Pages'
+import Pages from '../classes/Pages'
 export default class About extends Pages {
-  constructor () {
+  constructor() {
     super('about')
   }
 
-  create () {
+  create() {
     super.create()
   }
-
 }

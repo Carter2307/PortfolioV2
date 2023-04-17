@@ -1,19 +1,57 @@
+- const links = [{ name : lang.header.en.navigation.home, img : 'images/previews/img-1', url : "/", data: 'false', disabled:'false'}, { name : lang.header.en.navigation.project, img : 'images/previews/img-2', url : "projects", data :'false', disabled:'false'}, { name : 'About me', img : 'images/previews/img-3', url : "/about", data : 'true', disabled:'false'}  ]
+- const linksLeft = [{ name : lang.header.en.navigation.template, img : 'images/previews/img-1', url : "/", data: 'false', disabled:'false'}, { name : lang.header.en.navigation.lib, img : 'images/previews/img-2', url : "library", data :'false', disabled:'false'},{ name : lang.header.en.navigation.photo, img : 'images/previews/img-2', url : "photographies", data :'false', disabled:'false'} ]
+- const linksRight = [{ name : lang.header.en.navigation.home, img : 'images/previews/img-1', url : "/", data: 'false', disabled:'false'}, { name : lang.header.en.navigation.project, img : 'images/previews/img-2', url : "projects", data :'false', disabled:'false'}, { name : 'About me', img : 'images/previews/img-3', url : "/about", data : 'true', disabled:'false'}  ]
+- const mobileLinks = [{ name : lang.header.en.navigation.home, img : 'images/previews/img-1', url : "/", data: 'false', disabled:'false'}, { name : lang.header.en.navigation.project, img : 'images/previews/img-2', url : "projects", data :'false', disabled:'false'}, { name : 'About me', img : 'images/previews/img-3', url : "/about", data : 'true', disabled:'false'}  ]
+
+//- header.header
+//-    .header__wrapper
+//-       .header__icons.desktop-only
+//-          a.header__icons__link(href="https://twitter.com/RBentcha")
+//-             span.header__icons__link__item
+//-                include ../svg/twitter.svg
+
+//-          a.header__icons__link(href="mailto:rogerbentcha@gmail.com")
+//-             span.header__icons__link__item
+//-                include  ../svg/mail.svg
+
+//-       a.header__logo(href="/" data-links='true') ROGER--B
+
+//-       include menu
+//-       include menu-preview
+
 header.header
-  .header__wrapper
-    .header__icons.desktop-only
+   .header__wrapper
+      ul.header__links
+         each link in linksLeft
+            li.header__links__item(data-snap="image" data-snap-image=link.img)
+               a.header__links__item__link(href=link.url data-links=link.data data-links-disabled=link.disabled)=link.name
 
-      a.header__icons__link(href="https://twitter.com/RBentcha")
-        span.header__icons__link__item
-          include ../svg/twitter.svg
+      .header__content
+         a.header__icons__link(href="https://twitter.com/RBentcha")
+            span.header__icons__link__item
+               include ../svg/twitter.svg
 
-      a.header__icons__link(href="mailto:rogerbentcha@gmail.com")
-        span.header__icons__link__item
-          include  ../svg/mail.svg
+         a.header__logo(href="/" data-links='true') ROGER--B
 
-    a.header__logo(href="/" data-links='true') ROGER--B
+         a.header__icons__link(href="mailto:rogerbentcha@gmail.com")
+            span.header__icons__link__item
+               include  ../svg/mail.svg
 
-    include menu
-    include menu-preview
+      ul.header__links
+         each link in linksRight
+            li.header__links__item(data-snap="image" data-snap-image=link.img)
+               a.header__links__item__link(href=link.url data-links=link.data data-links-disabled=link.disabled)=link.name
 
+
+
+
+header.menu.mobile-header
+   button.mobile-menu-button.menu-button-open(data-animation="scale")
+      .mobile-menu-button__icons
+         span.mobile-menu-button__icons__item
+         span.mobile-menu-button__icons__item
+         span.mobile-menu-button__icons__item
+   .mobile-header__container
+      include menu-mobile
 
 

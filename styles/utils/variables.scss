@@ -5,15 +5,16 @@ $base-font: 16px;
 
 //Breakpoint
 $container: 87.5rem;
+$headerBreakpoint: 1080;
 
 //Z-index
 $z-indexes: (
   'preloader',
+  'menu-button',
+  'menu',
   'alert',
   'modal',
   'player-cta',
   'player',
-  'navigation',
-  'menu',
   'header'
 );

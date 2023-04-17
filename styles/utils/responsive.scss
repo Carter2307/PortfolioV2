@@ -34,6 +34,18 @@ $breakpoint-list: (
   }
 }
 
+@mixin up($value) {
+  @media (min-width: #{$value}px) {
+    @content;
+  }
+}
+
+@mixin down($value) {
+  @media (max-width: #{$value}px) {
+    @content;
+  }
+}
+
 .hidden {
   display: none !important;
 }
@@ -55,6 +67,13 @@ $breakpoint-list: (
   }
 }
 
+@mixin desktop-only($size) {
+  display: none !important;
+  @include breakpoints($size) {
+    display: inherit !important;
+  }
+}
+
 .desktop-lg-only {
   display: none !important;
   @include breakpoints('lg') {
@@ -62,13 +81,11 @@ $breakpoint-list: (
   }
 }
 
-
 //Visibility
 @mixin v-hidden {
   visibility: hidden;
   opacity: 0;
 }
-
 
 @mixin v-visible {
   visibility: visible;
@@ -79,5 +96,3 @@ $breakpoint-list: (
   visibility: visible;
   opacity: 1;
 }
-
-

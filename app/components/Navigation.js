@@ -4,7 +4,7 @@ import { $All } from '../utils/selectors'
 export default class Navigation extends Components {
   constructor() {
     super('navigation')
-    this.init()
+    //this.init()
     this.eventsListener()
   }
 
@@ -34,12 +34,13 @@ export default class Navigation extends Components {
 
   openMenu(e) {
     e.preventDefault()
-    this.root.navigation.content.classList.add('menu__content-visible')
+    this.root.navigation.content.classList.toggle('menu-visible')
+    this.root.navigation.menu.classList.toggle('menu-mobile-visible')
   }
 
   closeMenu(e) {
     e.preventDefault()
-    this.root.navigation.content.classList.remove('menu__content-visible')
+    this.root.navigation.content.classList.remove('menu-visible')
   }
 
   eventsListener() {
@@ -50,10 +51,6 @@ export default class Navigation extends Components {
     this.root.navigation.openMenu.addEventListener(
       'click',
       this.openMenu.bind(this)
-    )
-    this.root.navigation.closeMenu.addEventListener(
-      'click',
-      this.closeMenu.bind(this)
     )
   }
 }

@@ -9,10 +9,9 @@ export default {
   navigation: {
     header: '.header',
     navList: '.menu__links__item',
-    previewImg: '.menu__links__media__image',
-    content: '.menu__content',
-    openMenu: '.button-open',
-    closeMenu: '.button-close',
+    content: '.mobile-header__container',
+    menu: '.menu-mobile',
+    openMenu: '.menu-button-open',
   },
   player: {
     button: {

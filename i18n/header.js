@@ -5,6 +5,9 @@ module.exports = {
       project: 'Projects',
       writting: 'Articles',
       about: 'About Me',
+      template: 'Templates',
+      lib: 'Libraries',
+      photo: 'Photographies',
     },
   },
   fr: {

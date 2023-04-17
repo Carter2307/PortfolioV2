@@ -53,6 +53,12 @@
   @include mx-auto();
 }
 
+//Square size
+@mixin square-size($value) {
+  width: rem($value);
+  height: rem($value);
+}
+
 //Support blur
 @mixin support-blur($amount, $color, $alpha) {
   @supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0)))
@@ -103,5 +109,30 @@
   @include breakpoints('2xlg') {
     padding-right: calc(((100% - $container) / 2));
     padding-left: calc(((100% - $container) / 2));
+  }
+}
+
+@mixin container-flex($value: $container, $md, $lg, $xlg) {
+  padding-right: rem(16px);
+  padding-left: rem(16px);
+
+  @include breakpoints('md') {
+    padding-right: rem($md);
+    padding-left: rem($md);
+  }
+
+  @include breakpoints('lg') {
+    padding-right: rem($lg);
+    padding-left: rem($lg);
+  }
+
+  @include breakpoints('xlg') {
+    padding-right: rem($xlg);
+    padding-left: rem($xlg);
+  }
+
+  @include breakpoints('2xlg') {
+    padding-right: calc(((100% - $value) / 2));
+    padding-left: calc(((100% - $value) / 2));
   }
 }

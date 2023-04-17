@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 //const webpack = require('webpack')
 //const webpackDevMiddleware = require('webpack-dev-middleware')
 
+const photos = require('./datas/photos.json')
 const projectsData = require('./datas/projects.json')
 const port = process.env.PORT || 3001
 
@@ -40,7 +41,6 @@ app.use(express.static(path.join(__dirname, '/public')))
 
 app.get('/', (req, res) => {
   const datas = projectsData.filter((items) => projectsData.indexOf(items) <= 2)
-
   res.render('pages/home', {
     datas,
     lang,
@@ -49,6 +49,10 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('pages/about', { lang })
+})
+
+app.get('/photographies', (req, res) => {
+  res.render('pages/photographies', { lang, photos })
 })
 
 // MIDDLEWARE

@@ -22,6 +22,19 @@ body {
   color: $color-white;
   scroll-behavior: smooth;
   @extend %cover;
+  position: relative;
+
+  //   &::after {
+  //     content: '';
+  //     position: fixed;
+  //     height: 100%;
+  //     width: 100%;
+  //     display: inline-block;
+  //     background: url('images/body-background.png');
+  //     background-repeat: no-repeat;
+  //     background-size: cover;
+  //     z-index: -1;
+  //   }
 }
 ::-webkit-scrollbar {
   display: none;

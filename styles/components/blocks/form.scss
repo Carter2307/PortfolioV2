@@ -1,8 +1,9 @@
 .connect {
   @include breakpoints('sm') {
     padding-top: rem(64px);
+    padding-bottom: rem(64px);
     @include space-y(64px);
-    background-color: rgba($color-white, .05);
+    background-color: rgba($color-white, 0.05);
     margin-top: rem(48px);
   }
 
@@ -19,20 +20,18 @@
   @include breakpoints('xlg') {
     @include space-y(196px);
     margin-top: rem(128px);
-
   }
 
   @include breakpoints('2xlg') {
     @include space-y(256px);
     margin-top: rem(196px);
-
   }
 }
 .connect__wrapper {
   padding: rem(16px);
   margin: rem(16px);
   border-radius: rem(16px);
-  background-color: rgba($color-white, .05);
+  background-color: rgba($color-white, 0.05);
   @include space-y(24px);
 
   @include breakpoints('sm') {
@@ -49,7 +48,6 @@
   @include breakpoints('xlg') {
     max-width: rem(512px);
     @include space-y(64px);
-
   }
 
   @include breakpoints('2xlg') {
@@ -66,7 +64,6 @@
     transform: translateX(-100px);
   }
 
-
   &__text {
     font-family: $font-rische;
     font-weight: bold;
@@ -74,19 +71,19 @@
     color: $color-white;
 
     @include breakpoints('md') {
-      @include text-4xl
+      @include text-4xl;
     }
 
     @include breakpoints('lg') {
-      @include text-6xl
+      @include text-6xl;
     }
 
     @include breakpoints('xlg') {
-      @include text-7xl
+      @include text-7xl;
     }
 
     @include breakpoints('xlg') {
-      @include text-8xl
+      @include text-8xl;
     }
   }
 
@@ -134,8 +131,7 @@
         transform: rotate(-45deg);
       }
     }
-   }
-
+  }
 }
 
 .connect__form {

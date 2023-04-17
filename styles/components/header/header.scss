@@ -1,5 +1,5 @@
 .header {
-  @include container;
+  @include container-flex(68.125rem, 16px, 24px, 32px);
   padding-top: rem(24px);
   position: sticky;
   top: 0;
@@ -12,21 +12,80 @@
       transform: translateY(0px);
     }
   }
+
+  @include breakpoints('sm') {
+    @include flex-center;
+  }
 }
 
 .header__wrapper {
   position: relative;
-  padding: rem(8px) rem(12px);
+  //padding: rem(8px) rem(12px);
+  //border: 1px solid rgba($color: $color-white, $alpha: 0.1);
+  //border-radius: rem(18px);
+  //background-color: rgba($color: $color-primary-black, $alpha: 0.08);
+  //box-shadow: 4px 8px 24px rgba($color: $color-black, $alpha: 0.1);
+  //@include support-blur(100px, $color-white, 0.08);
+  @include flex-center;
+  width: 100%;
+  @include breakpoints('md') {
+    padding: rem(8px) rem(24px);
+  }
+
+  @include down($headerBreakpoint) {
+    @include flex-center;
+  }
+  @include up($headerBreakpoint) {
+    @include flex-between;
+  }
+}
+
+.header__links {
+  @include down($headerBreakpoint) {
+    display: none;
+  }
+  @include up($headerBreakpoint) {
+    display: flex;
+  }
+  border-radius: rem(16px);
   border: 1px solid rgba($color: $color-white, $alpha: 0.1);
-  border-radius: rem(18px);
   background-color: rgba($color: $color-primary-black, $alpha: 0.08);
   box-shadow: 4px 8px 24px rgba($color: $color-black, $alpha: 0.1);
   @include support-blur(100px, $color-white, 0.08);
+
+  &__item {
+    display: flex;
+
+    &:last-child {
+      .header__links__item__link {
+        border-right: 1px solid transparent !important;
+      }
+    }
+  }
+
+  &__item__link {
+    padding: rem(16px) rem(24px);
+    border-right: 1px solid rgba($color: $color-white, $alpha: 0.1);
+    @include flex-center;
+    @include text-sm;
+  }
+}
+
+.header__content {
   @include flex-between;
-  align-items: center;
+  border-radius: rem(16px);
+  padding: rem(8px);
+  @include space-x(32px + 180px);
+  position: relative;
+  width: 100%;
+
+  border: 1px solid rgba($color: $color-white, $alpha: 0.1);
+  background-color: rgba($color: $color-black, $alpha: 0.1);
+  box-shadow: 4px 8px 24px rgba($color: $color-black, $alpha: 0.1);
+  @include support-blur(100px, $color-white, 0.08);
 
   @include breakpoints('md') {
-    padding: rem(8px) rem(24px);
+    width: rem(300px);
   }
 }
 
@@ -38,7 +97,8 @@
     @include flex-center;
     height: rem(36px);
     width: rem(36px);
-    border-radius: 50%;
+    padding: rem(4px);
+    border-radius: rem(8px);
     background-color: rgba($color: $color-white, $alpha: 0.08);
     transition: background-color 0.4s;
 
@@ -53,11 +113,18 @@
 }
 
 .header__logo {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 !important;
   font-family: $font-rische;
   @include text-lg;
   font-weight: bold;
-
-  @include breakpoints('md') {
-    @include text-2xl;
-  }
+  border-radius: rem(16px);
+  padding: rem(16px) rem(24px);
+  border: 1px solid rgba($color: $color-white, $alpha: 0.1);
+  background-color: #2d2d2d;
+  box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.5);
 }

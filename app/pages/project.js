@@ -1,5 +1,5 @@
-import Pages from '../../classes/Pages'
-import Tabs from '../../components/Tabs'
+import Pages from '../classes/Pages'
+import Tabs from '../components/Tabs'
 
 export default class Project extends Pages {
   constructor() {

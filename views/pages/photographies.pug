@@ -1,0 +1,15 @@
+extends ../base.pug
+
+block variables
+   - const title = 'My Pics'
+   - const description = 'Some nice pictures'
+
+   - let template = 'photographies'
+
+block content
+   .photographies
+      ul.photographies__wrapper
+         each photo in photos
+            li.photographies__item
+               .photographies__item__image
+                  img.photographies__item__pic(src=photo.image)

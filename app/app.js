@@ -1,7 +1,11 @@
 'use strict'
 
+//Pages
 import Home from './pages/home'
 import About from './pages/about'
+import Project from './pages/project'
+import Photographies from './pages/photographies'
+//Components
 import Preloader from './components/Preloader'
 import Player from './components/widgets/music-player/player'
 import Navigation from './components/Navigation'
@@ -9,7 +13,6 @@ import FormHandler from './config/forms'
 import Canvas from './animation/canvas'
 import Smoothscroll from './utils/Smoothscroll'
 import { $All, $ } from './utils/selectors'
-import Project from './pages/project'
 
 class App {
   constructor() {
@@ -46,6 +49,7 @@ class App {
       home: new Home(),
       about: new About(),
       project: new Project(),
+      photographies: new Photographies(),
     }
 
     this.page = this.pages[this.template]

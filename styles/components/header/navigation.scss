@@ -1,0 +1,128 @@
+.mobile-header {
+}
+
+.mobile-header__container {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  z-index: z('menu');
+  background-color: rgba($color-white, 0.8);
+  @include support-blur(25px, $color-primary-black, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  &.menu-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.mobile-menu-button {
+  @include button-flotting;
+  display: flex;
+  left: rem(32px);
+  z-index: z('menu-button');
+  @include up($headerBreakpoint) {
+    display: none;
+  }
+}
+
+.mobile-menu-button__icons {
+  @include square-size(24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__item {
+    display: inline-block;
+    width: 100%;
+    height: rem(4px);
+    border-radius: rem(4px);
+    background-color: $color-white;
+
+    &:nth-child(1) {
+      width: rem(14px);
+    }
+
+    &:nth-child(3) {
+      width: rem(14px);
+      margin-left: auto;
+    }
+  }
+}
+
+.menu-mobile {
+  position: absolute;
+  bottom: rem(128px);
+  left: rem(24px);
+  border-radius: rem(16px);
+  width: 100%;
+  max-width: rem(288px);
+  padding: rem(24px);
+  background-color: rgba($color-white, 0.08);
+  @include support-blur(8px, $color-white, 0.08);
+  border: 1px solid rgba($color: $color-white, $alpha: 0.1);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s opacity 0.8s, padding 0.6s, 0.8s height 1s;
+
+  &.menu-mobile-visible {
+    height: 200px;
+    opacity: 1;
+    visibility: visible;
+    padding: rem(24px);
+  }
+}
+
+.menu-mobile__wrapper {
+}
+
+.menu-mobile__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-mobile__links__item {
+  width: 100%;
+}
+
+.menu-mobile__links__item__link {
+  border-radius: rem(8px);
+  padding: rem(16px);
+  @include flex-center;
+  justify-content: flex-start;
+  @include space-x(16px);
+  color: $color-gray-200;
+  width: 100%;
+
+  &:hover {
+    color: $color-accent-green;
+    font-weight: 700;
+
+    .menu-mobile__links__item__link__line {
+      width: 100%;
+      background-color: $color-accent-green;
+    }
+  }
+}
+
+.menu-mobile__links__item__link span:last-child {
+  display: inline-block;
+  width: 100%;
+}
+
+.menu-mobile__links__item__link__line {
+  display: inline-block;
+  width: rem(16px);
+  height: rem(4px);
+  border-radius: rem(4px);
+  background-color: $color-gray-500;
+  transition: width 0.6s ease-in-out;
+}

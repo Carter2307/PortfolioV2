@@ -17,6 +17,7 @@
   flex-direction: column;
   @include space-x(16px);
   @include space-y(16px);
+  margin-top: rem(32px);
 
   @include breakpoints('md') {
     padding: rem(8px) rem(24px);
