@@ -1,7 +1,7 @@
 import Components from './Components'
 //import Smoothscroll from '../utils/Smoothscroll'
 import GSAP from 'gsap'
-import { $ } from '../utils/selectors'
+import { $, $All, $Attribute } from '../utils/selectors'
 import Title from '../animation/Title'
 import Paragraph from '../animation/Paragraph'
 //import { ResizeObserver } from 'resize-observer'
@@ -38,7 +38,17 @@ export default class Pages {
   }
 
   create() {
-    console.log($('.wrapper').getBoundingClientRect())
+    const template = $All('[data-hide]')
+    if (!template) return
+    template.forEach((wrapper) => {
+      const attributes = $Attribute(wrapper, 'data-hide').split(',')
+      if (!attributes) return
+      attributes.forEach((attr) => {
+        const component = $(`.${attr.trim()}`)
+        if (!component) return
+        component.style.display = 'none'
+      })
+    })
     // this.smootscroll.update()
   }
 

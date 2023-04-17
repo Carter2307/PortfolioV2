@@ -86,6 +86,7 @@ export default class FormHandler extends Components {
   }
 
   eventListener() {
+    if (!this.elements.button) return
     this.elements.button.addEventListener('click', this.sendData.bind(this))
   }
 }

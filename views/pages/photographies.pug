@@ -1,4 +1,4 @@
-extends ../base.pug
+extends ../base-light.pug
 
 block variables
    - const title = 'My Pics'
@@ -7,9 +7,13 @@ block variables
    - let template = 'photographies'
 
 block content
-   .photographies
+   .photographies(data-hide="header,connect, footer")
       ul.photographies__wrapper
          each photo in photos
             li.photographies__item
                .photographies__item__image
                   img.photographies__item__pic(src=photo.image)
+      a.photographies__button(href="/")
+         .photographies__button__icon
+            include ../components/svg/arrow-2-left.svg
+         .photographies__button__text Back to home

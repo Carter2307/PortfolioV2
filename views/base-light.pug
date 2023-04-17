@@ -1,0 +1,21 @@
+block variables
+include mixins
+
+doctype html
+html(lang="en")
+   head
+      include partials/analytics
+      include partials/head
+   body
+      include components/preloader
+      include components/widgets/music-player
+      .wrapper-light
+         .content#content(data-template=template)
+            block content
+
+      include partials/scripts
+
+
+
+
+

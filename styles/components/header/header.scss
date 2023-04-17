@@ -56,6 +56,11 @@
   &__item {
     display: flex;
 
+    :hover,
+    .menu__links__item-active {
+      background-color: rgba($color: $color-primary-black, $alpha: 0.08);
+    }
+
     &:last-child {
       .header__links__item__link {
         border-right: 1px solid transparent !important;

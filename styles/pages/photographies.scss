@@ -1,24 +1,20 @@
 .photographies {
   $photoContainer: rem(1100px);
-  @include container-flex($photoContainer, 24px, 32px, 48px);
   background-color: red($color: #000000);
+  position: relative;
 }
 
 .photographies__wrapper {
-  margin: rem(32px) 0;
   display: grid;
   gap: rem(8px);
   overflow: hidden;
   padding: rem(8px);
-  border-radius: rem(16px);
 
   border: 1px solid rgba($color: $color-white, $alpha: 0.1);
-  background-color: rgba($color: $color-primary-black, $alpha: 0.08);
-  @include support-blur(100px, $color-white, 0.08);
+  background-color: rgba($color: $color-white, $alpha: 0.8);
 
   @include breakpoints('sm') {
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    margin: rem(48px) 0;
   }
 }
 
@@ -48,4 +44,29 @@
   width: 100%;
   user-select: none;
   object-fit: cover;
+}
+
+.photographies__button {
+  @include flex-center;
+  padding: rem(8px) rem(16px);
+  @include space-x(16px);
+  position: fixed;
+  bottom: rem(32px);
+  left: 50%;
+  color: $color-white;
+  transform: translateX(-50%);
+  background-color: rgba($color: $color-white, $alpha: 0.35);
+  box-shadow: 0px 8px 24px rgba($color: $color-black, $alpha: 0.5);
+  @include support-blur(30px, $color-black, 0.5);
+  border-radius: rem(16px);
+  border: 1px solid $color-gray-700;
+
+  &__icon {
+    @include flex-center;
+  }
+
+  &__text {
+    @include text-sm;
+    font-weight: 700;
+  }
 }
