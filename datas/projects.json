@@ -1,28 +1,28 @@
 [
   {
     "title": "HiddenCode",
-    "description": "This is one of favorite project. I worked as Designer and Frontend developer. I whas in charged to create all Frontend stuff. From design to code",
+    "description": "This is one of my favorite projects. I worked as a designer and frontend developer, and i was in charge of creating all frontend elements, from design to code.",
     "link": "https://www.hiddencode.fr",
     "image": "/images/hiddencode.png",
     "role": ["Frontend dev", "UI designer"]
   },
   {
     "title": "Incub",
-    "description": "I worked here as Fullstack dev and designer. I started by creating Deign in Figma and give life to the project with code. I use Express js for Backend",
+    "description": "I worked here as a Full Stack developer and designer. I started by creating the design in Figma and brought the project to life with code. For the backend, I used Express.js.",
     "link": "https://incub-server.onrender.com",
     "image": "images/incub.png",
     "role": ["Frontend dev", "UI designer", "Backend dev"]
   },
   {
     "title": "Afroteats",
-    "description": "I was the designer of all the user interface of the project. I also create little design system for this project",
+    "description": "I was the designer for the user interface of the entire project. Additionally, I created a design system for the project.",
     "link": "https://afroeats.fr",
     "image": "images/afroeats.png",
     "role": ["UI designer"]
   },
   {
     "title": "Greendy",
-    "description": "This is one of my first good HTML template. I designed an code the landing page. The idea was to pratice and understant how HTML template are created",
+    "description": "This is one of my first good HTML templates. I designed and coded the landing page. The idea was to practice and understand how HTML templates are created.",
     "link": "https://greendy-landing-page.vercel.app",
     "image": "images/greendy.png",
     "role": ["Frontend dev", "UI designer"]

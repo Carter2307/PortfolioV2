@@ -1,94 +1,43 @@
-const path = require('path')
+const config = require('./config')
 const express = require('express')
-const mongoose = require('mongoose')
-//const webpack = require('webpack')
-//const webpackDevMiddleware = require('webpack-dev-middleware')
-
-const photos = require('./datas/photos.json')
-const projectsData = require('./datas/projects.json')
-const port = process.env.PORT || 3001
-
 const app = express()
-//const config = require('./bundler/webpack.config.development.js')
-//const compiler = webpack(config)
+
+//setup express to enable cors
+// and bodyParser and other config class
+config.expressInitBody(app)
+
+// PUG template engine + Add static file  like js and css
+config.views(app)
 
 //i18N
-const i18n = require('./i18n/index.js')
+const langHandler = config.language()
 
-const lang = {
-  header: i18n.header,
-}
-
-// Tell express to use the webpack-dev-middleware and use the webpack.config.js
-// configuration file as a base.
-// app.use(
-//   webpackDevMiddleware(compiler, {
-//     publicPath: config.output.publicPath,
-//   })
-// )
-
-// Use .env file to store password or key api
-require('dotenv').config()
-
-// PUG template engine
-app.set('views', './views')
-app.set('view engine', 'pug')
-
-app.use(express.urlencoded({ extended: true }))
-
-// Add static file  like js and css
-app.use(express.static(path.join(__dirname, '/public')))
-
-app.get('/', (req, res) => {
-  const datas = projectsData.filter((items) => projectsData.indexOf(items) <= 2)
+app.get('/', langHandler, (req, res) => {
+  const datas = config.datas.projectsData.filter(
+    (items) => config.datas.projectsData.indexOf(items) <= 2
+  )
   res.render('pages/home', {
     datas,
-    lang,
   })
 })
 
-app.get('/about', (req, res) => {
-  res.render('pages/about', { lang })
+app.get('/about', langHandler, (req, res) => {
+  res.render('pages/about')
 })
 
-app.get('/photographies', (req, res) => {
-  res.render('pages/photographies', { lang, photos })
+app.get('/photographies', langHandler, (req, res) => {
+  res.render('pages/photographies', { photos: config.datas.photos })
 })
 
 // MIDDLEWARE
-//Propagate lang object to Route
-const langHandler = (req, res, next) => {
-  res.locals.lang = lang
-  next()
-}
-app.use('/connect', require('./Routes/Users'))
+app.use('/connect', langHandler, require('./Routes/Users'))
 app.use('/projects', langHandler, require('./Routes/Projects'))
 
 // Page no found handler
-app.use((req, res) => {
-  res.status(404).render('404')
-})
+config.pageNotFound(app)
 
-/**
- * Connect to database
- */
-const uri = process.env.MONGODB_URI
-const ops = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  dbName: 'portfolioDB',
-}
-
-mongoose
-  .connect(uri, ops)
-  .then(() => {
-    console.log('Succefully connect to the database')
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+//DATA BASE CONNECTION
+config.initDB()
 
 // Start Server
-app.listen(port, () => {
-  console.log(`Server is listening on port: ${port}`)
-})
+config.server(app)
