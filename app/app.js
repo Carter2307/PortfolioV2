@@ -114,9 +114,13 @@ class App {
       const { href } = link
       const linkData = href.split('#')
       const [url] = linkData
+      const attribute = link.getAttribute('data-links-disabled')
+      const isDisabled = attribute === 'true'
 
       link.onclick = (e) => {
         e.preventDefault()
+
+        if (isDisabled) return
 
         if (link.classList.contains('menu__links__item-active')) {
           link.classList.remove('menu__links__item-active')
