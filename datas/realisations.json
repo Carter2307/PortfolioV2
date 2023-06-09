@@ -82,6 +82,12 @@
   "design": {
     "collum0": [
       {
+        "title": "Photoby Website",
+        "src": "images/previews/photoby.png",
+        "type": "Interface design",
+        "link": "https://www.figma.com/file/8JlJwI4fNwQ2sOp7Jbos04/PHOTOBY?type=design&node-id=14%3A553&t=iEBaJh7vUU12zu0Z-1"
+      },
+      {
         "title": "My old porfolio",
         "src": "images/previews/portfolio-old.png",
         "type": "Interface design"

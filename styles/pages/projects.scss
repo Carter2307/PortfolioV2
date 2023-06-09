@@ -1,3 +1,9 @@
+//Variables
+$col-padding: rem(8px);
+$border-radius: rem(16px);
+$padding: rem(8px);
+$radius-calc: $border-radius - $padding;
+
 .project {
   @include container;
   margin-top: rem(64px);
@@ -69,6 +75,7 @@
   font-style: italic;
   @include space-x(8px);
 }
+
 .projects__items__description__title {
   font-weight: 600;
   text-decoration: underline;
@@ -205,13 +212,42 @@
   }
 }
 
+// --> Logo
+.projects__logos {
+  display: grid;
+  gap: rem(16px);
+  grid-template-columns: repeat(1, 1fr);
+
+  @include breakpoints('md') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    overflow: hidden;
+  }
+
+  &__item__img {
+    border-radius: rem(8px);
+  }
+
+  &__item__detail {
+    @include flex-center;
+    padding: rem(12px);
+    border-radius: $radius-calc;
+    margin-top: $padding;
+    background-color: rgba($color: $color-white, $alpha: 0.05);
+
+    h4 {
+      flex: none;
+      font-weight: 700;
+      @include text-base;
+    }
+  }
+}
+
 // --> Design
 .projects__design {
   $col: 3;
-  $col-padding: rem(8px);
-  $border-radius: rem(16px);
-  $padding: rem(8px);
-  $radius-calc: $border-radius - $padding;
 
   display: flex;
   flex-direction: column;
@@ -275,6 +311,15 @@
       padding: rem(4px) rem(8px);
       @include flex-center;
       border-radius: rem(8px);
+    }
+  }
+
+  &__item__link {
+    width: 100%;
+    padding-top: rem(8px);
+
+    .button {
+      width: auto;
     }
   }
 }

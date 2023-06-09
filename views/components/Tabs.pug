@@ -18,13 +18,12 @@
                      .projects__grids__item__video__detail
                         +button-icon(video.url, 'View project')
          .tabs__panel
-            .project__grids
+            .projects__logos
                each logo in logos
-                  .projects__grids__item
-                     img.projects__grids__item__img(src=logo.imgUrl)
-                     .projects__grids__item__detail
+                  .projects__logos__item
+                     img.projects__logos__item__img(src=logo.imgUrl)
+                     .projects__logos__item__detail
                         h4=logo.title
-                        +button-icon(logo.url, 'View project')
          .tabs__panel
             .projects__design
                .projects__design__collumn
@@ -35,6 +34,10 @@
                         .projects__design__item__detail
                            h4=item.title
                            span=item.type
+                        if item.link
+                           .projects__design__item__link
+                              +button-icon(item.link, 'View project')
+
                .projects__design__collumn
                   each item in collum1
                      .projects__design__item
