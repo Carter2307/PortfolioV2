@@ -1,5 +1,5 @@
 export default class Shapes {
-  constructor({ position, height, width, blur, background }) {
+  constructor({ position, height, width, blur, background, src }) {
     this.top = position.top === -1 ? undefined : position.top
     this.left = position.left === -1 ? undefined : position.left
     this.right = position.right === -1 ? undefined : position.right
@@ -9,8 +9,11 @@ export default class Shapes {
     this.blur = blur
     this.background = background
     this.windowWidth = window.innerWidth
+    this.src = src
 
     this.init()
+
+    return this
   }
 
   init() {
@@ -22,12 +25,12 @@ export default class Shapes {
   createShape() {
     this.shapeFrame = document.createElement('DIV')
     this.shapeFrame.className = 'shapes'
-    this.id = 'shapes'
+    this.shapeFrame.id = 'shapes'
 
     this.testBreakpoint()
     // style
-    this.shapeFrame.style.borderRadius = this.height[2] + 'px'
-    this.shapeFrame.style.backgroundColor = this.background
+    //this.shapeFrame.style.borderRadius = this.height[2] + 'px'
+    //this.shapeFrame.style.backgroundColor = this.background
     // this.shapeFrame.style.transition = 'all 8s'
     this.shapeFrame.style.position = 'absolute'
 
@@ -36,6 +39,18 @@ export default class Shapes {
     this.shapeFrame.style.left = this.left + 'px'
     this.shapeFrame.style.right = this.right + 'px'
     this.shapeFrame.style.bottom = this.bottom + 'px'
+
+    //Insert shape img
+    this.shapeFrame.appendChild(this.createShapeImg(this.src))
+  }
+
+  createShapeImg(src) {
+    this.shapeFrameImg = document.createElement('IMG')
+     this.shapeFrameImg.setAttribute('src', src);
+     this.shapeFrame.style.objectFit = "cover";
+    this.shapeFrameImg.setAttribute('alt', 'blur frame')
+
+    return this.shapeFrameImg
   }
 
   animshapes(animationArr) {
@@ -78,6 +93,6 @@ export default class Shapes {
   }
 
   events() {
-    addEventListener('resize', this.onWindowResize.bind(this))
+    window.addEventListener('resize', this.onWindowResize.bind(this))
   }
 }

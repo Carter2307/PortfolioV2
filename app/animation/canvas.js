@@ -7,38 +7,12 @@ export default class Canvas extends Components {
     super()
     this.isMounted = false
     this.shapeGradient = '#00FF47'
-    this.blur = 200
+    this.blur = 80
     this.init()
   }
 
   init() {
     this.mountFrame()
-    if (!this.isMounted) return
-    const shape1 = new Shapes({
-      position: {
-        top: -100,
-        right: -1,
-        left: -100,
-        bottom: -1,
-      },
-
-      height: [280, 380, 480],
-      width: [280, 380, 480],
-      background: this.shapeGradient,
-    })
-    const shape2 = new Shapes({
-      position: {
-        top: -1,
-        right: -100,
-        left: -1,
-        bottom: -100,
-      },
-      height: [280, 380, 480],
-      width: [280, 380, 480],
-      background: this.shapeGradient,
-    })
-    shape1.mountShape($('#frame'))
-    shape2.mountShape($('#frame'))
   }
 
   createFrame() {
@@ -55,7 +29,36 @@ export default class Canvas extends Components {
   }
 
   mountFrame() {
-    this.createFrame()
+     this.createFrame()
+
+     const size = [480, 768, 1024];
+    const shape1 = new Shapes({
+      position: {
+        top: -300,
+        right: -1,
+        left: -300,
+        bottom: -1,
+      },
+      height: size,
+      width: size,
+      background: this.shapeGradient,
+      src: 'images/blur-pic.png',
+    })
+    const shape2 = new Shapes({
+      position: {
+        top: -1,
+        right: -300,
+        left: -1,
+        bottom: -300,
+      },
+      height: size,
+      width: size,
+      background: this.shapeGradient,
+      src: 'images/blur-pic.png',
+    })
+
+    this.frame.appendChild(shape1.shapeFrame)
+    this.frame.appendChild(shape2.shapeFrame)
     document.body.append(this.frame)
     this.eventListener()
     this.isMounted = true

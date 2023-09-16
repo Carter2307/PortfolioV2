@@ -82,6 +82,19 @@ export function validEmail(email) {
   }
 }
 
+/**
+ * Capitalise a given string
+ *
+ * @param {string} string - A string to capitalize
+ * @return {string}
+ */
+export function capitalize(string) {
+  const str = string
+  const c = str.charAt(0).toUpperCase() + str.slice(1)
+
+  return c
+}
+
 //https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 /**
  * Observe et execuse un callback lorsque les noeuds enfants(DOM) de la cible ont été modifier

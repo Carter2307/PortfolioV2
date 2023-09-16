@@ -1,18 +1,22 @@
 'use strict'
 
-//Pages
-import Home from './pages/home'
-import About from './pages/about'
-import Project from './pages/project'
-import Photographies from './pages/photographies'
 //Components
-import Preloader from './components/Preloader'
-import Player from './components/widgets/music-player/player'
-import Navigation from './components/Navigation'
-import FormHandler from './config/forms'
-import Canvas from './animation/canvas'
-import Smoothscroll from './utils/Smoothscroll'
+import {
+  Preloader,
+  Player,
+  Navigation,
+  FormHandler,
+  Canvas,
+  Smoothscroll,
+} from './components'
+
+//Helpers
 import { $All, $ } from './utils/selectors'
+
+//Config
+import * as Pages from './pages/index'
+import PageFactory from './factories/pagesFactory'
+import { capitalize } from './utils/function'
 
 class App {
   constructor() {
@@ -41,18 +45,26 @@ class App {
 
   getContent() {
     this.content = document.querySelector('#content')
-    this.template = this.content.getAttribute('data-template')
+    this.template = capitalize(this.content.getAttribute('data-template'))
   }
 
   initPages() {
-    this.pages = {
-      home: new Home(),
-      about: new About(),
-      project: new Project(),
-      photographies: new Photographies(),
+    this.pages = {}
+
+    for (let [key, value] of Object.entries(Pages)) {
+      this.pages[key] = PageFactory.createInstance(key)
     }
 
+    //  this.pages = {
+    //    home: new Home(),
+    //    about: new About(),
+    //    project: new Project(),
+    //    photographies: new Photographies(),
+    //  }
+
     this.page = this.pages[this.template]
+
+    console.log(this.page)
     this.page.init()
     this.page.create()
     this.page.show()
@@ -94,9 +106,11 @@ class App {
       div.innerHTML = html
 
       const divContent = div.querySelector('.content')
-      this.template = divContent.getAttribute('data-template')
+      this.template = capitalize(divContent.getAttribute('data-template'))
       this.content.innerHTML = divContent.innerHTML
       this.page = this.pages[this.template]
+
+      console.log(this.template)
 
       this.page.create()
       this.page.show()

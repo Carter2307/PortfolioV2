@@ -11,11 +11,6 @@ export default class Pages {
   constructor(elements) {
     this.element = elements
     this.animateOut = GSAP.timeline()
-    this.device = {
-      mobile: /mobile/i.test(navigator.userAgent),
-      tablet: !/ipad|tablet/i.test(navigator.userAgent),
-    }
-
     this.wrapper = $('.wrapper')
   }
 
@@ -23,18 +18,6 @@ export default class Pages {
     this.scaleAnimation = new Scale("[data-animation='scale']")
     document.body.style.overflow = 'visible'
     document.body.style.position = 'relative'
-    //  if (this.device.mobile && this.device.tablet) {
-    //    document.body.style.overflow = 'visible'
-    //    document.body.style.position = 'relative'
-    //  } else {
-    //    this.wrapper.onload = () => {
-    //      console.log(this.wrapper.getBoundingClientRect())
-    //    }
-    //    this.smootscroll = new Smoothscroll(this.wrapper, {
-    //      direction: 'v',
-    //      smooth: 0.1,
-    //    })
-    //  }
   }
 
   create() {
@@ -49,7 +32,6 @@ export default class Pages {
         component.style.display = 'none'
       })
     })
-    // this.smootscroll.update()
   }
 
   createAnimation() {

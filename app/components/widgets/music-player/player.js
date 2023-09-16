@@ -17,11 +17,14 @@ export default class Player extends Components {
     this.randomId = 0
     this.sound = null
     this.icon = this.elements.button.play.querySelector('i')
+    this.desktop = 768
 
     this.mediaManager = new MediaManager()
     this.length = this.mediaManager.data.length
     this.randomId = Math.floor(Math.random() * this.length)
 
+    this.close()
+    if (window.innerWidth > this.desktop) this.show()
     this.componentsHandler(this.randomId)
     this.eventsListerner()
   }
@@ -138,6 +141,15 @@ export default class Player extends Components {
     )
   }
 
+  onWindowResize(e) {
+    const size = window.innerWidth
+    if (size > this.desktop) {
+      this.show()
+    } else {
+      this.close()
+    }
+  }
+
   eventsListerner() {
     this.elements.button.expand.addEventListener(
       'click',
@@ -149,5 +161,7 @@ export default class Player extends Components {
     this.elements.button.next.addEventListener('click', this.next.bind(this))
     this.elements.button.prev.addEventListener('click', this.prev.bind(this))
     this.elements.button.toggler.addEventListener('click', this.show.bind(this))
+
+    window.addEventListener('resize', this.onWindowResize.bind(this))
   }
 }

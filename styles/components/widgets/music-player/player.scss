@@ -3,13 +3,13 @@
   position: fixed;
   bottom: rem(24px);
   right: rem(24px);
-  left: rem(24px);
+  //left: rem(24px);
   z-index: z('player');
   max-width: rem(300px);
   //display: none;
 
   @include breakpoints('lg') {
-    left: initial;
+   //left: initial;
   }
 
   @include breakpoints('md') {
