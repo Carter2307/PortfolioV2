@@ -51,9 +51,9 @@ class App {
   initPages() {
     this.pages = {}
 
-    for (let [key, value] of Object.entries(Pages)) {
+    Object.keys(Pages).forEach((key) => {
       this.pages[key] = PageFactory.createInstance(key)
-    }
+    })
 
     //  this.pages = {
     //    home: new Home(),

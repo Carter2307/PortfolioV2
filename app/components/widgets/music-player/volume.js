@@ -11,7 +11,7 @@ export default class Volume {
     this.media = media
     this.initialValue = volume | 26
     this.position = { current: 0, target: 0 }
-    this.step = 0.8
+    this.step = 0.5
     this.slider.style.height = `calc(${this.initialValue}%)`
     this.media.volume = clamp(this.initialValue / this.containerHeight, 0, 1)
 

@@ -146,7 +146,7 @@ export default class Player extends Components {
     )
   }
 
-  onWindowResize(e) {
+  onWindowResize() {
     const size = window.innerWidth
     if (size > this.desktop) {
       this.show()
@@ -155,7 +155,7 @@ export default class Player extends Components {
     }
   }
 
-  onEnded(e) {
+  onEnded() {
     this.next()
   }
 

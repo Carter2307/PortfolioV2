@@ -29,9 +29,9 @@ export default class Canvas extends Components {
   }
 
   mountFrame() {
-     this.createFrame()
+    this.createFrame()
 
-     const size = [480, 768, 1024];
+    const size = [480, 768, 1024]
     const shape1 = new Shapes({
       position: {
         top: -300,

@@ -46,8 +46,8 @@ export default class Shapes {
 
   createShapeImg(src) {
     this.shapeFrameImg = document.createElement('IMG')
-     this.shapeFrameImg.setAttribute('src', src);
-     this.shapeFrame.style.objectFit = "cover";
+    this.shapeFrameImg.setAttribute('src', src)
+    this.shapeFrame.style.objectFit = 'cover'
     this.shapeFrameImg.setAttribute('alt', 'blur frame')
 
     return this.shapeFrameImg
