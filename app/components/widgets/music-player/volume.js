@@ -1,7 +1,7 @@
 import { clamp } from '../../../utils/function'
 
 export default class Volume {
-  constructor(container, grapper, slider, media) {
+  constructor(container, grapper, slider, media, volume) {
     this.container = container
     this.grapper = grapper
     this.containerBottom = this.container.getBoundingClientRect().bottom
@@ -9,7 +9,7 @@ export default class Volume {
     this.containerTop = this.container.getBoundingClientRect().top
     this.slider = slider
     this.media = media
-    this.initialValue = 26
+    this.initialValue = volume | 26
     this.position = { current: 0, target: 0 }
     this.step = 0.8
     this.slider.style.height = `calc(${this.initialValue}%)`
@@ -24,7 +24,7 @@ export default class Volume {
 
   onPointerDown(e) {
     e.stopPropagation()
-     this.position.current = e.clientY
+    this.position.current = e.clientY
     document.body.style.cursor = 'ns-resize'
     window.addEventListener('pointerup', this.onPointerUpHandler)
     window.addEventListener('pointermove', this.onPointerMoveHandler)
@@ -43,7 +43,7 @@ export default class Volume {
       } else {
         this.initialValue -= this.step
       }
-      console.log(this.initialValue)
+
       this.slider.style.height = `calc(${clamp(this.initialValue, 0, 100)}%)`
       this.media.volume = clamp(this.initialValue / this.containerHeight, 0, 1)
     }
@@ -60,7 +60,7 @@ export default class Volume {
     window.removeEventListener('pointermove', this.onPointerMoveHandler)
   }
 
-   addEventListener() {
+  addEventListener() {
     this.container.addEventListener('pointerdown', this.onPointerDownHandler)
   }
 }

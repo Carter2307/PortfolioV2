@@ -18,14 +18,19 @@ export default class Player extends Components {
     this.sound = null
     this.icon = this.elements.button.play.querySelector('i')
     this.desktop = 768
+    this.media.volume = this.volume = 26 / 100
 
     this.mediaManager = new MediaManager()
     this.length = this.mediaManager.data.length
     this.randomId = Math.floor(Math.random() * this.length)
 
+    //Events
+
     this.close()
     if (window.innerWidth > this.desktop) this.show()
     this.componentsHandler(this.randomId)
+
+    this.volumeHandler(this.media)
     this.eventsListerner()
   }
 
@@ -62,7 +67,6 @@ export default class Player extends Components {
 
   setComponents(sound) {
     this.coverHandler(sound)
-    this.volumeHandler(this.media)
     this.setSoundDetails(sound)
   }
 
@@ -137,7 +141,8 @@ export default class Player extends Components {
       this.elements.volume.container,
       this.elements.volume.grapper,
       this.elements.volume.slider,
-      sound
+      sound,
+      this.volume * 100
     )
   }
 
@@ -148,6 +153,10 @@ export default class Player extends Components {
     } else {
       this.close()
     }
+  }
+
+  onEnded(e) {
+    this.next()
   }
 
   eventsListerner() {
@@ -161,6 +170,8 @@ export default class Player extends Components {
     this.elements.button.next.addEventListener('click', this.next.bind(this))
     this.elements.button.prev.addEventListener('click', this.prev.bind(this))
     this.elements.button.toggler.addEventListener('click', this.show.bind(this))
+
+    this.media.addEventListener('ended', this.onEnded.bind(this))
 
     window.addEventListener('resize', this.onWindowResize.bind(this))
   }

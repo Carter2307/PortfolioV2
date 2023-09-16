@@ -18,8 +18,8 @@ export default class Timer {
     console.log('Pause')
   }
 
-  isEnded(cb) {
-    cb()
+  isEnded(e) {
+    console.log(e)
   }
 
   #setTime() {
@@ -63,7 +63,9 @@ export default class Timer {
     const seconds = Math.floor(this.media.duration - minutes * 60)
 
     if (hours <= 0) {
-      this.elements.endtime.textContent = `${minutes} : ${seconds}`
+      this.elements.endtime.textContent = `${
+        minutes <= 9 ? '0' + minutes : minutes
+      } : ${seconds <= 9 ? '0' + seconds : seconds}`
     } else {
       this.elements.endtime.textContent = `${hours}:${minutes}:${seconds}`
     }
