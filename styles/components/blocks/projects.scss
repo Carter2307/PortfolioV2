@@ -1,3 +1,7 @@
+.projects {
+  @include container;
+}
+
 .projects__wrapper {
   @include space-y(32px);
 }
@@ -8,63 +12,81 @@
 }
 
 .projects__content {
+  @include space-y(32px);
   width: 100%;
+  padding: rem(8px);
+  //border-radius: rem(24px);
+  //@include border-light;
 }
 
 //Project items
 .project__items {
   display: flex;
   flex-direction: column;
-  @include space-y(24px);
-  border-radius: rem(24px);
+  @include space-y(32px);
+  border-radius: rem(16px);
   background-color: rgba($color: $color-white, $alpha: 0.05);
   padding: rem(24px);
+  padding-bottom: 0;
+  overflow: hidden;
+  @include border-light;
 
   @include breakpoints('sm') {
     padding: rem(64px);
+    padding-bottom: 0;
   }
 
   @include breakpoints('md') {
     padding: rem(48px);
+    padding-bottom: 0;
   }
 
   @include breakpoints('lg') {
     @include flex-between;
     align-items: center;
-    flex-direction: row;
     padding: rem(56px) rem(64px);
-    @include space-x(64px);
-    @include space-y(0px);
+    padding-bottom: 0;
   }
 
   @include breakpoints('xlg') {
     padding: rem(64px) rem(71px);
+    padding-bottom: 0;
   }
 
   @include breakpoints('2xlg') {
     padding: rem(64px) rem(96px);
+    padding-bottom: 0;
   }
 }
 
 .project__items__description {
-  @include space-y(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 
-  @include breakpoints('md') {
-    @include space-y(16px);
+  @include space-y(16px);
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    @include space-y(24px);
+
+    //  &:nth-child(1) {
+    //    @include space-y(24px);
+    //  }
+
+    //  &:nth-child(2) {
+    //  }
   }
 
   @include breakpoints('lg') {
-    max-width: rem(280px);
-  }
-
-  @include breakpoints('xlg') {
-    max-width: rem(310px);
-  }
-
-  @include breakpoints('2xlg') {
-    max-width: rem(380px);
+    @include flex-between;
+    flex-direction: row;
+    @include space-y(0px);
   }
 }
+
 .project__items__description__number {
   @include text-2xl;
   font-weight: 600;
@@ -84,12 +106,12 @@
 }
 
 .project__items__description__title {
-  @include text-3xl;
-  font-weight: 600;
+  @include text-4xl;
+  font-weight: 900;
   font-family: $font-rische;
 
   @include breakpoints('lg') {
-    @include text-4xl;
+    @include text-5xl;
   }
 
   @include breakpoints('2xlg') {
@@ -98,6 +120,8 @@
 }
 .project__items__description__detail {
   @include text-sm;
+  max-width: rem(600px);
+  color: rgba($color: $color-white, $alpha: 0.8);
 
   @include breakpoints('md') {
     @include text-base;
@@ -110,28 +134,41 @@
 
 .project__items__description__details {
   @include space(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include breakpoints('md') {
+    flex-direction: row;
+    align-items: center;
+  }
 
   &__title {
-    @include text-sm;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: capitalize;
   }
 
   &__list {
     flex: none;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: rem(8px);
-    background-color: rgba($color: $color-white, $alpha: 0.08);
-    padding: rem(8px);
-    border-radius: rem(8px);
+
+    @include breakpoints('md') {
+      width: auto;
+       display: flex;
+       @include space-x(8px);
+    }
 
     &__item {
       display: inline-block;
-      padding: rem(4px) rem(8px);
-      border-radius: rem(4px);
+      padding: rem(8px) rem(16px);
+      border-radius: rem(999px);
+      word-break: keep-all;
       background-color: rgba($color: $color-white, $alpha: 0.05);
       flex: 1 auto;
+      @include border-light;
     }
   }
 }
@@ -143,6 +180,7 @@
   background-color: rgba($color: $color-white, $alpha: 0.1);
   padding: rem(8px);
   display: flex;
+  transform: translateY(rem(24px));
 
   img {
     border-radius: rem(8px);

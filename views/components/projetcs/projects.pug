@@ -1,14 +1,15 @@
-section.projects#projects
+section.projects#projects.container
   .projects__wrapper
     h2.projects__title(data-animation='title') Works
     .projects__content
-      .rb-slider
-        .rb-slider-navigation
-          button.rb-slider-button#rb-slider-button-prev
-            include ../svg/arrow-left.svg
-          button.rb-slider-button#rb-slider-button-next
-            include ../svg/arrow-right.svg
-        .rb-slider-wrapper
-          .rb-slider-items
-              include items
+      include items
+      //- .rb-slider
+      //-   .rb-slider-navigation
+      //-     button.rb-slider-button#rb-slider-button-prev
+      //-       include ../svg/arrow-left.svg
+      //-     button.rb-slider-button#rb-slider-button-next
+      //-       include ../svg/arrow-right.svg
+      //-   .rb-slider-wrapper
+      //-     .rb-slider-items
+      //-         include items
 

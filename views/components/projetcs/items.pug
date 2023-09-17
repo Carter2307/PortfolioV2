@@ -1,16 +1,17 @@
 each projects, index in datas
-   .rb-slider-item
-      .project__items
-         .project__items__description
-            h4.project__items__description__number=`0${index}`
+   .project__items
+      .project__items__description
+         .project__items__description__col
+            //h4.project__items__description__number=`0${index}`
             h3.project__items__description__title=projects.title
-            p.project__items__description__detail=projects.description
             .project__items__description__details
-               h5.project__items__description__details__title Role
+               h5.project__items__description__details__title Role:
                ul.project__items__description__details__list
                   each item in projects.role
                      li.project__items__description__details__list__item=item
-            +button(projects.link,'View project')(class="button button__primary button-bg")
-               include ../svg/plug.svg
-         .project__items__image
-            img(src=projects.image)
+            p.project__items__description__detail=projects.description
+         .project__items__description__col
+            +button(projects.link,'View project')(class="button button__link")
+               include ../svg/chevron-oblick.svg
+      .project__items__image
+         img(src=projects.image)

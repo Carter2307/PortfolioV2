@@ -1,5 +1,5 @@
 import Pages from '../classes/Pages'
-import Slider from '../components/slider/Slider'
+//import Slider from '../components/slider/Slider'
 import Services from '../components/Services'
 import FormHandler from '../config/forms'
 
@@ -10,7 +10,7 @@ export default class Home extends Pages {
 
   create() {
     super.create()
-    new Slider()
+    //new Slider()
     new Services()
     new FormHandler('modal', 'projects/usersProjects', 'POST')
   }
