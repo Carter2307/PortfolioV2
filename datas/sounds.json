@@ -97,5 +97,16 @@
       "title": "Carpe Diem",
       "cover": "sound/Olamide/cover.png"
     }
+  },
+  {
+    "id": 9,
+    "title": "Know You",
+    "link": "sound/KorynHawthorne/Know-you.mp3",
+    "artist": { "name": "Koryn Hawthorne" },
+    "album": {
+      "id": 1,
+      "title": "Know You",
+      "cover": "sound/KorynHawthorne/cover.png"
+    }
   }
 ]
