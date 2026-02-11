@@ -1,9 +1,28 @@
-/node_modules
-.DS_Store
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# IDE
 .idea
 .vscode
-.editorconfig
+
+# OS
+.DS_Store
+
+# Environment
 .env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.editorconfig
 .prettierrc
+
+# Lock files (optional)
 package-lock.json
-.babelrc
